@@ -86,12 +86,8 @@ def update_author_data_tuples(doi, url, idx, j, author_data_tuples):
                 aff = author['affiliation']
             except:
                 aff = np.nan
-            try:
-                author_type = author['@type']
-            except:
-                author_type = np.nan
             author_data_tuples.append((
-                doi, url, title, journal, date_published, name, author_num, position, aff, author_type))
+                doi, url, title, journal, date_published, name, author_num, position, aff))
     else:
         author_data_tuples.append((
                 doi, url, title, journal, date_published))
@@ -152,7 +148,6 @@ if __name__ == '__main__':
             'numberOfAuthors',
             'authorPosition',
             'affiliation',
-            'authorType',
         ]
     )
 

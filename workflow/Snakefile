@@ -1,0 +1,45 @@
+from os.path import join as pjoin
+import sys
+
+DATA_DIR = "../data/"
+RAW_DATA_DIR = pjoin(DATA_DIR, "raw")
+INTERIM_DATA_DIR = pjoin(DATA_DIR, "interim")
+INTERIM_LARGE_DATA_DIR = pjoin(INTERIM_DATA_DIR, 'large')
+PROCESSED_DATA_DIR = pjoin(DATA_DIR, "processed")
+
+###############################################################################
+# Raw Data
+###############################################################################
+
+# SSCI journals 
+SSCI = pjoin(RAW_DATA_DIR, 'ssci.csv')
+
+###############################################################################
+# Interim outputs
+###############################################################################
+
+ICA_PAPER_DF = pjoin(INTERIM_DATA_DIR, 'ica_paper_df.csv')
+
+ICA_PAPER_DATA = pjoin(INTERIM_DATA_DIR, 'ica_paper_data.csv')
+ICA_AUTHOR_DATA = pjoin(INTERIM_DATA_DIR, 'ica_author_data.csv')
+ICA_ERROR_URLS = pjoin(INTERIM_DATA_DIR, 'ica_error_urls.txt')
+
+###############################################################################
+# Workflows
+###############################################################################
+
+rule all:
+    input:
+        ICA_PAPER_DF,
+        ICA_PAPER_DATA,
+        ICA_AUTHOR_DATA,
+        ICA_ERROR_URLS,
+
+rule scrape_ica_paper_dois:
+    output: ICA_PAPER_DF
+    shell: "python scripts/scrape_ica_paper_dois.py {output}"
+
+rule scrape_ica_author_data:
+    input: ICA_PAPER_DF
+    output: ICA_PAPER_DATA, ICA_AUTHOR_DATA, ICA_ERROR_URLS
+    shell: "python scripts/scrape_ica_author_data.py {input} {output}"

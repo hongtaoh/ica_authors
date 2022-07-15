@@ -34,6 +34,14 @@ def get_journal_and_urls():
 	return journals, j_urls, url_j_dic 
 
 def get_volume_and_issue():
+	'''
+	there are two "div.issue-info-pub". First is the left panel and second is 
+		something like "Volume 72, Issue 3, June 2022"
+		I am extracting the first one here
+	Returns:
+		- 'Volume 72'
+		- 'Issue 3'
+	'''
 	volume_and_issue = wait.until(EC.presence_of_element_located((
 		By.CSS_SELECTOR, "div.issue-info-pub"
 	))).text
@@ -43,6 +51,7 @@ def get_volume_and_issue():
 	return volume_num, issue_num
 
 def get_mo_and_yr():
+	# get the issue date information from the left panel
 	issue_date = wait.until(EC.presence_of_element_located((
 		By.CSS_SELECTOR, "div.issue-info-date"
 	))).text
@@ -57,6 +66,9 @@ def get_mo_and_yr():
 	return month, year
 
 def extract_paper_info(tuples, journal, volume_num, issue_num, month, year):
+	# There are several sections. For example, 
+	# in 'https://academic.oup.com/joc/issue/72/3?browseBy=volume'
+	# there are four sections: articles, Corrigendum, correction, and book reviews
 	sections = wait.until(EC.presence_of_all_elements_located((
 			By.CSS_SELECTOR, "div.section-container > section"
 		)))
@@ -64,10 +76,12 @@ def extract_paper_info(tuples, journal, volume_num, issue_num, month, year):
 	for section in sections:
 		section_index = sections.index(section) + 1
 
+		# the section name is the category, e.g., Articles
 		category = section.find_element(
 			By.CSS_SELECTOR, 'h4'
 		).get_attribute('innerHTML')
 
+		# all individual papers in each section
 		papers = section.find_elements(
 			By.CSS_SELECTOR, "div.al-article-items"
 		)
@@ -86,10 +100,11 @@ def extract_paper_info(tuples, journal, volume_num, issue_num, month, year):
 
 			try:
 				# if it has "get access", for example, https://academic.oup.com/hcr/issue/33/1
-				# I only get the real title within the first span
+				#  the real title is within the first span
 				title = title_link.find_element(
 					By.CSS_SELECTOR, "span.access-title"
 				).text 
+			# if there is no such "span.access-title", then just get the title as usual
 			except:
 				title = title_link.text 
 
@@ -190,7 +205,7 @@ def check_for_previous_tab():
 
 def click_browse_by_volume():
 	browse_volume_link = wait.until(EC.element_to_be_clickable((
-			By.CSS_SELECTOR, "div.issue-browse-volume-link > a"
+		By.CSS_SELECTOR, "div.issue-browse-volume-link > a"
 	)))
 	browse_volume_link.click()
 

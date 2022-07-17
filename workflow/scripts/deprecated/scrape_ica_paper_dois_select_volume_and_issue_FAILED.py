@@ -1,4 +1,4 @@
-"""get ICA publication paper info, specifically, I got all paper dois, title, and abstracts """
+"""get ICA publication paper info"""
 
 import pandas as pd
 import numpy as np
@@ -34,7 +34,7 @@ def get_journal_and_urls():
 	url_j_dic = dict(zip(j_urls, journals))
 	return journals, j_urls, url_j_dic 
 
-def extract_paper_info(tuples, journal, volume_num, issue_num, issue_text, month, year, issue_url):
+def extract_paper_info(tuples, journal, volume_num, issue_num, month, year):
 	# There are several sections. For example, 
 	# in 'https://academic.oup.com/joc/issue/72/3?browseBy=volume'
 	# there are four sections: articles, Corrigendum, correction, and book reviews
@@ -149,10 +149,8 @@ def extract_paper_info(tuples, journal, volume_num, issue_num, issue_text, month
 
 				tuples.append((
 					journal,
-					issue_url,
 					volume_num,
 					issue_num,
-					issue_text,
 					month,
 					year,
 					category,
@@ -172,6 +170,12 @@ def click_browse_by_volume():
 	)))
 	browse_volume_link.click()
 
+def get_volumeSelect():
+	volumeSelect = Select(
+		driver.find_element(
+			By.CSS_SELECTOR, '.issue-browse-year-list.issue-browse-select'))
+	return volumeSelect
+
 def get_volume_option_texts():
 	'''
 	get all volume options
@@ -180,6 +184,12 @@ def get_volume_option_texts():
 		By.CSS_SELECTOR, '.issue-browse-year-list.issue-browse-select > option')
 	volume_option_texts = [v.text for v in volume_options]
 	return volume_option_texts
+
+def get_issueSelect():
+	issueSelect = Select(driver.find_element(
+		By.CSS_SELECTOR, '.issue-browse-issues-list'
+	))
+	return issueSelect
 
 def get_issue_option_texts():
 	issue_options = driver.find_elements(
@@ -193,7 +203,6 @@ def get_issue_num_year_and_month(issue_text):
 	  such as  "Issue 1, March 1981, Pages 3–240"
 	'''
 	issue_info_list = issue_text.split(', ')
-	# example issue_num: issue 2
 	issue_num = issue_info_list[0]
 	# year and month:
 	yr_n_mo = issue_info_list[1]
@@ -212,54 +221,37 @@ if __name__ == '__main__':
 	wait = WebDriverWait(driver, 5)
 	journals, j_urls, url_j_dic = get_journal_and_urls()
 
-
 	tuples = []
 
 	for j_url in [j_urls[-1]]:
-		start_str = j_url
-		end_str = "?browseBy=volume"
 		journal = url_j_dic[j_url]
 		print(f"{journal} has started")
 		driver.get(j_url)
 		click_browse_by_volume()
-		# check total number of vlumes 
+		# get all volume options 
 		volume_option_texts = get_volume_option_texts()
-		total_volume = int(volume_option_texts[0])
-		print(f'Total volume in {journal}: {total_volume}')
 		# for each volume
-		# for v in reversed(range(10, 12)):
-		for v in reversed(range(1, total_volume+1)):
-			volume_num = f'Volume {v}'
-			print(f'{volume_num} has started!')
-			'''
-			to go to the first issue of the current volume
-			this is to make sure that get_issue_option_texts() returns issues of the current 
-			volume, rather than the previous volume
-			'''
-			current_volume_url = f'{start_str}/{v}/1{end_str}'
-			driver.get(current_volume_url)
-			issue_texts = get_issue_option_texts()
-			for issue_text in reversed(issue_texts):
-				# issue_text example: "Issue 1, March 2006, Pages 1–234"
-				# reversed because most recent issues should be crawled first
-				# issue eample: "Issue 1, March 1981, Pages 3–240"
+		for volume in volume_option_texts:
+			volume_num = f'Volume {volume}' 
+			print(f'volume {volume} has started')
+			volumeSelect = get_volumeSelect()
+			volumeSelect.select_by_visible_text(volume)
+			issueSelect = get_issueSelect()
+			issue_option_texts = get_issue_option_texts()
+			for issue_text in issue_option_texts:
+				# issue_text eample: "Issue 1, March 1981, Pages 3–240"
 				issue_num, month, year = get_issue_num_year_and_month(issue_text)
-				# this is to prevent error when issue text is "Issue suppl_1, August 2006" (joc)
-				issue = issue_num.split(' ')[1]
-				issue_url = f'{start_str}/{v}/{issue}{end_str}'
-				driver.get(issue_url)
-				extract_paper_info(tuples, journal, volume_num, issue_num, issue_text, month, year, issue_url)
-				print(f'({volume_num}, {issue_text}) is done')
+				issueSelect.select_by_visible_text(issue_text)
+				extract_paper_info(tuples, journal, volume_num, issue_num, month, year)
+				print(f'{volume_num}, {issue_text} is done')
+				issueSelect = get_issueSelect()
 		print(f"{journal} is done")
 		time.sleep(1+random.uniform(0,1))
-	print('Everything is done!')
-	driver.close()
-	driver.quit()
 	
 	df = pd.DataFrame(
 		list(tuples), 
 		columns = [
-			'journal', 'issueURL', 'volumn', 'issue', 'issueText',
+			'journal', 'volumn', 'issue', 
 			'month', 'year', 'category', 'title', 
 			'url', 'doi', 'pages',  
 			'abstract', 'abstract_para_num',

@@ -1,4 +1,4 @@
-"""get ICA publication paper info, specifically, I got all paper dois, title, and abstracts """
+"""get ICA publication paper info"""
 
 import pandas as pd
 import numpy as np
@@ -11,7 +11,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC 
 from selenium.common.exceptions import TimeoutException
 from selenium.common.exceptions import NoSuchElementException 
-from selenium.webdriver.support.ui import Select
 import sys
 
 ICA_PAPER_DF = sys.argv[1]
@@ -34,7 +33,39 @@ def get_journal_and_urls():
 	url_j_dic = dict(zip(j_urls, journals))
 	return journals, j_urls, url_j_dic 
 
-def extract_paper_info(tuples, journal, volume_num, issue_num, issue_text, month, year, issue_url):
+def get_volume_and_issue():
+	'''
+	there are two "div.issue-info-pub". First is the left panel and second is 
+		something like "Volume 72, Issue 3, June 2022"
+		I am extracting the first one here
+	Returns:
+		- 'Volume 72'
+		- 'Issue 3'
+	'''
+	volume_and_issue = wait.until(EC.presence_of_element_located((
+		By.CSS_SELECTOR, "div.issue-info-pub"
+	))).text
+	split_text = volume_and_issue.split(', ')
+	volume_num = split_text[0]
+	issue_num = split_text[1]
+	return volume_num, issue_num
+
+def get_mo_and_yr():
+	# get the issue date information from the left panel
+	issue_date = wait.until(EC.presence_of_element_located((
+		By.CSS_SELECTOR, "div.issue-info-date"
+	))).text
+	split_text = issue_date.split(' ')
+	year = split_text[-1]
+	# sometimes the issue_date is in the format of "1 March 2004"
+	# for example: https://academic.oup.com/joc/issue/54/1
+	if len(split_text) > 2:
+		month = split_text[1]
+	else:
+		month = split_text[0]
+	return month, year
+
+def extract_paper_info(tuples, journal, volume_num, issue_num, month, year):
 	# There are several sections. For example, 
 	# in 'https://academic.oup.com/joc/issue/72/3?browseBy=volume'
 	# there are four sections: articles, Corrigendum, correction, and book reviews
@@ -149,10 +180,8 @@ def extract_paper_info(tuples, journal, volume_num, issue_num, issue_text, month
 
 				tuples.append((
 					journal,
-					issue_url,
 					volume_num,
 					issue_num,
-					issue_text,
 					month,
 					year,
 					category,
@@ -164,7 +193,21 @@ def extract_paper_info(tuples, journal, volume_num, issue_num, issue_text, month
 					abstract_para_num,
 				))
 			time.sleep(0.1+random.uniform(0,0.1))
+	# all sections done! print the completed journal-issue
+	print(f'{journal} ({month} {year}) is done')
 	time.sleep(0.1+random.uniform(0,0.1)) 
+
+def check_for_previous_tab():
+	try:
+		previous_tab = wait.until(EC.element_to_be_clickable((
+			By.CSS_SELECTOR, "span.issue-link--prev  > a"
+		)))
+		tab_exists = True
+		previous_url = previous_tab.get_attribute('href')
+	except:
+		tab_exists = False 
+		previous_url = np.nan 
+	return tab_exists, previous_url
 
 def click_browse_by_volume():
 	browse_volume_link = wait.until(EC.element_to_be_clickable((
@@ -172,94 +215,46 @@ def click_browse_by_volume():
 	)))
 	browse_volume_link.click()
 
-def get_volume_option_texts():
-	'''
-	get all volume options
-	'''
-	volume_options = driver.find_elements(
-		By.CSS_SELECTOR, '.issue-browse-year-list.issue-browse-select > option')
-	volume_option_texts = [v.text for v in volume_options]
-	return volume_option_texts
+def extract_first_url(j_url, tuples, journal):
+	driver.get(j_url)
+	click_browse_by_volume()
+	volume_num, issue_num = get_volume_and_issue()
+	month, year = get_mo_and_yr()
+	extract_paper_info(tuples, journal, volume_num, issue_num, month, year)
+	tab_exists, previous_url = check_for_previous_tab()
+	return tab_exists, previous_url
 
-def get_issue_option_texts():
-	issue_options = driver.find_elements(
-		By.CSS_SELECTOR, '.issue-browse-issues-list > option'
-	)
-	issue_option_texts = [i.text for i in issue_options]
-	return issue_option_texts
-
-def get_issue_num_year_and_month(issue_text):
-	''' to extract issue number, year, and month information from an issue text 
-	  such as  "Issue 1, March 1981, Pages 3–240"
-	'''
-	issue_info_list = issue_text.split(', ')
-	# example issue_num: issue 2
-	issue_num = issue_info_list[0]
-	# year and month:
-	yr_n_mo = issue_info_list[1]
-	split_text = yr_n_mo.split(' ')
-	year = split_text[-1]
-	# sometimes the issue_date is in the format of "1 March 2004"
-	# for example: https://academic.oup.com/joc/issue/54/1
-	if len(split_text) > 2:
-		month = split_text[1]
-	else:
-		month = split_text[0]
-	return issue_num, month, year 
+def extract_previous_url(previous_url, tuples, journal):
+	driver.get(previous_url)
+	volume_num, issue_num = get_volume_and_issue()
+	month, year = get_mo_and_yr()
+	extract_paper_info(tuples, journal, volume_num, issue_num, month, year)
+	tab_exists, previous_url = check_for_previous_tab()
+	return tab_exists, previous_url
 
 if __name__ == '__main__':
 	driver = webdriver.Firefox()
-	wait = WebDriverWait(driver, 5)
+	wait = WebDriverWait(driver, 3)
 	journals, j_urls, url_j_dic = get_journal_and_urls()
-
 
 	tuples = []
 
 	for j_url in [j_urls[-1]]:
-		start_str = j_url
-		end_str = "?browseBy=volume"
 		journal = url_j_dic[j_url]
-		print(f"{journal} has started")
-		driver.get(j_url)
-		click_browse_by_volume()
-		# check total number of vlumes 
-		volume_option_texts = get_volume_option_texts()
-		total_volume = int(volume_option_texts[0])
-		print(f'Total volume in {journal}: {total_volume}')
-		# for each volume
-		# for v in reversed(range(10, 12)):
-		for v in reversed(range(1, total_volume+1)):
-			volume_num = f'Volume {v}'
-			print(f'{volume_num} has started!')
-			'''
-			to go to the first issue of the current volume
-			this is to make sure that get_issue_option_texts() returns issues of the current 
-			volume, rather than the previous volume
-			'''
-			current_volume_url = f'{start_str}/{v}/1{end_str}'
-			driver.get(current_volume_url)
-			issue_texts = get_issue_option_texts()
-			for issue_text in reversed(issue_texts):
-				# issue_text example: "Issue 1, March 2006, Pages 1–234"
-				# reversed because most recent issues should be crawled first
-				# issue eample: "Issue 1, March 1981, Pages 3–240"
-				issue_num, month, year = get_issue_num_year_and_month(issue_text)
-				# this is to prevent error when issue text is "Issue suppl_1, August 2006" (joc)
-				issue = issue_num.split(' ')[1]
-				issue_url = f'{start_str}/{v}/{issue}{end_str}'
-				driver.get(issue_url)
-				extract_paper_info(tuples, journal, volume_num, issue_num, issue_text, month, year, issue_url)
-				print(f'({volume_num}, {issue_text}) is done')
-		print(f"{journal} is done")
+		journal_index = j_urls.index(j_url)
+		if journal_index < 4:
+			journal_next = url_j_dic[j_urls[journal_index + 1]]
+		tab_exists, previous_url = extract_first_url(j_url, tuples, journal)
+		while tab_exists:
+			tab_exists, previous_url = extract_previous_url(
+				previous_url, tuples, journal)
+		print(f"{journal} completed; {journal_next} begins.")
 		time.sleep(1+random.uniform(0,1))
-	print('Everything is done!')
-	driver.close()
-	driver.quit()
 	
 	df = pd.DataFrame(
 		list(tuples), 
 		columns = [
-			'journal', 'issueURL', 'volumn', 'issue', 'issueText',
+			'journal', 'volumn', 'issue', 
 			'month', 'year', 'category', 'title', 
 			'url', 'doi', 'pages',  
 			'abstract', 'abstract_para_num',

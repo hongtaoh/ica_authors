@@ -215,7 +215,7 @@ if __name__ == '__main__':
 
 	tuples = []
 
-	for j_url in [j_urls[-1]]:
+	for j_url in j_urls:
 		start_str = j_url
 		end_str = "?browseBy=volume"
 		journal = url_j_dic[j_url]

@@ -1,4 +1,10 @@
-"""get paper and author data on ICA journal publications using BeautifulSoup"""
+"""get paper and author data on ICA journal publications using BeautifulSoup
+
+This script differs from `get_ica_author_df.py` in that this script utilizes the hidden javascript 
+data in the html source as the `get_ica_author_df.py` script utilizes the apparent 
+HTML codes.
+
+"""
 
 import sys
 import pandas as pd
@@ -11,10 +17,11 @@ import re
 import json
 
 ICA_PAPER_DF = sys.argv[1]
-ICA_AUTHOR_DF = sys.argv[2]
-NO_AUTHOR_URLS = sys.argv[3]
+ICA_PAPER_DATA = sys.argv[2]
+ICA_AUTHOR_DATA = sys.argv[3]
+ICA_ERROR_URLS = sys.argv[4]
 
-def get_soup(url, idx):
+def get_response(url, idx):
 	headers = {
 	"user-agent": "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36" \
 	"(KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36",
@@ -24,27 +31,67 @@ def get_soup(url, idx):
 		time.sleep(1)
 		print(f"{idx} : {url} status code is {response.status_code}, retrying ...")
 		response = requests.get(url=url, headers=headers)
+	return response 
+
+def get_j(response):
 	html = response.text 
 	soup = BeautifulSoup(html, 'html.parser')
-	return soup
-
-def update_author_data(url, soup, no_author_urls, author_data_tuples):
-	doi = url_doi_dic[url]
-	journal = url_journal_dic[url]
-	title = url_title_dic[url]
-	year = url_year_dic[url]
-	# this return a list
-	# sometimes there is no authors: https://academic.oup.com/joc/article/33/4/20/4282700
 	try:
-		authors = soup.find(class_="al-authors-list").find_all(
-			class_="al-author-name-more js-flyout-wrap")
+		string = soup.select_one(
+			"script[type='application/ld+json']"
+		).string.strip()
+
+		j = json.loads(string)
+	except:
+		j = None
+	return j 
+
+def update_paper_data_tuples(doi, url, year, journal, title, idx, j, paper_data_tuples):
+	# title = j['name']
+	try:
+		paper_type = j['@type']
+	except:
+		paper_type = np.nan
+	# journal = j['isPartOf']['isPartOf']['name'] or np.nan
+	try:
+		date_published = j['datePublished']
+	except:
+		date_published = np.nan
+	try:
+		keywords_list = j['keywords']
+		keywords = ", ".join(keywords_list)
+	except:
+		keywords = np.nan
+		# print(f"there are no keywords in {idx} : {url}")
+	paper_data_tuples.append((doi, url, year, title, paper_type, journal, date_published, keywords))
+	return paper_data_tuples
+
+def update_author_data_tuples(doi, url, year, journal, title, idx, j, paper_data_tuples):
+	try:
+		date_published = j['datePublished']
+	except:
+		date_published = np.nan
+	try:
+		authors = j['author']
 		author_num = len(authors)
+	except:
+		# print(f"there is no author data in {idx} : {url}")
+		authors = None
+		author_num = None
+		name = np.nan; aff = np.nan; author_type = np.nan
+	# if there is no author data, I don't need to proceed here
+	if authors is not None:
 		for author in authors:
-			author_position = authors.index(author) + 1
-			'''author names
-			'''
+			position = authors.index(author) + 1
 			try:
-				fullname = author.find(class_="info-card-name").text.strip()
+				"""
+				authors[0]['name'] returns last, and then first.
+				one example: 'Read, Stephen J.'
+				so I need to reverse the order
+				"""
+				name_elements = author['name'].split(', ')
+				name_elements.reverse()
+				fullname = ' '.join(name_elements)
 				fullname_split = fullname.split(' ')
 				lastname = fullname_split[-1]
 				if fullname_split:
@@ -64,48 +111,22 @@ def update_author_data(url, soup, no_author_urls, author_data_tuples):
 			except:
 				fullname = np.nan
 				lastname = np.nan 
-				firstname = np.nan
-			'''author affiliations
-			'''
+				firstname = np.nan 
 			try:
-				aff = author.find(class_="aff")
-				# sometimes, there is no 'span': 
-				# https://academic.oup.com/ccc/article/15/2/269/6561482
-				if aff.find('span') is not None:
-					aff.find('span').extract()
-				aff = aff.text.strip()
+				aff = author['affiliation']
 			except:
 				aff = np.nan
-			'''author correspondence
-			'''
-			try:
-				cor = author.find(class_="info-author-correspondence").text.strip()
-			except:
-				cor = np.nan
-			'''google scholar link
-			'''
-			try:
-				gscholar_link = author.find(
-					class_="info-card-search info-card-search-google").find('a')['href']
-			except:
-				gscholar_link = np.nan
-			'''update data tuples
-			'''
 			author_data_tuples.append((
-				doi, url, journal, title, year,
-				author_num, author_position, fullname,
-				firstname, lastname, aff, cor, gscholar_link
-			))
-	except:
-		no_author_urls.append(url)
+				doi, url, year, title, 
+				journal, date_published, 
+				fullname, firstname, lastname, 
+				author_num, position, aff))
+	else:
 		author_data_tuples.append((
-			doi, url, journal, title, year
-		))
-		print(f'{url}')
+				doi, url, year, title, journal, date_published))
 	return author_data_tuples
 
 if __name__ == '__main__':
-	# read data
 	ica_papers = pd.read_csv(ICA_PAPER_DF)
 	
 	# extract useful info
@@ -120,46 +141,74 @@ if __name__ == '__main__':
 	url_year_dic = dict(zip(paper_urls, years))
 	url_title_dic = dict(zip(paper_urls, titles))
 	url_journal_dic = dict(zip(paper_urls, journals))
-	
-	# initiate data tuples
+
+	# 188, 1459 have some problems. You can check them out
+	random_paper_urls = random.sample(paper_urls, 10)
+	error_urls = []
+
+	paper_data_tuples = []
 	author_data_tuples = []
-
-	# papers that do not have any author data
-	# e.g., https://academic.oup.com/joc/article-abstract/38/4/2/4210505
-	no_author_urls = []
-
+	
 	total_urls = len(paper_urls)
 	print(f'Total number of URLs to crawl: {total_urls}')
-	
-	random_paper_urls = random.sample(paper_urls, 10)
 
-	for url in random_paper_urls:
-		idx = random_paper_urls.index(url) + 1
-	# for url in paper_urls:
-	#     idx = paper_urls.index(url) + 1
-		soup = get_soup(url, idx)
-		update_author_data(url, soup, no_author_urls, author_data_tuples)
+	# for url in random_paper_urls:
+	# 	idx = random_paper_urls.index(url) + 1
+	for url in paper_urls:
+		idx = paper_urls.index(url) + 1
+		doi = url_doi_dic[url]
+		year = url_year_dic[url]
+		journal = url_journal_dic[url]
+		title = url_title_dic[url]
+		response = get_response(url, idx)
+		j = get_j(response)
+		if j is not None:
+			update_paper_data_tuples(
+				doi, url, year, journal, title, idx, j, paper_data_tuples)
+			update_author_data_tuples(
+				doi, url, year, journal, title, idx, j, author_data_tuples)
+		else:
+			print(f'something wrong with {idx} : {url}')
+			paper_data_tuples.append((doi, url, year, journal, title))
+			author_data_tuples.append((doi, url, year, journal, title))
+			error_urls.append(url)
 		print(f'{idx} is done')
-		time.sleep(0.5 + random.uniform(0, 0.4))
-	
-	# build dataframe
-	author_df = pd.DataFrame(author_data_tuples, columns=[
-		'doi',
-		'url',
-		'journal',
-		'title',
-		'year',
-		'numberOfAuthros',
-		'authorPosition',
-		'fullname',
-		'firstname',
-		'lastname',
-		'affiliation',
-		'correspondence',
-		'googleScholarLink'
-	])
-	
-	author_df.to_csv(ICA_AUTHOR_DF, index=False)
-	with open(NO_AUTHOR_URLS, 'w') as f:
-		for url in no_author_urls:
+		time.sleep(0.2 + random.uniform(0, 0.2))
+
+	paper_data = pd.DataFrame(
+		list(paper_data_tuples),
+		columns = [
+			'doi',
+			'url',
+			'year',
+			'title',
+			'paperType',
+			'journal',
+			'datePublished',
+			'keywords'
+		]
+	)
+
+	author_data = pd.DataFrame(
+		list(author_data_tuples),
+		columns = [
+			'doi',
+			'url',
+			'year',
+			'title',
+			'journal',
+			'datePublished',
+			'authorFullName',
+			'firstName',
+			'lastName',
+			'numberOfAuthors',
+			'authorPosition',
+			'affiliation',
+		]
+	)
+
+	paper_data.to_csv(ICA_PAPER_DATA, index=False)
+	author_data.to_csv(ICA_AUTHOR_DATA, index=False)
+	with open(ICA_ERROR_URLS, 'w') as f:
+		for url in error_urls:
 			f.write("%s\n" % url)

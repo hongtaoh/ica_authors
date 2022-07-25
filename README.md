@@ -1,6 +1,24 @@
-# Intro
+# ICA AUTHORS
 
 This project contains my codes to scrape ICA Annaual conference data and also some exploratory codes about ICA journal data from web of science and also openalex. 
+
+## Workflow
+
+This project uses [snakemake](https://github.com/hongtaoh/snakemake-tutorial).
+ 
+### Scripts
+
+- `scrape_ica_paper_dois.py`: get ICA publication paper info, specifically, I got all paper dois, title, and abstracts
+
+- `scrape_ica_author_data.py`: get paper and author data on ICA journal publications using BeautifulSoup
+
+- `get_gender_race_aff_pred`: get predictions for gender, race, and affiliations
+
+More details can be found in `workflow/Snakefile`.
+
+## Notebooks
+
+These are exploratory notebooks. 
 
 ## Data
 

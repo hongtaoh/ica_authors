@@ -3,6 +3,7 @@ import sys
 
 DATA_DIR = "../data/"
 RAW_DATA_DIR = pjoin(DATA_DIR, "raw")
+RAW_LARGE_DATA_DIR = pjoin(RAW_DATA_DIR, 'large')
 INTERIM_DATA_DIR = pjoin(DATA_DIR, "interim")
 INTERIM_LARGE_DATA_DIR = pjoin(INTERIM_DATA_DIR, 'large')
 PROCESSED_DATA_DIR = pjoin(DATA_DIR, "processed")
@@ -13,6 +14,8 @@ PROCESSED_DATA_DIR = pjoin(DATA_DIR, "processed")
 
 # SSCI journals 
 SSCI = pjoin(RAW_DATA_DIR, 'ssci.csv')
+
+ROR_RAW_DATA = pjoin(RAW_LARGE_DATA_DIR, 'ror.json')
 
 ###############################################################################
 # Interim outputs
@@ -58,7 +61,9 @@ rule scrape_ica_author_data:
     shell: "python scripts/scrape_ica_author_data.py {input} {output}"
 
 rule get_gender_race_aff_pred:
-    input: ICA_AUTHOR_DATA
+    input: 
+        ICA_AUTHOR_DATA, 
+        ROR_RAW_DATA
     output: AUTHOR_WITH_PRED
     shell: "python scripts/get_gender_race_aff_pred.py {input} {output}"
 

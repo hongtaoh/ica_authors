@@ -30,7 +30,15 @@ ICA_ERROR_URLS = pjoin(INTERIM_DATA_DIR, 'ica_error_urls.txt')
 ICA_AUTHOR_DF = pjoin(INTERIM_DATA_DIR, 'ica_author_df.csv')
 NO_AUTHOR_URLS = pjoin(INTERIM_DATA_DIR, 'no_author_urls.txt')
 
-AUTHOR_WITH_PRED = pjoin(INTERIM_DATA_DIR, 'author_with_pred.csv')
+AUTHOR_WITH_GENDER = pjoin(INTERIM_DATA_DIR, 'author_with_gender.csv')
+
+AUTHOR_WITH_PRED_RAW = pjoin(INTERIM_DATA_DIR, 'author_with_pred_raw.csv')
+
+###############################################################################
+# Processed outputs
+###############################################################################
+
+AUTHOR_WITH_PRED = pjoin(PROCESSED_DATA_DIR, 'author_with_pred.csv')
 
 ###############################################################################
 # Workflows
@@ -44,6 +52,8 @@ rule all:
         ICA_PAPER_DATA,
         ICA_AUTHOR_DATA,
         ICA_ERROR_URLS,
+        AUTHOR_WITH_GENDER,
+        AUTHOR_WITH_PRED_RAW,
         AUTHOR_WITH_PRED,
 
 rule scrape_ica_paper_dois:
@@ -60,10 +70,20 @@ rule scrape_ica_author_data:
     output: ICA_PAPER_DATA, ICA_AUTHOR_DATA, ICA_ERROR_URLS
     shell: "python scripts/scrape_ica_author_data.py {input} {output}"
 
-rule get_gender_race_aff_pred:
+rule get_author_with_gender:
+    input: ICA_AUTHOR_DATA, 
+    output: AUTHOR_WITH_GENDER
+    shell: "python scripts/get_author_with_gender.py {input} {output}"
+
+rule get_author_with_pred_raw:
     input: 
-        ICA_AUTHOR_DATA, 
+        AUTHOR_WITH_GENDER, 
         ROR_RAW_DATA
+    output: AUTHOR_WITH_PRED_RAW
+    shell: "python scripts/get_author_with_pred_raw.py {input} {output}"
+
+rule get_author_with_pred:
+    input: AUTHOR_WITH_PRED_RAW
     output: AUTHOR_WITH_PRED
-    shell: "python scripts/get_gender_race_aff_pred.py {input} {output}"
+    shell: "python scripts/get_author_with_pred.py {input} {output}"
 

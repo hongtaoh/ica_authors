@@ -1,4 +1,13 @@
-"""get predictions for gender, race, and affiliations"""
+"""get predictions for gender, race, and affiliations
+
+Note on 2022-07-26: I am no longer using this file because although it's convenient and cool to
+complete all tasks in one script, this may come with some prices. For example, every time I want to 
+re-arrange the column order in the output, I need to run the whole thing again, which involves gender
+prediction, which has a limit on how many names I can predict. 
+
+Therefore, I decided to split this script into several small steps so that I don't need to run the 
+previous parts again if I only want to change the final output. 
+"""
 
 import sys
 import pandas as pd

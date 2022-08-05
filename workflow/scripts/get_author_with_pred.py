@@ -4,41 +4,55 @@
 
 import sys
 import pandas as pd
+import urllib.parse
 
 AUTHOR_WITH_PRED_RAW = sys.argv[1]
 AUTHOR_WITH_PRED = sys.argv[2]
 
 if __name__ == '__main__':
-	author_with_pred_raw = pd.read_csv(AUTHOR_WITH_PRED_RAW)
+	df = pd.read_csv(AUTHOR_WITH_PRED_RAW)
+	# add a column called authorID
+	df['authorID'] = df['doi'] + '+' + df['authorPosition'].astype(str)
+	# add google search
+	google_string = 'https://www.google.com/search?q='
+	df['googleSearch'] = df.apply(
+		lambda row: google_string + urllib.parse.quote_plus(
+			str(row['authorFullName']) + ' ' + str(row['affProcessed'])), axis=1)
 
 	cols_to_keep = [
+		'authorID',
 		'doi',
 		'url',
 		'year',
 		'title',
 		'journal',
-		'authorFullName',
 		'numberOfAuthors',
 		'authorPosition',
+		'authorFullName',
+		'firstName',
+		'lastName',
+		'affiliation',
+		'gscholarLink',
+		'googleSearch',
 		'genderize',
 		'genderize_prob',
 		'genderize_basedon',
 		'genderAccuracy',
+		'authorFullName',
 		'firstName',
 		'lastName',
+		'affiliation',
 		'gscholarLink',
+		'googleSearch',
+		'race',
+		'racePredAccuracy',
 		'api',
 		'black',
 		'hispanic',
 		'white',
-		'race',
-		'firstName',
-		'lastName',
-		'gscholarLink',
 		'raceHighest',
 		'raceSecondHighest',
 		'raceDiff',
-		'racePredAccuracy',
 		'affProcessed',
 		'affiliation',
 		'ROR_AFFNAME',
@@ -46,5 +60,5 @@ if __name__ == '__main__':
 		'ROR_ID',
 	]
 
-	author_with_pred_raw[cols_to_keep].to_csv(
+	df[cols_to_keep].to_csv(
 		AUTHOR_WITH_PRED, index=False)

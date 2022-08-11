@@ -17,6 +17,9 @@ SSCI = pjoin(RAW_DATA_DIR, 'ssci.csv')
 
 ROR_RAW_DATA = pjoin(RAW_LARGE_DATA_DIR, 'ror.json')
 
+CAT_CLASSIFICATION = pjoin(RAW_DATA_DIR, 'category-classification.csv')
+TO_DELETE_DOIS = pjoin(RAW_DATA_DIR, 'to_delete_dois.txt')
+
 ###############################################################################
 # Interim outputs
 ###############################################################################
@@ -39,6 +42,8 @@ AUTHOR_WITH_PRED_RAW = pjoin(INTERIM_DATA_DIR, 'author_with_pred_raw.csv')
 ###############################################################################
 
 AUTHOR_WITH_PRED = pjoin(PROCESSED_DATA_DIR, 'author_with_pred.csv')
+ICA_PAPER_DF_WITH_TYPE = pjoin(PROCESSED_DATA_DIR, 'ica_paper_df_with_type.csv')
+RESEARCH_AUTHOR_WITH_PRED = pjoin(PROCESSED_DATA_DIR, 'research_author_with_pred.csv')
 
 ###############################################################################
 # Workflows
@@ -55,6 +60,8 @@ rule all:
         AUTHOR_WITH_GENDER,
         AUTHOR_WITH_PRED_RAW,
         AUTHOR_WITH_PRED,
+        ICA_PAPER_DF_WITH_TYPE,
+        RESEARCH_AUTHOR_WITH_PRED,
 
 rule scrape_ica_paper_dois:
     output: ICA_PAPER_DF
@@ -87,3 +94,11 @@ rule get_author_with_pred:
     output: AUTHOR_WITH_PRED
     shell: "python scripts/get_author_with_pred.py {input} {output}"
 
+rule get_research_paper_only:
+    input: 
+        CAT_CLASSIFICATION,
+        TO_DELETE_DOIS,
+        ICA_PAPER_DF,
+        AUTHOR_WITH_PRED
+    output: ICA_PAPER_DF_WITH_TYPE, RESEARCH_AUTHOR_WITH_PRED
+    shell: "python scripts/get_research_paper_only.py {input} {output}"

@@ -124,6 +124,8 @@ def get_select_ror_affnames(rorData, target_str, to_remove_affs):
 def get_exact_match_list(dedup_affs_to_predict, select_ror_affnames):
 	"""for each aff in dedup_affs_to_predict, check whether any of its substring 
 	can be exactly matched with any of the aff in select_ror_affnames
+
+
 	Output:
 		a dictionary where key is aff_to_predict, and value is the matched 
 		aff in select ror affnames
@@ -133,10 +135,13 @@ def get_exact_match_list(dedup_affs_to_predict, select_ror_affnames):
 	exact_match = 0
 	for aff_to_predict in dedup_affs_to_predict:
 		for x in select_ror_affnames:
+			exact_match_list = []
 			if x in aff_to_predict:
 				exact_match += 1
-				exact_match_dic[aff_to_predict] = x
-				break
+				exact_match_list.append(x)
+			# if multiple exact matches, use the longest string
+			result = max(exact_match_list, key=len)
+			exact_match_dic[aff_to_predict] = result
 	print(f'{exact_match} out of {total} affiliations have been exactly matched')
 	return exact_match_dic
 

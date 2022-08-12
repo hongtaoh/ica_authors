@@ -45,6 +45,8 @@ AUTHOR_WITH_PRED = pjoin(PROCESSED_DATA_DIR, 'author_with_pred.csv')
 ICA_PAPER_DF_WITH_TYPE = pjoin(PROCESSED_DATA_DIR, 'ica_paper_df_with_type.csv')
 RESEARCH_AUTHOR_WITH_PRED = pjoin(PROCESSED_DATA_DIR, 'research_author_with_pred.csv')
 
+RANDOM_ISSUES = pjoin(PROCESSED_DATA_DIR, 'random_issues.txt')
+
 ###############################################################################
 # Workflows
 ###############################################################################
@@ -62,6 +64,7 @@ rule all:
         AUTHOR_WITH_PRED,
         ICA_PAPER_DF_WITH_TYPE,
         RESEARCH_AUTHOR_WITH_PRED,
+        RANDOM_ISSUES,
 
 rule scrape_ica_paper_dois:
     output: ICA_PAPER_DF
@@ -102,3 +105,8 @@ rule get_research_paper_only:
         AUTHOR_WITH_PRED
     output: ICA_PAPER_DF_WITH_TYPE, RESEARCH_AUTHOR_WITH_PRED
     shell: "python scripts/get_research_paper_only.py {input} {output}"
+
+rule get_random_issues:
+    input: ICA_PAPER_DF
+    output: RANDOM_ISSUES
+    shell: "python scripts/get_random_issues.py {input} {output}"

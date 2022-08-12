@@ -134,14 +134,15 @@ def get_exact_match_list(dedup_affs_to_predict, select_ror_affnames):
 	exact_match_dic = {}
 	exact_match = 0
 	for aff_to_predict in dedup_affs_to_predict:
+		exact_match_list = []
 		for x in select_ror_affnames:
-			exact_match_list = []
 			if x in aff_to_predict:
 				exact_match += 1
 				exact_match_list.append(x)
 			# if multiple exact matches, use the longest string
-			result = max(exact_match_list, key=len)
-			exact_match_dic[aff_to_predict] = result
+			if exact_match_list:
+				result = max(exact_match_list, key=len)
+				exact_match_dic[aff_to_predict] = result
 	print(f'{exact_match} out of {total} affiliations have been exactly matched')
 	return exact_match_dic
 

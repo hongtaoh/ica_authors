@@ -40,6 +40,8 @@ DOIS_TO_KEEP = pjoin(INTERIM_DATA_DIR, 'dois_to_keep.txt')
 
 CATS_KEEP_TO_CHECK = pjoin(INTERIM_DATA_DIR, 'cats_keep_to_check.csv')
 
+ICR_RAW_DATA = pjoin(INTERIM_DATA_DIR, 'icr_raw_data.csv')
+
 ###############################################################################
 # Processed outputs
 ###############################################################################
@@ -68,6 +70,7 @@ rule all:
         CATS_KEEP_TO_CHECK,
         ICA_PAPER_DF_WITH_TYPE,
         RESEARCH_AUTHOR_WITH_PRED,
+        ICR_RAW_DATA,
 
 rule scrape_ica_paper_dois:
     output: ICA_PAPER_DF
@@ -115,8 +118,8 @@ rule get_research_paper_only:
     output: ICA_PAPER_DF_WITH_TYPE, RESEARCH_AUTHOR_WITH_PRED
     shell: "python scripts/get_research_paper_only.py {input} {output}"
 
+rule get_icr_raw_data:
+    input: RESEARCH_AUTHOR_WITH_PRED
+    output: ICR_RAW_DATA
+    shell: "python scripts/get_icr_raw_data.py {input} {output}"
 
-# rule get_random_issues:
-#     input: ICA_PAPER_DF
-#     output: RANDOM_ISSUES
-#     shell: "python scripts/get_random_issues.py {input} {output}"

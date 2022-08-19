@@ -68,6 +68,12 @@ if __name__ == '__main__':
 	print(f'Authors shape: {authors.shape}')
 	research_authors = authors[authors.doi.isin(research_paper_dois)]
 	print(f'Research authors shape: {research_authors.shape}')
+
+	missing_author_info = research_authors[
+		research_authors.numberOfAuthors.isnull()]
+	print(f'{len(missing_author_info)} authors do not even have info for num of authors')
+	research_authors = research_authors[
+		research_authors.numberOfAuthors.notnull()]
 	research_authors.to_csv(
 		RESEARCH_AUTHOR_WITH_PRED, index=False)
 	

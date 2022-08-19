@@ -17,9 +17,6 @@ SSCI = pjoin(RAW_DATA_DIR, 'ssci.csv')
 
 ROR_RAW_DATA = pjoin(RAW_LARGE_DATA_DIR, 'ror.json')
 
-CAT_CLASSIFICATION = pjoin(RAW_DATA_DIR, 'category-classification.csv')
-TO_DELETE_DOIS = pjoin(RAW_DATA_DIR, 'to_delete_dois.txt')
-
 ###############################################################################
 # Interim outputs
 ###############################################################################
@@ -36,6 +33,12 @@ NO_AUTHOR_URLS = pjoin(INTERIM_DATA_DIR, 'no_author_urls.txt')
 AUTHOR_WITH_GENDER = pjoin(INTERIM_DATA_DIR, 'author_with_gender.csv')
 
 AUTHOR_WITH_PRED_RAW = pjoin(INTERIM_DATA_DIR, 'author_with_pred_raw.csv')
+
+CAT_CLASSIFICATION = pjoin(INTERIM_DATA_DIR, 'cat_classification.csv')
+DOIS_TO_DELETE = pjoin(INTERIM_DATA_DIR, 'dois_to_delete.txt')
+DOIS_TO_KEEP = pjoin(INTERIM_DATA_DIR, 'dois_to_keep.txt')
+
+CATS_KEEP_TO_CHECK = pjoin(INTERIM_DATA_DIR, 'cats_keep_to_check.csv')
 
 ###############################################################################
 # Processed outputs
@@ -61,10 +64,10 @@ rule all:
         ICA_ERROR_URLS,
         AUTHOR_WITH_GENDER,
         AUTHOR_WITH_PRED_RAW,
-        AUTHOR_WITH_PRED,
+        AUTHOR_WITH_PRED,       
+        CATS_KEEP_TO_CHECK,
         ICA_PAPER_DF_WITH_TYPE,
         RESEARCH_AUTHOR_WITH_PRED,
-        RANDOM_ISSUES,
 
 rule scrape_ica_paper_dois:
     output: ICA_PAPER_DF
@@ -97,16 +100,23 @@ rule get_author_with_pred:
     output: AUTHOR_WITH_PRED
     shell: "python scripts/get_author_with_pred.py {input} {output}"
 
+rule get_cats_keep_to_check:
+    input: CAT_CLASSIFICATION, ICA_PAPER_DF
+    output: CATS_KEEP_TO_CHECK
+    shell: "python scripts/get_cats_keep_to_check.py {input} {output}"
+
 rule get_research_paper_only:
     input: 
         CAT_CLASSIFICATION,
-        TO_DELETE_DOIS,
+        DOIS_TO_DELETE,
+        DOIS_TO_KEEP,
         ICA_PAPER_DF,
-        AUTHOR_WITH_PRED
+        AUTHOR_WITH_PRED,
     output: ICA_PAPER_DF_WITH_TYPE, RESEARCH_AUTHOR_WITH_PRED
     shell: "python scripts/get_research_paper_only.py {input} {output}"
 
-rule get_random_issues:
-    input: ICA_PAPER_DF
-    output: RANDOM_ISSUES
-    shell: "python scripts/get_random_issues.py {input} {output}"
+
+# rule get_random_issues:
+#     input: ICA_PAPER_DF
+#     output: RANDOM_ISSUES
+#     shell: "python scripts/get_random_issues.py {input} {output}"

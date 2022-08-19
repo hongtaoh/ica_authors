@@ -13,12 +13,13 @@ import numpy as np
 import re 
 
 CAT_CLASSIFICATION = sys.argv[1]
-TO_DELETE_DOIS = sys.argv[2]
-ICA_PAPER_DF = sys.argv[3]
-AUTHOR_WITH_PRED = sys.argv[4]
+DOIS_TO_DELETE = sys.argv[2]
+DOIS_TO_KEEP = sys.argv[3]
+ICA_PAPER_DF = sys.argv[4]
+AUTHOR_WITH_PRED = sys.argv[5]
 
-ICA_PAPER_DF_WITH_TYPE = sys.argv[5]
-RESEARCH_AUTHOR_WITH_PRED = sys.argv[6]
+ICA_PAPER_DF_WITH_TYPE = sys.argv[6]
+RESEARCH_AUTHOR_WITH_PRED = sys.argv[7]
 
 if __name__ == '__main__':
 	### categories to exclude
@@ -30,19 +31,32 @@ if __name__ == '__main__':
 	num_to_exclude_cat = len(to_exclude_cat)
 	print(f'There are {num_to_exclude_cat} categories to exclude.')
 
-	### dois to exclude
-	to_exclude_dois = pd.read_csv(TO_DELETE_DOIS, header=None).iloc[:, 0]
-	to_exclude_dois = [
-		re.sub('https://doi.org/', '', x) for x in to_exclude_dois]
-	print(f'There are {len(to_exclude_dois)} dois to exclude')
+	### DOIS to keep
+	dois_to_keep = pd.read_csv(DOIS_TO_KEEP, header = None).iloc[:,0]
+	print(f'There are {len(dois_to_keep)} dois to keep')
+
+	## TO EXCLUDE DOIS 1
+	papers = pd.read_csv(ICA_PAPER_DF)
+	to_exclude_dois_1 = papers[
+		(papers.category.isin(to_exclude_cat)) & (
+			~papers.doi.isin(dois_to_keep))].doi.tolist()
+	print(f'There are {len(to_exclude_dois_1)} dois to exclude')
+
+	### to exclude dois 2
+	to_exclude_dois_2 = pd.read_csv(DOIS_TO_DELETE, header=None).iloc[:, 0]
+	to_exclude_dois_2 = [
+		re.sub('https://doi.org/', '', x) for x in to_exclude_dois_2]
+	print(f'There are {len(to_exclude_dois_2)} dois to exclude')
+
+	### DOIS to delete all
+	to_exclude_dois_all = to_exclude_dois_1 + to_exclude_dois_2
+	print(f'There are in total {len(to_exclude_dois_all)} dois to delete')
 
 	### Process papers
-	papers = pd.read_csv(ICA_PAPER_DF)
 	papers['type'] = np.where(
-		(papers.category.isin(to_exclude_cat)) | (papers.doi.isin(to_exclude_dois)
-			), 
-		'M', 
-		'R')
+		papers.doi.isin(to_exclude_dois_all), 
+    	'M', 
+    	'R')
 	print(f'papers shape: {papers.shape}')
 	research_papers = papers[papers.type == 'R']
 	print(f'research papers shape: {research_papers.shape}')

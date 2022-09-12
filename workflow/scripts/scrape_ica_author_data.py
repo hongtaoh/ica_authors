@@ -1,7 +1,7 @@
 """get paper and author data on ICA journal publications using BeautifulSoup
 
 This script differs from `get_ica_author_df.py` in that this script utilizes the hidden javascript 
-data in the html source as the `get_ica_author_df.py` script utilizes the apparent 
+data in the html source whereas the `get_ica_author_df.py` script utilizes the apparent 
 HTML codes.
 
 """

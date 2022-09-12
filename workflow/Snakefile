@@ -35,8 +35,8 @@ AUTHOR_WITH_GENDER = pjoin(INTERIM_DATA_DIR, 'author_with_gender.csv')
 AUTHOR_WITH_PRED_RAW = pjoin(INTERIM_DATA_DIR, 'author_with_pred_raw.csv')
 
 CAT_CLASSIFICATION = pjoin(INTERIM_DATA_DIR, 'cat_classification.csv')
-DOIS_TO_DELETE = pjoin(INTERIM_DATA_DIR, 'dois_to_delete.txt')
-DOIS_TO_KEEP = pjoin(INTERIM_DATA_DIR, 'dois_to_keep.txt')
+# DOIS_TO_DELETE = pjoin(INTERIM_DATA_DIR, 'dois_to_delete.txt')
+# DOIS_TO_KEEP = pjoin(INTERIM_DATA_DIR, 'dois_to_keep.txt')
 
 CATS_KEEP_TO_CHECK = pjoin(INTERIM_DATA_DIR, 'cats_keep_to_check.csv')
 
@@ -76,10 +76,10 @@ rule scrape_ica_paper_dois:
     output: ICA_PAPER_DF
     shell: "python scripts/scrape_ica_paper_dois.py {output}"
 
-rule get_ica_author_df:
-    input: ICA_PAPER_DF
-    output: ICA_AUTHOR_DF, NO_AUTHOR_URLS
-    shell: "python scripts/get_ica_author_df.py {input} {output}"
+# rule get_ica_author_df:
+#     input: ICA_PAPER_DF
+#     output: ICA_AUTHOR_DF, NO_AUTHOR_URLS
+#     shell: "python scripts/get_ica_author_df.py {input} {output}"
 
 rule scrape_ica_author_data:
     input: ICA_PAPER_DF

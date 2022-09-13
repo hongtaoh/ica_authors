@@ -16,4 +16,6 @@ Krippendorff alpha: 0.831
 
 - We tested final icr here: https://docs.google.com/spreadsheets/d/1KvPvm5DWAP9ndPbB4yfEWyet5WIu0rfKsqM_FL2kbP8/edit?usp=sharing
   - This is created by `2022-09-12-GET-100-random-papers-to-classify-types-for-final-ICR.ipynb`
+  - Result: `2022-09-13-calculate-paper-classification-final-icr.ipynb`. 
+  - Final ICR: .79
 

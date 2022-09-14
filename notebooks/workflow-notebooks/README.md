@@ -21,3 +21,11 @@ Krippendorff alpha: 0.831
   - Result: `2022-09-13-calculate-paper-classification-final-icr.ipynb`. 
   - Final ICR: .79
 
+## with type
+
+- With `2022-09-14-get-paper-and-author-with-type.ipynb`, I add `type` to ica paper df and author data with pred. I also outputed research paper df and research author with pred. 
+
+## race and gender 
+
+- With `2022-09-14-get-100-names-for-initial-gender-race-icr.ipynb`, I randomly selected 100 names for initial icr for race and gender. 
+

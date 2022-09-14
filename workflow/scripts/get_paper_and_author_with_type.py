@@ -4,6 +4,7 @@
 
 import sys
 import pandas as pd
+import numpy as np
 
 PAPER_CLASSIFICATION_HONGTAO = sys.argv[1]
 PAPER_CLASSIFICATION_JEFF = sys.argv[2]
@@ -12,6 +13,8 @@ ICA_PAPER_DF = sys.argv[4]
 AUTHOR_WITH_PRED = sys.argv[5]
 ICA_PAPER_DF_WITH_TYPE = sys.argv[6]
 AUTHOR_WITH_PRED_WITH_TYPE = sys.argv[7]
+RESEARCH_PAPER_DF = sys.argv[8]
+RESEARCH_AUTHOR_WITH_PRED = sys.argv[9]
 
 if __name__ == '__main__':
 	hongtao = pd.read_csv(PAPER_CLASSIFICATION_HONGTAO)
@@ -36,4 +39,6 @@ if __name__ == '__main__':
 	author['type'] = np.where(author.doi.isin(all_r), 'R', 'M')
 	author.shape, author[author.type=='R'].shape
 	author.to_csv(AUTHOR_WITH_PRED_WITH_TYPE, index = False)
+	paper[paper.type == 'R'].to_csv(RESEARCH_PAPER_DF, index=False)
+	author[author.type=='R'].to_csv(RESEARCH_AUTHOR_WITH_PRED, index=False)
 

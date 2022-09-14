@@ -14,7 +14,7 @@ Krippendorff alpha: 0.831
 
 - `paper_cla_ica_compa_results_2022-08-29.csv` is the aggregated results. This result is computed by `2022-08-29-calculate-paper-cla-icr.ipynb`
 
-- Then, We did all the classification here: https://docs.google.com/spreadsheets/d/1uslTqfe269jf0KHJ8E70XHru2jag8y-iiRRb94HQA9s/edit#gid=349722970
+- Then, We did all the classification here: https://docs.google.com/spreadsheets/d/1uslTqfe269jf0KHJ8E70XHru2jag8y-iiRRb94HQA9s/edit#gid=349722970, which is created by `2022-08-29-randomly-split-ica-paper-df-for-paper-classification.ipynb`
 
 - We tested final icr here: https://docs.google.com/spreadsheets/d/1KvPvm5DWAP9ndPbB4yfEWyet5WIu0rfKsqM_FL2kbP8/edit?usp=sharing
   - This is created by `2022-09-12-GET-100-random-papers-to-classify-types-for-final-ICR.ipynb`

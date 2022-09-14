@@ -27,6 +27,10 @@ SSCI = pjoin(RAW_DATA_DIR, 'ssci.csv')
 
 ROR_RAW_DATA = pjoin(RAW_LARGE_DATA_DIR, 'ror.json')
 
+PAPER_CLASSIFICATION_HONGTAO = pjoin(RAW_DATA_DIR, 'paper_classification_hongtao.csv')
+PAPER_CLASSIFICATION_JEFF = pjoin(RAW_DATA_DIR, 'paper_classification_jeff.csv')
+PAPER_CLASSIFICATION_KRISTEN = pjoin(RAW_DATA_DIR, 'paper_classification_kristen.csv')
+
 ###############################################################################
 # Interim outputs
 ###############################################################################
@@ -44,13 +48,13 @@ AUTHOR_WITH_GENDER = pjoin(INTERIM_DATA_DIR, 'author_with_gender.csv')
 
 AUTHOR_WITH_PRED_RAW = pjoin(INTERIM_DATA_DIR, 'author_with_pred_raw.csv')
 
-CAT_CLASSIFICATION = pjoin(INTERIM_DATA_DIR, 'cat_classification.csv')
+# CAT_CLASSIFICATION = pjoin(INTERIM_DATA_DIR, 'cat_classification.csv')
 # DOIS_TO_DELETE = pjoin(INTERIM_DATA_DIR, 'dois_to_delete.txt')
 # DOIS_TO_KEEP = pjoin(INTERIM_DATA_DIR, 'dois_to_keep.txt')
 
-CATS_KEEP_TO_CHECK = pjoin(INTERIM_DATA_DIR, 'cats_keep_to_check.csv')
+# CATS_KEEP_TO_CHECK = pjoin(INTERIM_DATA_DIR, 'cats_keep_to_check.csv')
 
-ICR_RAW_DATA = pjoin(INTERIM_DATA_DIR, 'icr_raw_data.csv')
+# ICR_RAW_DATA = pjoin(INTERIM_DATA_DIR, 'icr_raw_data.csv')
 
 ###############################################################################
 # Processed outputs
@@ -58,9 +62,10 @@ ICR_RAW_DATA = pjoin(INTERIM_DATA_DIR, 'icr_raw_data.csv')
 
 AUTHOR_WITH_PRED = pjoin(PROCESSED_DATA_DIR, 'author_with_pred.csv')
 ICA_PAPER_DF_WITH_TYPE = pjoin(PROCESSED_DATA_DIR, 'ica_paper_df_with_type.csv')
-RESEARCH_AUTHOR_WITH_PRED = pjoin(PROCESSED_DATA_DIR, 'research_author_with_pred.csv')
+AUTHOR_WITH_PRED_WITH_TYPE = pjoin(PROCESSED_DATA_DIR, 'author_with_pred_with_type.csv')
+# RESEARCH_AUTHOR_WITH_PRED = pjoin(PROCESSED_DATA_DIR, 'research_author_with_pred.csv')
 
-RANDOM_ISSUES = pjoin(PROCESSED_DATA_DIR, 'random_issues.txt')
+# RANDOM_ISSUES = pjoin(PROCESSED_DATA_DIR, 'random_issues.txt')
 
 ###############################################################################
 # Workflows
@@ -69,18 +74,14 @@ RANDOM_ISSUES = pjoin(PROCESSED_DATA_DIR, 'random_issues.txt')
 rule all:
     input:
         ICA_PAPER_DF,
-        # ICA_AUTHOR_DF,
-        # NO_AUTHOR_URLS, 
         ICA_PAPER_DATA,
         ICA_AUTHOR_DATA,
         ICA_ERROR_URLS,
         AUTHOR_WITH_GENDER,
         AUTHOR_WITH_PRED_RAW,
         AUTHOR_WITH_PRED,       
-        CATS_KEEP_TO_CHECK,
         ICA_PAPER_DF_WITH_TYPE,
-        RESEARCH_AUTHOR_WITH_PRED,
-        ICR_RAW_DATA,
+        AUTHOR_WITH_PRED_WITH_TYPE,
 
 # scrape ica paper dois
 rule scrape_ica_paper_dois:
@@ -113,18 +114,29 @@ rule get_author_with_pred:
     output: AUTHOR_WITH_PRED
     shell: "python scripts/get_author_with_pred.py {input} {output}"
 
-rule get_research_paper_only:
+# add 'type' to paper df and author data
+rule get_paper_and_author_with_type:
     input: 
-        CAT_CLASSIFICATION,
-        DOIS_TO_DELETE,
-        DOIS_TO_KEEP,
+        PAPER_CLASSIFICATION_HONGTAO,
+        PAPER_CLASSIFICATION_JEFF,
+        PAPER_CLASSIFICATION_KRISTEN,
         ICA_PAPER_DF,
         AUTHOR_WITH_PRED,
-    output: ICA_PAPER_DF_WITH_TYPE, RESEARCH_AUTHOR_WITH_PRED
-    shell: "python scripts/get_research_paper_only.py {input} {output}"
+    output: ICA_PAPER_DF_WITH_TYPE, AUTHOR_WITH_PRED_WITH_TYPE
+    shell: "python scripts/get_paper_and_author_with_type.py {input} {output}"
 
-rule get_icr_raw_data:
-    input: RESEARCH_AUTHOR_WITH_PRED
-    output: ICR_RAW_DATA
-    shell: "python scripts/get_icr_raw_data.py {input} {output}"
+# rule get_research_paper_only:
+#     input: 
+#         CAT_CLASSIFICATION,
+#         DOIS_TO_DELETE,
+#         DOIS_TO_KEEP,
+#         ICA_PAPER_DF,
+#         AUTHOR_WITH_PRED,
+#     output: ICA_PAPER_DF_WITH_TYPE, RESEARCH_AUTHOR_WITH_PRED
+#     shell: "python scripts/get_research_paper_only.py {input} {output}"
+
+# rule get_icr_raw_data:
+#     input: RESEARCH_AUTHOR_WITH_PRED
+#     output: ICR_RAW_DATA
+#     shell: "python scripts/get_icr_raw_data.py {input} {output}"
 

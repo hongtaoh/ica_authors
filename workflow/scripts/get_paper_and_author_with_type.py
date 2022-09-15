@@ -31,11 +31,13 @@ if __name__ == '__main__':
 
 	# paper with type
 	paper = pd.read_csv(ICA_PAPER_DF)
+	paper['year'] = np.where(paper.year == 'Progress)', '2022', paper.year)
 	paper['type'] = np.where(paper.doi.isin(all_r), 'R', 'M')
 	paper.to_csv(ICA_PAPER_DF_WITH_TYPE, index = False)
 
 	# author with type
 	author = pd.read_csv(AUTHOR_WITH_PRED)
+	author['year'] = np.where(author.year == 'Progress)', '2022', author.year)
 	author['type'] = np.where(author.doi.isin(all_r), 'R', 'M')
 	author.shape, author[author.type=='R'].shape
 	author.to_csv(AUTHOR_WITH_PRED_WITH_TYPE, index = False)

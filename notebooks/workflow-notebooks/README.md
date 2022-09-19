@@ -29,3 +29,7 @@ Krippendorff alpha: 0.831
 
 - With `2022-09-14-get-100-names-for-initial-gender-race-icr.ipynb`, I randomly selected 100 names for initial icr for race and gender. 
 
+- This is where they coded: https://docs.google.com/spreadsheets/d/1ZgDutpqsO23PqssScUaACHdWuu32mzO1SmNOkbsq-jA/edit#gid=112686513. And there is the data for Matthew: https://docs.google.com/spreadsheets/d/1VS7iTtfS640PA56o8DnPh3DJm4Dx5UJfubvkbXd7IwI/edit#gid=0
+
+- I calculated race and gender ICR in `2022-09-19-calculate-initial-gender-icr.ipynb` and `2022-09-19-calculate-initial-race-icr.ipynb`
+

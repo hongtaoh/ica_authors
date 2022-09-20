@@ -15,6 +15,9 @@ ICA_PAPER_DF_WITH_TYPE = sys.argv[6]
 AUTHOR_WITH_PRED_WITH_TYPE = sys.argv[7]
 RESEARCH_PAPER_DF = sys.argv[8]
 RESEARCH_AUTHOR_WITH_PRED = sys.argv[9]
+AUTHORS_TO_STUDY = sys.argv[10]
+DOIS_TO_STUDY = sys.argv[11]
+PAPERS_TO_STUDY = sys.argv[12]
 
 if __name__ == '__main__':
 	hongtao = pd.read_csv(PAPER_CLASSIFICATION_HONGTAO)
@@ -42,5 +45,23 @@ if __name__ == '__main__':
 	author.shape, author[author.type=='R'].shape
 	author.to_csv(AUTHOR_WITH_PRED_WITH_TYPE, index = False)
 	paper[paper.type == 'R'].to_csv(RESEARCH_PAPER_DF, index=False)
-	author[author.type=='R'].to_csv(RESEARCH_AUTHOR_WITH_PRED, index=False)
+	author[author.type == 'R'].to_csv(RESEARCH_AUTHOR_WITH_PRED, index=False)
+
+	## papers to study and authors to study
+	dois_to_exclude = list(set(
+		author[(author.type =='R') & (author['affiliation.2'].isnull())].doi))
+	dois_to_study = [x for x in all_r if x not in dois_to_exclude]
+	papers_to_study = paper[paper.doi.isin(dois_to_study)]
+	authors_to_study = author[author.doi.isin(dois_to_study)]
+	authors_to_study.to_csv(AUTHORS_TO_STUDY, index=False)
+	with open(DOIS_TO_STUDY, 'w') as f:
+		for doi in dois_to_study:
+			# %s mean adds s, but what is s? that after the second %
+			f.write("%s\n" % doi)
+	papers_to_study.to_csv(PAPERS_TO_STUDY, index=False)
+	print(f'authors shape:  {authors_to_study.shape}')
+	print(f'papers shape:  {papers_to_study.shape}')
+
+
+
 

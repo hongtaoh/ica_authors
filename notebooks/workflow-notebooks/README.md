@@ -31,10 +31,26 @@ Krippendorff alpha: 0.831
 
 - This is where they coded: https://docs.google.com/spreadsheets/d/1ZgDutpqsO23PqssScUaACHdWuu32mzO1SmNOkbsq-jA/edit#gid=112686513. And there is the data for Matthew: https://docs.google.com/spreadsheets/d/1VS7iTtfS640PA56o8DnPh3DJm4Dx5UJfubvkbXd7IwI/edit#gid=0
 
-- I calculated race and gender ICR in `2022-09-19-calculate-initial-gender-icr.ipynb` and `2022-09-19-calculate-initial-race-icr.ipynb`
+- I calculated race and gender ICR in `2022-09-19-calculate-initial-gender-icr.ipynb`. The ICR is 0.94. 
+
+- Here is the aggregated results for initial gender coding: https://docs.google.com/spreadsheets/d/1ZgDutpqsO23PqssScUaACHdWuu32mzO1SmNOkbsq-jA/edit#gid=1431889162
+
+### Redo Race
 
 - Gender is okay but we need to redo race. Now I used `2022-09-20-get-100-names-for-race-icr.ipynb` to get another 100 random names for race ICR. Here is where we coded the race: https://docs.google.com/spreadsheets/d/1Fe_w078ZxqOV8HxmjuqJav5ff-PM4bElJr9CgSwZHHw/edit?usp=sharing
 
-## affiliation
+- I calculated the ICR here: `2022-09-23-calculate-initial-race-icr.ipynb`. The initial ICR is 0.91. 
+
+- Here is the aggregated result: https://docs.google.com/spreadsheets/d/1Fe_w078ZxqOV8HxmjuqJav5ff-PM4bElJr9CgSwZHHw/edit#gid=1729958890
+
+## ACTUAL CODING
+
+### author affiliation
 
 With `2022-09-16-split-aff-task.ipynb` I split the dataset. Here is where we coded: https://docs.google.com/spreadsheets/d/1DA7EZ1SmvdaMihPzNqcp1aHmZ_N6PQpxB5YUjI_jNoY/edit#gid=393854720
+
+### Gender and Race
+
+I did it here: `2022-09-23-split-race-gender-task.ipynb`. There datasets are deposited in `data/interim/gender_race_coding_task`
+
+Note that I found one person who uses anonymous name: https://academic.oup.com/ct/article/8/4/381/4201775. I then updated the script of `get_paper_and_author_with_type.py` in the workflow. Now this issue is solved. 

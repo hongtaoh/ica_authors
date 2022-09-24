@@ -11,6 +11,14 @@ AUTHOR_WITH_PRED = sys.argv[2]
 
 if __name__ == '__main__':
 	df = pd.read_csv(AUTHOR_WITH_PRED_RAW)
+	# This guy used an anonymous name: https://academic.oup.com/ct/article/8/4/381/4201775
+	# I need to change it
+	anonymous_name_index = df[df.authorFullName == ' Anonymous'].index[0]
+	df.at[anonymous_name_index, 'authorFullName'] = 'Craig R. Scott'
+	df.at[anonymous_name_index, 'firstName'] = 'Craig'
+	df.at[anonymous_name_index, 'lastName'] = 'Scott'
+	df.at[anonymous_name_index, 'genderize'] = 'male'
+	df.at[anonymous_name_index, 'gscholarLink'] = 'https://scholar.google.com/scholar?hl=en&as_sdt=0%252C50&q=Craig+R.+Scott'
 	# add a column called authorID
 	df['authorID'] = df['doi'] + '+' + df['authorPosition'].astype(str)
 	# add google search

@@ -7,6 +7,8 @@ RAW_LARGE_DATA_DIR = pjoin(RAW_DATA_DIR, 'large')
 INTERIM_DATA_DIR = pjoin(DATA_DIR, "interim")
 PAPER_CLASSIFICATION_TASK = pjoin(INTERIM_DATA_DIR, 'paper_classification_task')
 INTERIM_LARGE_DATA_DIR = pjoin(INTERIM_DATA_DIR, 'large')
+AFF_CODING_RESULTS = pjoin(INTERIM_DATA_DIR, 'aff_result')
+GENDER_AND_RACE_CODING_RESULTS = pjoin(INTERIM_DATA_DIR, 'gender_race_result')
 PROCESSED_DATA_DIR = pjoin(DATA_DIR, "processed")
 
 ###############################################################################
@@ -43,6 +45,17 @@ PAPER_CLASSIFICATION_JEFF = pjoin(PAPER_CLASSIFICATION_TASK,
 PAPER_CLASSIFICATION_KRISTEN = pjoin(PAPER_CLASSIFICATION_TASK, 
     'paper_classification_kristen.csv')
 
+HONGTAO_AFF_RESULT = pjoin(AFF_CODING_RESULTS, 'hongtao.csv')
+KRISTEN_AFF_RESULT = pjoin(AFF_CODING_RESULTS, 'kristen.csv')
+
+# GR means gender and race
+HALEY_GR_RESULT = pjoin(GENDER_AND_RACE_CODING_RESULTS, 'haley.csv')
+JAEMIN_GR_RESULT = pjoin(GENDER_AND_RACE_CODING_RESULTS, 'JAEMIN.csv')
+JONGMIN_GR_RESULT = pjoin(GENDER_AND_RACE_CODING_RESULTS, 'jongmin.csv')
+MATTHEW_GR_RESULT = pjoin(GENDER_AND_RACE_CODING_RESULTS, 'matthew.csv')
+JEFF_GR_RESULT = pjoin(GENDER_AND_RACE_CODING_RESULTS, 'jeff.csv')
+MICHELLE_GR_RESULT = pjoin(GENDER_AND_RACE_CODING_RESULTS, 'michelle.csv')
+
 ###############################################################################
 # Processed outputs
 ###############################################################################
@@ -57,6 +70,8 @@ RESEARCH_AUTHOR_WITH_PRED = pjoin(PROCESSED_DATA_DIR, 'research_author_with_pred
 AUTHORS_TO_STUDY = pjoin(PROCESSED_DATA_DIR, 'authors_to_study.csv')
 DOIS_TO_STUDY = pjoin(PROCESSED_DATA_DIR, 'dois_to_study.txt')
 PAPERS_TO_STUDY = pjoin(PROCESSED_DATA_DIR, 'papers_to_study.csv')
+
+AUTHORID_WITH_VARS = pjoin(PROCESSED_DATA_DIR, 'authorid_with_variables.csv')
 
 ###############################################################################
 # Workflows
@@ -78,6 +93,7 @@ rule all:
         AUTHORS_TO_STUDY,
         DOIS_TO_STUDY,
         PAPERS_TO_STUDY,
+        AUTHORID_WITH_VARS,
 
 # scrape ica paper dois
 rule scrape_ica_paper_dois:
@@ -127,3 +143,20 @@ rule get_paper_and_author_with_type:
             DOIS_TO_STUDY,
             PAPERS_TO_STUDY
     shell: "python scripts/get_paper_and_author_with_type.py {input} {output}"
+
+rule get_authorid_with_vars:
+    input:
+        ROR_RAW_DATA,
+        HONGTAO_AFF_RESULT,
+        KRISTEN_AFF_RESULT,
+        HALEY_GR_RESULT,
+        JAEMIN_GR_RESULT,
+        JONGMIN_GR_RESULT,
+        MATTHEW_GR_RESULT,
+        JEFF_GR_RESULT,
+        MICHELLE_GR_RESULT,
+
+    output:
+        AUTHORID_WITH_VARS
+    shell: 'python scripts/get_authorid_with_vars.py {input} {output}'
+

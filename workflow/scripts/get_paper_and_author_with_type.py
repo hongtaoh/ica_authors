@@ -1,5 +1,8 @@
 """add 'type' to paper_df and author_data
 
+In this scripe, I outputed a lot of stuff, including authors to study
+and papers to study. See Snakefile for details
+
 """
 
 import sys

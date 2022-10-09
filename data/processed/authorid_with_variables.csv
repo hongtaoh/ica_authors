@@ -1640,7 +1640,7 @@ authorID,new_country_code,new_afftype,gender_prediction,race_prediction,race
 10.1093/joc/jqz052+26.0,DE,Education,M,0.0,White
 10.1093/joc/jqz052+21.0,US,Education,M,0.0,White
 10.1093/jcmc/zmab001+4.0,US,Education,M,0.0,White
-10.1093/jcmc/zmaa015+1.0,CN,Non Education,M,2.0,Asian
+10.1093/jcmc/zmaa015+1.0,CN,Education,M,2.0,Asian
 10.1093/joc/jqaa042+4.0,US,Education,F,2.0,Asian
 10.1093/ct/qtaa013+1.0,IL,Education,M,0.0,White
 10.1093/joc/jqz052+4.0,DE,Education,M,0.0,White
@@ -2839,7 +2839,7 @@ authorID,new_country_code,new_afftype,gender_prediction,race_prediction,race
 10.1111/hcre.12087+1.0,US,Education,M,0.0,White
 10.1111/hcre.12087+2.0,US,Education,M,0.0,White
 10.1111/jcom.12261+3.0,US,Education,F,2.0,Asian
-10.1111/hcre.12076+1.0,CN,Non Education,M,0.0,White
+10.1111/hcre.12076+1.0,NL,Education,M,0.0,White
 10.1111/jcom.12268+2.0,US,Education,M,2.0,Asian
 10.1111/hcre.12090+4.0,US,Education,M,0.0,White
 10.1111/jcom.12243+2.0,US,Education,M,2.0,Asian

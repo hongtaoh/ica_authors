@@ -42,7 +42,7 @@ def filter_gr_df(source, cutoff_year, wanted_cols):
 def load_ror_dataset(ROR_RAW_DATA):
 	'''read in ROR_DATA
 	Output:
-		a list of dictionaries
+		a list of dictionaries (in fact, json objects)
 	'''
 	with open(ROR_RAW_DATA, 'r') as myfile:
 		data=myfile.read()
@@ -65,6 +65,9 @@ def update_two_dicts(ror, ror_cntry_dic, ror_afftype_dic):
 			afftype = None
 		ror_cntry_dic[ror_id] = cntry
 		ror_afftype_dic[ror_id] = afftype
+	# Chinese Academy of Social Sciences
+	# should be edu in this case. Professor Weishan Miao
+	ror_afftype_dic['https://ror.org/05bxbmy32'] = 'Education'
 
 def get_new_cntry_code(row):
 	'''if I have added the country code manually, use that

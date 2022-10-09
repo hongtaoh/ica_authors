@@ -73,6 +73,9 @@ PAPERS_TO_STUDY = pjoin(PROCESSED_DATA_DIR, 'papers_to_study.csv')
 
 AUTHORID_WITH_VARS = pjoin(PROCESSED_DATA_DIR, 'authorid_with_variables.csv')
 
+AUTHORS_TO_STUDY_EXPANDED = pjoin(PROCESSED_DATA_DIR, 'authors_to_study_expanded.csv')
+PAPERS_TO_STUDY_EXPANDED = pjoin(PROCESSED_DATA_DIR, 'papers_to_study_expanded.csv')
+
 ###############################################################################
 # Workflows
 ###############################################################################
@@ -94,6 +97,8 @@ rule all:
         DOIS_TO_STUDY,
         PAPERS_TO_STUDY,
         AUTHORID_WITH_VARS,
+        AUTHORS_TO_STUDY_EXPANDED,
+        PAPERS_TO_STUDY_EXPANDED,
 
 # scrape ica paper dois
 rule scrape_ica_paper_dois:
@@ -160,3 +165,13 @@ rule get_authorid_with_vars:
         AUTHORID_WITH_VARS
     shell: 'python scripts/get_authorid_with_vars.py {input} {output}'
 
+rule get_authors_and_papers_expanded:
+    input:
+        AUTHORID_WITH_VARS,
+        AUTHORS_TO_STUDY,
+        PAPERS_TO_STUDY,
+
+    output:
+        AUTHORS_TO_STUDY_EXPANDED,
+        PAPERS_TO_STUDY_EXPANDED,
+    shell: 'python scripts/get_authors_and_papers_expanded.py {input} {output}'

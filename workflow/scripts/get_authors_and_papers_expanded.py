@@ -31,6 +31,8 @@ def get_cross_and_num_stuff_dic(df):
 	num_country_dic = {}
 	num_race_dic = {}
 	with_us_authors_dic = {}
+	# cross race or not, if not, what race?
+	cross_race_details_dic = {}
 	for group in df.groupby('doi'):
 		DOI = group[0]
 		# counry:
@@ -68,8 +70,10 @@ def get_cross_and_num_stuff_dic(df):
 		num_race_dic[DOI] = num_of_races
 		if num_of_races != 1:
 			cross_race_dic[DOI] = True
+			cross_race_details_dic[DOI] = 'corss race'
 		else:
 			cross_race_dic[DOI] = False
+			cross_race_details_dic[DOI] = races[0] + ' ' + 'only'
 				
 	return cross_country_dic,\
 			cross_type_dic,\
@@ -77,7 +81,8 @@ def get_cross_and_num_stuff_dic(df):
 			cross_race_dic,\
 			num_country_dic,\
 			num_race_dic,\
-			with_us_authors_dic
+			with_us_authors_dic,\
+			cross_race_details_dic
 
 def get_first_author_stuff_dic(df):
 	first_author_gender_dic = {}
@@ -134,7 +139,8 @@ if __name__ == '__main__':
 	cross_race_dic,\
 	num_country_dic,\
 	num_race_dic,\
-	with_us_authors_dic = get_cross_and_num_stuff_dic(authors)
+	with_us_authors_dic,\
+	cross_race_details_dic = get_cross_and_num_stuff_dic(authors)
 
 	first_author_gender_dic,\
 	first_author_race_dic,\
@@ -158,6 +164,7 @@ if __name__ == '__main__':
 	papers['first_author_country'] = [first_author_country_dic[x] for x in papers.doi]
 	papers['first_author_afftype'] = [first_author_afftype_dic[x] for x in papers.doi]
 	papers['with_us_authors'] = [with_us_authors_dic[x] for x in papers.doi]
+	papers['cross_race_details'] = [cross_race_details_dic[x] for x in papers.doi]
 	
 	papers.to_csv(PAPERS_TO_STUDY_EXPANDED, index = False)
 	authors.to_csv(AUTHORS_TO_STUDY_EXPANDED, index = False)

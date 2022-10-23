@@ -70,7 +70,7 @@ def get_cross_and_num_stuff_dic(df):
 		num_race_dic[DOI] = num_of_races
 		if num_of_races != 1:
 			cross_race_dic[DOI] = True
-			cross_race_details_dic[DOI] = 'corss race'
+			cross_race_details_dic[DOI] = 'cross race'
 		else:
 			cross_race_dic[DOI] = False
 			cross_race_details_dic[DOI] = races[0] + ' ' + 'only'

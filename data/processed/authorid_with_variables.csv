@@ -2474,7 +2474,7 @@ authorID,new_country_code,new_afftype,gender_prediction,race_prediction,race
 10.1093/joc/jqaa029+1.0,NL,Education,F,0.0,White
 10.1093/hcr/hqz023+1.0,US,Education,F,0.0,White
 10.1093/joc/jqaa027+1.0,GB,Education,F,4.0,Middle Eastern
-10.1093/ccc/tcaa022+1.0,TK,Education,M,2.0,Asian
+10.1093/ccc/tcaa022+1.0,TR,Education,M,2.0,Asian
 10.1093/joc/jqaa014+2.0,US,Education,F,1.0,Black
 10.1093/ccc/tcaa019+1.0,CA,Education,F,2.0,Asian
 10.1093/jcmc/zmaa009+2.0,US,Education,F,2.0,Asian

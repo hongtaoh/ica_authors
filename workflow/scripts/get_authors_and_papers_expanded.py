@@ -33,6 +33,8 @@ def get_cross_and_num_stuff_dic(df):
 	with_us_authors_dic = {}
 	# cross race or not, if not, what race?
 	cross_race_details_dic = {}
+	# cross gender ot not, if not, what gender?
+	cross_gender_details_dic = {}
 	for group in df.groupby('doi'):
 		DOI = group[0]
 		# counry:
@@ -61,8 +63,10 @@ def get_cross_and_num_stuff_dic(df):
 		num_of_genders = len(list(set(genders)))
 		if num_of_genders != 1:
 			cross_gender_dic[DOI] = True
+			cross_gender_details_dic[DOI] = 'cross gender'
 		else:
 			cross_gender_dic[DOI] = False
+			cross_gender_details_dic[DOI] = genders[0] + ' ' + 'only'
 		
 		# races
 		races = group[1]['racepred'].tolist()

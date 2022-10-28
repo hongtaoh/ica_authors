@@ -86,7 +86,8 @@ def get_cross_and_num_stuff_dic(df):
 			num_country_dic,\
 			num_race_dic,\
 			with_us_authors_dic,\
-			cross_race_details_dic
+			cross_race_details_dic,\
+			cross_gender_details_dic
 
 def get_first_author_stuff_dic(df):
 	first_author_gender_dic = {}
@@ -114,14 +115,14 @@ def get_first_author_stuff_dic(df):
 		first_author_afftype_dic
 
 if __name__ == '__main__':
-	cutoff_year = 2010
+	cutoff_year = 2000
 
 	# import and filter
 	aid_df = pd.read_csv(AUTHORID_WITH_VARS)
 	authors = pd.read_csv(AUTHORS_TO_STUDY)
 	papers = pd.read_csv(PAPERS_TO_STUDY)
-	authors = authors[authors.year >= 2010]
-	papers = papers[papers.year >= 2010]
+	authors = authors[authors.year >= cutoff_year]
+	papers = papers[papers.year >= cutoff_year]
 
 	# number of authors dic
 	num_author_dic = dict(zip(authors.doi, authors.numberOfAuthors))
@@ -144,7 +145,8 @@ if __name__ == '__main__':
 	num_country_dic,\
 	num_race_dic,\
 	with_us_authors_dic,\
-	cross_race_details_dic = get_cross_and_num_stuff_dic(authors)
+	cross_race_details_dic,\
+	cross_gender_details_dic = get_cross_and_num_stuff_dic(authors)
 
 	first_author_gender_dic,\
 	first_author_race_dic,\
@@ -169,6 +171,7 @@ if __name__ == '__main__':
 	papers['first_author_afftype'] = [first_author_afftype_dic[x] for x in papers.doi]
 	papers['with_us_authors'] = [with_us_authors_dic[x] for x in papers.doi]
 	papers['cross_race_details'] = [cross_race_details_dic[x] for x in papers.doi]
+	papers['cross_gender_details'] = [cross_gender_details_dic[x] for x in papers.doi]
 	
 	papers.to_csv(PAPERS_TO_STUDY_EXPANDED, index = False)
 	authors.to_csv(AUTHORS_TO_STUDY_EXPANDED, index = False)

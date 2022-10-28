@@ -107,7 +107,7 @@ def recode_race(row):
 		return 'Indigenous'
 
 if __name__ == '__main__':
-	cutoff_year = 2010
+	cutoff_year = 2000
 
 	######### AFF
 	df1 = filter_aff_df(HONGTAO_AFF_RESULT, cutoff_year)
@@ -141,6 +141,10 @@ if __name__ == '__main__':
 	matthew = filter_gr_df(matthew, cutoff_year, gr_wanted_cols)
 	michelle = filter_gr_df(michelle, cutoff_year, gr_wanted_cols)
 	jeff = filter_gr_df(jeff, cutoff_year, gr_wanted_cols)
+	# Temporary, DElete later!!!!!!!!!
+	# jeff = jeff[
+	# 	(jeff.gender_prediction.notnull()) & (
+	# 		jeff.race_prediction.notnull())]
 	jongmin = filter_gr_df(jongmin, cutoff_year, gr_wanted_cols)
 	jaemin = filter_gr_df(jaemin, cutoff_year, gr_wanted_cols)
 

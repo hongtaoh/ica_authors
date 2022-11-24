@@ -76,29 +76,32 @@ AUTHORID_WITH_VARS = pjoin(PROCESSED_DATA_DIR, 'authorid_with_variables.csv')
 AUTHORS_TO_STUDY_EXPANDED = pjoin(PROCESSED_DATA_DIR, 'authors_to_study_expanded.csv')
 PAPERS_TO_STUDY_EXPANDED = pjoin(PROCESSED_DATA_DIR, 'papers_to_study_expanded.csv')
 
+GSCHOLAR_DATA = pjoin(PROCESSED_DATA_DIR, 'gscholar_data.csv')
+
 ###############################################################################
 # Workflows
 ###############################################################################
 
 rule all:
     input:
-        ICA_PAPER_DF,
-        ICA_PAPER_DATA,
-        ICA_AUTHOR_DATA,
-        ICA_ERROR_URLS,
-        AUTHOR_WITH_GENDER,
-        AUTHOR_WITH_PRED_RAW,
-        AUTHOR_WITH_PRED,
-        ICA_PAPER_DF_WITH_TYPE, 
-        AUTHOR_WITH_PRED_WITH_TYPE,
-        RESEARCH_PAPER_DF,
-        RESEARCH_AUTHOR_WITH_PRED,
-        AUTHORS_TO_STUDY,
-        DOIS_TO_STUDY,
-        PAPERS_TO_STUDY,
-        AUTHORID_WITH_VARS,
-        AUTHORS_TO_STUDY_EXPANDED,
-        PAPERS_TO_STUDY_EXPANDED,
+        # ICA_PAPER_DF,
+        # ICA_PAPER_DATA,
+        # ICA_AUTHOR_DATA,
+        # ICA_ERROR_URLS,
+        # AUTHOR_WITH_GENDER,
+        # AUTHOR_WITH_PRED_RAW,
+        # AUTHOR_WITH_PRED,
+        # ICA_PAPER_DF_WITH_TYPE, 
+        # AUTHOR_WITH_PRED_WITH_TYPE,
+        # RESEARCH_PAPER_DF,
+        # RESEARCH_AUTHOR_WITH_PRED,
+        # AUTHORS_TO_STUDY,
+        # DOIS_TO_STUDY,
+        # PAPERS_TO_STUDY,
+        # AUTHORID_WITH_VARS,
+        # AUTHORS_TO_STUDY_EXPANDED,
+        # PAPERS_TO_STUDY_EXPANDED,
+        GSCHOLAR_DATA,
 
 # scrape ica paper dois
 rule scrape_ica_paper_dois:
@@ -175,3 +178,8 @@ rule get_authors_and_papers_expanded:
         AUTHORS_TO_STUDY_EXPANDED,
         PAPERS_TO_STUDY_EXPANDED,
     shell: 'python scripts/get_authors_and_papers_expanded.py {input} {output}'
+
+rule get_gscholar_data:
+    input: AUTHORS_TO_STUDY
+    output: GSCHOLAR_DATA
+    shell: 'python scripts/get_gscholar_data.py {input} {output}'

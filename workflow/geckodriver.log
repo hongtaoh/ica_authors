@@ -32254,3 +32254,22 @@ JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch res
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1669318126154	geckodriver	INFO	Listening on 127.0.0.1:55338
+1669318127178	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/jh/8bnrrjds16sbkbtxfzdx393w0000gn/T/rust_mozprofilenhtKqO"
+1669318127856	Marionette	INFO	Marionette enabled
+1669318128000	Marionette	INFO	Listening on port 55349
+Read port: 55349
+1669318128087	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/jh/8bnrrjds16sbkbtxfzdx393w0000gn/T/rust_mozprofilenhtKqO/search.json.mozlz4", (void 0)))
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://scholar.google.com."
+1669318374413	geckodriver	INFO	Listening on 127.0.0.1:55396
+1669318375435	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/jh/8bnrrjds16sbkbtxfzdx393w0000gn/T/rust_mozprofile6AnRlL"
+1669318375550	Marionette	INFO	Stopped listening on port 55349
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1669318375907	Marionette	INFO	Marionette enabled
+1669318375936	Marionette	INFO	Listening on port 55408
+Read port: 55408
+1669318376106	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/jh/8bnrrjds16sbkbtxfzdx393w0000gn/T/rust_mozprofile6AnRlL/search.json.mozlz4", (void 0)))
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://scholar.google.com."
+1669318420300	Marionette	INFO	Stopped listening on port 55408

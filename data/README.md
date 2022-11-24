@@ -26,3 +26,7 @@ Finally, I generated
 - PAPERS_TO_STUDY_EXPANDED,
 
 Those two files are the most complete ones. 
+
+### Google scholar data
+
+I scraped citation data from Google Scholar. I queried title + journal + first author name. I then compared the original title and the title shown on Google Scholar to make sure my data is accurate. Among all 5,718 papers, only 294 papers have differences in titles. I then investigated these 294 papers. I compared the similarity (using python's difflib) between the two titles. More than half of them have a similarity score of 0.95. For these, I considered them as accurate. For the 123 papers, I decided to collect their data manually. 

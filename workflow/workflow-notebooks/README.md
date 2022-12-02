@@ -35,6 +35,12 @@ Krippendorff alpha: 0.831
 
 - Here is the aggregated results for initial gender coding: https://docs.google.com/spreadsheets/d/1ZgDutpqsO23PqssScUaACHdWuu32mzO1SmNOkbsq-jA/edit#gid=1431889162
 
+### Post ICR
+
+- With `2022-12-02-get-100-names-for-final-gender-race-icr.ipynb`, I obtained 100 names for final ICR for gender and race. Resulting data is `data/interim/icr/2022-12-02-race-gender-post-icr-100names.csv`
+
+- This is where they coded: 
+
 ### Redo Race
 
 - Gender is okay but we need to redo race. Now I used `2022-09-20-get-100-names-for-race-icr.ipynb` to get another 100 random names for race ICR. Here is where we coded the race: https://docs.google.com/spreadsheets/d/1Fe_w078ZxqOV8HxmjuqJav5ff-PM4bElJr9CgSwZHHw/edit?usp=sharing

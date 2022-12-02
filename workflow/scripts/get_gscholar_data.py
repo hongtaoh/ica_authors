@@ -32,62 +32,70 @@ def get_vars(df):
 	return titles, dois, years, papers 
 
 def update_gscholar_dict_list(paper, titles, dois, years, idx):
-    orig_title = titles[idx]
-    doi = dois[idx]
-    year = years[idx]
-    query_string = 'https://scholar.google.com/scholar?hl=en&as_sdt=0%2C50&q='
-    driver.get(query_string + paper + '&btnG=')
-    gs_paper_e = wait.until(EC.presence_of_element_located((
-            By.CSS_SELECTOR, 'h3.gs_rt')))
-    gs_paper_title = gs_paper_e.text
-    gs_citation_e = wait.until(
-        EC.presence_of_element_located((By.XPATH, '//div[@class="gs_fl"]//child::a[3]'
-    )))
-    citation_link = gs_citation_e.get_attribute('href')
-    citation_count_string = gs_citation_e.get_attribute('innerHTML')
-    if citation_count_string == "Related articles":
-        gs_citation_count = 0
-    else:
-        gs_citation_count = int(re.findall(r'\d+', citation_count_string)[0])
-    gscholar_dict = {
-        'Original Title': orig_title,
-        'Title on Google Scholar': gs_paper_title,
-        'DOI': doi,
-        'Year': year,
-        'Citation Link': citation_link,
-        'Citation Counts on Google Scholar': gs_citation_count,
-    }
-    gscholar_dict_list.append(gscholar_dict)
-    print(f'paper {idx + 1} is done!')
+	orig_title = titles[idx]
+	doi = dois[idx]
+	year = years[idx]
+	query_string = 'https://scholar.google.com/scholar?hl=en&as_sdt=0%2C50&q='
+	driver.get(query_string + paper + '&btnG=')
+	gs_paper_e = wait.until(EC.presence_of_element_located((
+			By.CSS_SELECTOR, 'h3.gs_rt')))
+	gs_paper_title = gs_paper_e.text
+	gs_citation_e = wait.until(
+		EC.presence_of_element_located((By.XPATH, '//div[@class="gs_fl"]//child::a[3]'
+	)))
+	citation_link = gs_citation_e.get_attribute('href')
+	citation_count_string = gs_citation_e.get_attribute('innerHTML')
+	if 'Cited by' in citation_count_string:
+		gs_citation_count = int(re.findall(r'\d+', citation_count_string)[0])
+	else:
+		gs_citation_count = 0
+	# if citation_count_string == "Related articles":
+	#     gs_citation_count = 0
+	# elif 'versions' in citation_count_string:
+	# 	gs_citation_count = 0
+	# else:
+	#     gs_citation_count = int(re.findall(r'\d+', citation_count_string)[0])
+	gscholar_dict = {
+		'Original Title': orig_title,
+		'Title on Google Scholar': gs_paper_title,
+		'DOI': doi,
+		'Year': year,
+		'Citation Link': citation_link,
+		'Citation Counts on Google Scholar': gs_citation_count,
+	}
+	gscholar_dict_list.append(gscholar_dict)
+	print(f'paper {idx + 1} is done!')
 
-# def update_gscholar_dict_list(paper, titles, dois, years, idx, cur_idx):
-#     orig_title = titles[idx]
-#     doi = dois[idx]
-#     year = years[idx]
-#     query_string = 'https://scholar.google.com/scholar?hl=en&as_sdt=0%2C50&q='
-#     driver.get(query_string + paper + '&btnG=')
-#     gs_paper_e = wait.until(EC.presence_of_element_located((
-#             By.CSS_SELECTOR, 'h3.gs_rt')))
-#     gs_paper_title = gs_paper_e.text
-#     gs_citation_e = wait.until(
-#         EC.presence_of_element_located((By.XPATH, '//div[@class="gs_fl"]//child::a[3]'
-#     )))
-#     citation_link = gs_citation_e.get_attribute('href')
-#     citation_count_string = gs_citation_e.get_attribute('innerHTML')
-#     if citation_count_string == "Related articles":
-#         gs_citation_count = 0
-#     else:
-#         gs_citation_count = int(re.findall(r'\d+', citation_count_string)[0])
-#     gscholar_dict = {
-#         'Original Title': orig_title,
-#         'Title on Google Scholar': gs_paper_title,
-#         'DOI': doi,
-#         'Year': year,
-#         'Citation Link': citation_link,
-#         'Citation Counts on Google Scholar': gs_citation_count,
-#     }
-#     gscholar_dict_list.append(gscholar_dict)
-#     print(f'paper {cur_idx + 1} is done!')
+def update_gscholar_dict_list_random(paper, titles, dois, years, idx, cur_idx):
+	'''this is for random 
+	'''
+	orig_title = titles[idx]
+	doi = dois[idx]
+	year = years[idx]
+	query_string = 'https://scholar.google.com/scholar?hl=en&as_sdt=0%2C50&q='
+	driver.get(query_string + paper + '&btnG=')
+	gs_paper_e = wait.until(EC.presence_of_element_located((
+			By.CSS_SELECTOR, 'h3.gs_rt')))
+	gs_paper_title = gs_paper_e.text
+	gs_citation_e = wait.until(
+		EC.presence_of_element_located((By.XPATH, '//div[@class="gs_fl"]//child::a[3]'
+	)))
+	citation_link = gs_citation_e.get_attribute('href')
+	citation_count_string = gs_citation_e.get_attribute('innerHTML')
+	if 'Cited by' in citation_count_string:
+		gs_citation_count = int(re.findall(r'\d+', citation_count_string)[0])
+	else:
+		gs_citation_count = 0
+	gscholar_dict = {
+		'Original Title': orig_title,
+		'Title on Google Scholar': gs_paper_title,
+		'DOI': doi,
+		'Year': year,
+		'Citation Link': citation_link,
+		'Citation Counts on Google Scholar': gs_citation_count,
+	}
+	gscholar_dict_list.append(gscholar_dict)
+	print(f'paper {cur_idx + 1} is done!')
 
 if __name__ == '__main__':
 	AUTHORS_TO_STUDY = pd.read_csv(AUTHORS_TO_STUDY)
@@ -105,10 +113,10 @@ if __name__ == '__main__':
 	    time.sleep(0.2+random.uniform(0,0.2))
 
 	# for paper in random_papers:
-	#     idx = papers.index(paper)
-	#     cur_idx = random_papers.index(paper)
-	#     update_gscholar_dict_list(paper, titles, dois, years, idx, cur_idx)
-	#     time.sleep(0.2+random.uniform(0,0.2))
+	# 	idx = papers.index(paper)
+	# 	cur_idx = random_papers.index(paper)
+	# 	update_gscholar_dict_list_random(paper, titles, dois, years, idx, cur_idx)
+	# 	time.sleep(0.2+random.uniform(0,0.2))
 
 	print('Everything done!')
 	driver.close()

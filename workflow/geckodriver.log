@@ -32392,3 +32392,110 @@ console.warn: LoginRecipes: "Falling back to a synchronous message for: https://
 JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DGoverning%2520Public%2520Service%2520Broadcasting:%2520%25E2%2580%259CPublic%2520Value%2520Tests%25E2%2580%259D%2520in%2520Different%2520National%2520Contexts,%2520Communication,%2520Culture%2520and%2520Critique,%2520Hallvard%2520Moe%26btnG%3D&hl=en&q=EgSSl3RiGIH0_5sGIixJyc3G-QXm2N6VB5ddXKZrRq-_j6eIs1FPSRTSJhJqShLrjwuxYbjr3Q005DIBcg, line 1: SyntaxError: expected expression, got ','
 console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
 1669331531297	Marionette	INFO	Stopped listening on port 58047
+1670017090993	geckodriver	INFO	Listening on 127.0.0.1:51908
+1670017092025	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/jh/8bnrrjds16sbkbtxfzdx393w0000gn/T/rust_mozprofileMHtrgj"
+1670017116649	geckodriver	INFO	Listening on 127.0.0.1:51921
+1670017117672	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/jh/8bnrrjds16sbkbtxfzdx393w0000gn/T/rust_mozprofileNs7H7m"
+1670017119727	Marionette	INFO	Marionette enabled
+1670017119889	Marionette	INFO	Listening on port 51933
+Read port: 51933
+1670017120022	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/jh/8bnrrjds16sbkbtxfzdx393w0000gn/T/rust_mozprofileNs7H7m/search.json.mozlz4", (void 0)))
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://scholar.google.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://scholar.google.com."
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1670017192323	geckodriver	INFO	Listening on 127.0.0.1:51977
+1670017193347	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/jh/8bnrrjds16sbkbtxfzdx393w0000gn/T/rust_mozprofileJGrlsU"
+1670017193767	Marionette	INFO	Marionette enabled
+1670017193909	Marionette	INFO	Listening on port 51988
+Read port: 51988
+1670017194074	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/jh/8bnrrjds16sbkbtxfzdx393w0000gn/T/rust_mozprofileJGrlsU/search.json.mozlz4", (void 0)))
+1670017302338	geckodriver	INFO	Listening on 127.0.0.1:52031
+1670017303360	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/jh/8bnrrjds16sbkbtxfzdx393w0000gn/T/rust_mozprofile7jYmm2"
+1670017303771	Marionette	INFO	Marionette enabled
+1670017303913	Marionette	INFO	Listening on port 52042
+Read port: 52042
+1670017304088	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/jh/8bnrrjds16sbkbtxfzdx393w0000gn/T/rust_mozprofile7jYmm2/search.json.mozlz4", (void 0)))
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://scholar.google.com."
+1670017333861	Marionette	INFO	Stopped listening on port 52042
+1670017366918	Marionette	INFO	Stopped listening on port 51988
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1670017395229	geckodriver	INFO	Listening on 127.0.0.1:52090
+1670017396250	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/jh/8bnrrjds16sbkbtxfzdx393w0000gn/T/rust_mozprofileHwhrJX"
+1670017396686	Marionette	INFO	Marionette enabled
+1670017396828	Marionette	INFO	Listening on port 52101
+Read port: 52101
+1670017396913	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/jh/8bnrrjds16sbkbtxfzdx393w0000gn/T/rust_mozprofileHwhrJX/search.json.mozlz4", (void 0)))
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://scholar.google.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://scholar.google.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://scholar.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar_gsb_promo_ping&q=EgSSl3RiGNrjqZwGIiwc5QZ4QK2xKpjVKDJC2Uyise0y2a7Jc2hh0u_C0QHe5PAtyAyNXgaFxs5eJDIBcg, line 1: SyntaxError: expected expression, got ','
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DNetworks%2520of%2520Audience%2520Overlap%2520in%2520the%2520Consumption%2520of%2520Digital%2520News,%2520Journal%2520of%2520Communication,%2520Subhayan%2520Mukerjee%26btnG%3D&hl=en&q=EgSSl3RiGNvjqZwGIizpXHIqnzAwJqnlOX4oIN2j7u_j_FKVj_qKWnVXq_obMZ1Uul98y2_LOZys0jIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DThe%2520New%2520Media%2520Designs%2520of%2520Political%2520Consultants:%2520Campaign%2520Production%2520in%2520a%2520Fragmented%2520Era,%2520Journal%2520of%2520Communication,%2520Michael%2520Serazio%26btnG%3D&hl=en&q=EgSSl3RiGMjkqZwGIizOmXvjKSO82TlIA6yNURWYOiT_JV-XJ3wI9HLATuIzSkiCQjEtSjU0pS3blzIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DIdentification%2520With%2520Characters%2520and%2520Discussion%2520of%2520Taboo%2520Topics%2520After%2520Exposure%2520to%2520an%2520Entertainment%2520Narrative%2520About%2520Sexual%2520Health,%2520Journal%2520of%2520Communication,%2520Emily%2520Moyer-Gus%25C3%25A9%26btnG%3D&hl=en&q=EgSSl3RiGMDlqZwGIiwxzZqtaC7iz3-dy0c2qtREVNx4gzm1OkJs56fx5Fy3PkaZSwEQlk7x1LfHOzIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DAnalysis%2520Versus%2520Production:%2520Adolescent%2520Cognitive%2520and%2520Attitudinal%2520Responses%2520to%2520Antismoking%2520Interventions,%2520Journal%2520of%2520Communication,%2520Smita%2520C.%2520Banerjee%26btnG%3D&hl=en&q=EgSSl3RiGK_mqZwGIiyAgjUknk8exJMPF1VeDf3XfurIJfX08lS7bewcIvk1byMlt7GXdbyec-EntjIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DYoung%2520Adults%2527%2520Stereotypes%2520of%2520Older%2520Adults%2520with%2520Their%2520Grandparents%2520as%2520the%2520Targets,%2520Journal%2520of%2520Communication,%2520Loretta%2520L.%2520Pecchioni%26btnG%3D&hl=en&q=EgSSl3RiGJznqZwGIiz1a2OgwmWSb4AlQ03YEezcv2SJNWk6-pNsc5bzncnfjj9CcT9_GBdNUmOzbjIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DTelevision%2520News%2520and%2520Advertising%2520in%2520Schools:%2520The%2520%25E2%2580%259CChannel%2520One%25E2%2580%259D%2520Controversy,%2520Journal%2520of%2520Communication,%2520Bradley%2520S.%2520Greenberg%26btnG%3D&hl=en&q=EgSSl3RiGO7oqZwGIiwxLji1IGCEz4yOBJ5g8Juj0h4KxDwiwI39mZK4FQer3jZTrHU_ff_q52n1IzIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DThe%2520U.S.%2520Position%2520on%2520the%2520New%2520World%2520Information%2520and%2520Communication%2520Order,%2520Journal%2520of%2520Communication,%2520Colleen%2520Roach%26btnG%3D&hl=en&q=EgSSl3RiGNLpqZwGIix3ShnBQII5qaJZDCLUVZPoqbwW93FWbVvS9jMs4e4xUXC53GvDQFMlsxOPATIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DLocal%2520Television:%2520Producing%2520Soft%2520News,%2520Journal%2520of%2520Communication,%2520Joseph%2520Turow%26btnG%3D&hl=en&q=EgSSl3RiGMDqqZwGIizLC1_Esqo6QFRRsOCSNLaLWFVpM8r_7l-puTGpVIfBwik5lXn0F80ae8RXljIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DHit%2520Record%2520Trends,%25201940%25E2%2580%25931977,%2520Journal%2520of%2520Communication,%2520Bruce%2520Anderson%26btnG%3D&hl=en&q=EgSSl3RiGKTrqZwGIiyn2kOa2Yvevy_bGUwKrGlecvN4qiAPtudEdIXD9cbYMBeJoLJNBjaEo4z06zIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DLooking%2520for%2520Trouble,%2520Journal%2520of%2520Communication,%2520Elihu%2520Katz%26btnG%3D&hl=en&q=EgSSl3RiGIjsqZwGIiw7hcOo9PQ5Y87CChFEn4Zehi1NtGYulbuvBmt9BHYAt9zM_XAJ8bLxXfU15zIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DSome%2520Semantics%2520of%2520Repetition:%2520An%2520Experiment%2520in%2520Phonetic%2520Symbolism,%2520Journal%2520of%2520Communication,%2520Joseph%2520A.%2520De%2520Vito%26btnG%3D&hl=en&q=EgSSl3RiGNDtqZwGIiyn2E5dqB6urrEfa3tRia9A5ax0vJWEiRS8-FxapaeisribHzkebA5fXAjQsTIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DCommunication%2520and%2520the%2520Peace%2520Corps,%2520Journal%2520of%2520Communication,%2520Randall%2520C.%2520Ruechelle%26btnG%3D&hl=en&q=EgSSl3RiGL7uqZwGIiy-mnXKz092Dg9ZyszXYwmmwJsv35yL46ve9SMq1L_QYLRTf_VZhgFyZ47hWjIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DThe%2520Prose%2520Engineers,%2520Journal%2520of%2520Communication,%2520William%2520H.%2520White%26btnG%3D&hl=en&q=EgSSl3RiGKLvqZwGIix2WNPlnzsFnmiJ3l-F7JCynpd2M_X_EvmxO8y5-3PBTcySSf5EV2TA9zoj6DIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DThe%2520Implications%2520of%2520Computer-Mediated%2520Communication%2520(Cmc)%2520for%2520Social%2520Support%2520Message%2520Processing%2520and%2520Outcomes:%2520When%2520and%2520Why%2520Are%2520the%2520Effects%2520of%2520Support%2520Messages%2520Strengthened%2520during%2520Cmc%3F,%2520Human%2520Communication%2520Research,%2520Stephen%2520A.%2520Rains%26btnG%3D&hl=en&q=EgSSl3RiGIbwqZwGIiymEeiXShAzUhc4284d6xGpbj_uIgsIFOrNF3F21oERt3Wu6weeVtsQOHtkeTIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DDo%2520We%2520Know%2520a%2520Vector%2520From%2520a%2520Scalar%3F%2520Why%2520Measures%2520of%2520Association%2520(Not%2520Their%2520Squares)%2520Are%2520Appropriate%2520Indices%2520of%2520Effect,%2520Human%2520Communication%2520Research,%2520Michael%2520J.%2520Beatty%26btnG%3D&hl=en&q=EgSSl3RiGNjxqZwGIiyYX0211sSdSrBRReQ3ciPdWmELiw6wrR7U_irphPwUlFCdG0YYHCgqMguZaDIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DDisentangling%2520Listening%2520and%2520Verbal%2520Recall:%2520Related%2520but%2520Separate%2520Constructs%3F,%2520Human%2520Communication%2520Research,%2520L.%2520Todd%2520Thomas%26btnG%3D&hl=en&q=EgSSl3RiGL3yqZwGIiw7nH5CfZAEednsFEiTl58e5AgX8nYumx00bql7jyi0vw4E7z3ZJg2buuai7TIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DThe%2520Implicit%2520Representation%2520of%2520Characters%2520in%2520Dallas:%2520A%2520Multidimensional%2520Scaling%2520Approach,%2520Human%2520Communication%2520Research,%2520Sonia%2520M.%2520Livingstone%26btnG%3D&hl=en&q=EgSSl3RiGLTzqZwGIizqlp3V8L3wgpTjm7iQqiqvIsYvX71ygdMmpuWNYqZLhLbeoKCSl3gzit5nDDIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DAnalyzing%2520Negotiation%2520Tactics:%2520Development%2520of%2520a%2520Negotiation%2520Interact%2520System,%2520Human%2520Communication%2520Research,%2520William%2520A.%2520Donohue%26btnG%3D&hl=en&q=EgSSl3RiGKL0qZwGIiz0S3FOV9D3q6fwz7d9Bujgvnsfio7CDRtf9mh2LNtSwz9UM3zLGA-YwLMavjIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DInterpersonal%2520Communication%2520following%2520the%2520Wallace%2520Shooting,%2520Human%2520Communication%2520Research,%2520Edward%2520L.%2520Fink%26btnG%3D&hl=en&q=EgSSl3RiGJH1qZwGIix0WrJyc0vrvOB6NPytWirazMq-nS_1slPSSE2ePWzLtLu7tOtQz0gVawn-LjIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DA%2520Mesolevel%2520Communicative%2520Model%2520of%2520Collaboration,%2520Communication%2520Theory,%2520Joann%2520Keyton%26btnG%3D&hl=en&q=EgSSl3RiGM72qZwGIizJbP8lnHx2-aVwQo2XS2HV6HVMPiH-4DjffKKCeaSKi7wltkf0NkPj8KRWDDIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DDeveloping%2520Planning%2520Perspectives%2520to%2520Explain%2520Parent-Child%2520Interaction%2520Patterns%2520in%2520Physically%2520Abusive%2520Families,%2520Communication%2520Theory,%2520Steven%2520R.%2520Wilson%26btnG%3D&hl=en&q=EgSSl3RiGLL3qZwGIiyLeKEBVYHd8CqVj5NE6h7MsLy5hgZQq3Daqcg1zz3HvMh61lOqsHwLewUngDIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DProvocation%2520as%2520Agentic%2520Practice:%2520Gender%2520Performativity%2520in%2520Online%2520Strategies%2520of%2520Transgender%2520Sex%2520Workers,%2520Journal%2520of%2520Computer-Mediated%2520Communication,%2520Arul%2520Chib%26btnG%3D&hl=en&q=EgSSl3RiGKH4qZwGIiwhiGJ6xZVGtS9WND3JxaLhcXaxFU4kWRINbwlZEgCh7riqOM88mfU0VOQLyDIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DConfirmation%2520Bias%2520in%2520Online%2520Searches:%2520Impacts%2520of%2520Selective%2520Exposure%2520Before%2520an%2520Election%2520on%2520Political%2520Attitude%2520Strength%2520and%2520Shifts,%2520Journal%2520of%2520Computer-Mediated%2520Communication,%2520Silvia%2520Knobloch-Westerwick%26btnG%3D&hl=en&q=EgSSl3RiGI_5qZwGIiyxrahRmXQ1DnQgfONdKbB1yts9lsQPY3ImjGEVcetzf5QAfeY3fAukmAsRTDIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DBlog%2520Functions%2520as%2520Risk%2520and%2520Crisis%2520Communication%2520During%2520Hurricane%2520Katrina,%2520Journal%2520of%2520Computer-Mediated%2520Communication,%2520Wendy%2520Macias%26btnG%3D&hl=en&q=EgSSl3RiGPz5qZwGIiz3Q0uP_XgtZ0fe-xdTBxIXgowrGeRe1TlNmG_yITYwavboV97ympZ27s-jojIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DTelehospice:%2520Using%2520Telecommunication%2520Technology%2520for%2520Terminally%2520Ill%2520Patients,%2520Journal%2520of%2520Computer-Mediated%2520Communication,%2520Pamela%2520Whitten%26btnG%3D&hl=en&q=EgSSl3RiGLv7qZwGIixEfxN8NGJNgVWkBs-KMqDViY_qheifyHJKSfncpOpJ94vEWxlrCivcNHQpTzIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DEnshrining%2520Terror%2520for%2520the%2520Nation:%2520Affect%2520and%2520Nationalism%2520at%2520the%2520National%2520September%252011%2520Memorial%2520and%2520Museum,%2520Communication,%2520Culture%2520and%2520Critique,%2520Tim%2520Gruenewald%26btnG%3D&hl=en&q=EgSSl3RiGLL8qZwGIiwEn9ZmdVYBcgCPKSIFXQxozLjepvNr71b-orJAHWEIZvkO9sE0tYn-4jL_NDIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://scholar.google.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://scholar.google.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://scholar.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3Dqqqq%26btnG%3D&hl=en&q=EgSSl3RiGJf9qZwGIiwvJ5jcS3ZXd4bGichuttpsxZ28hguOf5cORtMewnyIYedTCGVKEkR_hxj6FDIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+JavaScript error: https://www.google.com/sorry/index?continue=https://scholar.google.com/scholar%3Fhl%3Den%26as_sdt%3D0%252C50%26q%3DExplaining%2520Gang%2520Rape%2520in%2520a%2520%25E2%2580%259CRough%2520Town%25E2%2580%259D:%2520Diverse%2520Voices%2520in%2520Gender%2520Violence%2520News%2520Online,%2520Communication,%2520Culture%2520and%2520Critique,%2520Nancy%2520Worthington%26btnG%3D&hl=en&q=EgSSl3RiGIL-qZwGIizYJAmFAjA30VTAmtWVHII_9sLpNmP438qL6p331Eri7q0uGR7wWbNHXTmmDDIBcg, line 1: SyntaxError: expected expression, got ','
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+1670020955256	Marionette	INFO	Stopped listening on port 52101

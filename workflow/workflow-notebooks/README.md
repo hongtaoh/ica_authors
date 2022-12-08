@@ -21,9 +21,9 @@ Krippendorff alpha: 0.831
   - Result: `2022-09-13-calculate-paper-classification-final-icr.ipynb`. 
   - Final ICR: .79
 
-## with type
+<!-- ## with type
 
-- With `2022-09-14-get-paper-and-author-with-type.ipynb`, I add `type` to ica paper df and author data with pred. I also outputed research paper df and research author with pred. 
+- With `2022-09-14-get-paper-and-author-with-type.ipynb`, I add `type` to ica paper df and author data with pred. I also outputed research paper df and research author with pred.  -->
 
 ## race and gender 
 
@@ -35,11 +35,11 @@ Krippendorff alpha: 0.831
 
 - Here is the aggregated results for initial gender coding: https://docs.google.com/spreadsheets/d/1ZgDutpqsO23PqssScUaACHdWuu32mzO1SmNOkbsq-jA/edit#gid=1431889162
 
-### Post ICR
+<!-- ### Post ICR
 
 - With `2022-12-02-get-100-names-for-final-gender-race-icr.ipynb`, I obtained 100 names for final ICR for gender and race. Resulting data is `data/interim/icr/2022-12-02-race-gender-post-icr-100names.csv`
 
-- This is where they coded: 
+- This is where they coded:  -->
 
 ### Redo Race
 

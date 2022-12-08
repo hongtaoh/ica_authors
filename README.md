@@ -2,6 +2,11 @@
 
 This project contains my codes to scrape ICA Annaual conference data and also some exploratory codes about ICA journal data from web of science and also openalex. 
 
+## TODO!
+
+- In `2022-12-08-check-authors-without-only-initials.ipynb`, I found one author without first name. I need to remove that paper `10.1111/j.1460-2466.1980.tb02015.x` and the two authors
+- There are 157 authors scattered in 70 papers whose first names are initials only. 
+
 ## Workflow
 
 This project uses [snakemake](https://github.com/hongtaoh/snakemake-tutorial).

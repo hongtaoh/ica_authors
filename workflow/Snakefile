@@ -56,6 +56,9 @@ MATTHEW_GR_RESULT = pjoin(GENDER_AND_RACE_CODING_RESULTS, 'matthew.csv')
 JEFF_GR_RESULT = pjoin(GENDER_AND_RACE_CODING_RESULTS, 'jeff.csv')
 MICHELLE_GR_RESULT = pjoin(GENDER_AND_RACE_CODING_RESULTS, 'michelle.csv')
 
+## Google Scholar
+GSCHOLAR_DATA_MANUAL_CHECKED = pjoin(INTERIM_DATA_DIR, 'gscholar_data_manual_checked.csv')
+
 ###############################################################################
 # Processed outputs
 ###############################################################################
@@ -77,6 +80,8 @@ AUTHORS_TO_STUDY_EXPANDED = pjoin(PROCESSED_DATA_DIR, 'authors_to_study_expanded
 PAPERS_TO_STUDY_EXPANDED = pjoin(PROCESSED_DATA_DIR, 'papers_to_study_expanded.csv')
 
 GSCHOLAR_DATA = pjoin(PROCESSED_DATA_DIR, 'gscholar_data.csv')
+
+GSCHOLAR_DATA_COMBINED = pjoin(PROCESSED_DATA_DIR, 'gscholar_data_combined.csv')
 
 ###############################################################################
 # Workflows
@@ -101,7 +106,8 @@ rule all:
         # AUTHORID_WITH_VARS,
         # AUTHORS_TO_STUDY_EXPANDED,
         # PAPERS_TO_STUDY_EXPANDED,
-        GSCHOLAR_DATA,
+        # GSCHOLAR_DATA,
+        GSCHOLAR_DATA_COMBINED,
 
 # scrape ica paper dois
 rule scrape_ica_paper_dois:
@@ -183,3 +189,8 @@ rule get_gscholar_data:
     input: AUTHORS_TO_STUDY
     output: GSCHOLAR_DATA
     shell: 'python scripts/get_gscholar_data.py {input} {output}'
+
+rule get_gscholar_data_combined:
+    input: GSCHOLAR_DATA, GSCHOLAR_DATA_MANUAL_CHECKED
+    output: GSCHOLAR_DATA_COMBINED
+    shell: 'python scripts/get_gscholar_data_combined.py {input} {output}'

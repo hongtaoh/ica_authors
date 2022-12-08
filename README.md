@@ -23,13 +23,26 @@ This project uses [snakemake](https://github.com/hongtaoh/snakemake-tutorial).
  
 ### Scripts
 
+(More details can be found in `workflow/Snakefile` and also in each specific `py` file)
+
 - `scrape_ica_paper_dois.py`: get ICA publication paper info, specifically, I got all paper dois, title, and abstracts
 
 - `scrape_ica_author_data.py`: get paper and author data on ICA journal publications using BeautifulSoup
 
-- `get_gender_race_aff_pred`: get predictions for gender, race, and affiliations
+- `get_author_with_gender.py`: get gender raw predictions. This is to prevent me from having to do it again, which requires quota from genderize.io.
 
-More details can be found in `workflow/Snakefile`.
+- `get_author_with_pred_raw.py`: get race and affiliations. "Raw" because I'll change column order later
+
+- `get_author_with_pred.py`: rearrange colomn order
+
+- `get_paper_and_author_with_type.py`: add 'type' to paper df and author data, and subsequently get research paper/author, and authors/papers to study. 
+
+- `get_authorid_with_vars.py`: in this script, I processed the gender, race and aff coded data
+and return basically dictionaries through a dataframe. 
+
+- `get_authors_and_papers_expanded.py`: get all variables needed in analysis.
+
+- `get_gscholar_data.py` and `get_gscholar_data_combined.py`: get gscholar data.
 
 ## Notebooks
 
@@ -37,7 +50,40 @@ These are exploratory notebooks.
 
 ## Data
 
+## Raw
+
+`to_delete_dois.csv`: these are the non-research papers that I need to delete. The categories that they belong to are considered to be "research", just that they are the first papers that introduce other papers in the issue and therefore should be deleted. 
+
+`category-classification.csv` is the result category classification directly from Google Sheet. 
+
+### Interim
+
 - `interim/ica_paper_df.csv`, this file mainly contains dois for ica journal papers. I also included all other necessary information when it exists, for example, issue, and abstract. 
 
 - `interim/ica_paper_data.csv`, this file is created when I scrape each paepr individually. It in fact does not contain any other useful information than in `ica_paper_df.csv`. It contains publication data, that might be the only useful thing. It only contains paperType but it seems all of them are 'ScholarlyArticle'. It also has 'keywords' but I am not sure where that data is from. 
+
+### Processed
+
+I first get AUTHOR_WITH_PRED. Then the following:
+
+- ICA_PAPER_DF_WITH_TYPE, type means research paper or not
+- AUTHOR_WITH_PRED_WITH_TYPE, type means research paper or not
+- RESEARCH_PAPER_DF, papers that are research papers
+- RESEARCH_AUTHOR_WITH_PRED, authors of research papers with all kinds of predictions (race, gender, aff)
+- AUTHORS_TO_STUDY, this is different from research authors because i removed thos research papers whose affiliaiton is nan
+- DOIS_TO_STUDY, research papers with valid aff information
+- PAPERS_TO_STUDY, research papers with valid affiliation information
+
+Then, after all the manual coding is done (race, gender, and aff), I generated AUTHORID_WITH_VARS, i.e., author ID with the associated aff country, aff type, gender, and race. 
+
+Finally, I generated
+
+- AUTHORS_TO_STUDY_EXPANDED,
+- PAPERS_TO_STUDY_EXPANDED,
+
+Those two files are the most complete ones. 
+
+- GSCHOLAR_DATA_COMBINED, this is the final google scholar data. For details of how I got this data, see the section of "Google scholar data"
+
+
 

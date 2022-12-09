@@ -107,6 +107,8 @@ I did it here: `2022-09-23-split-race-gender-task.ipynb`. There datasets are dep
 
 Note that I found one person who uses anonymous name: https://academic.oup.com/ct/article/8/4/381/4201775. I then updated the script of `get_paper_and_author_with_type.py` in the workflow. Now this issue is solved. 
 
+There are 84 scholars whose first name is initials only. With `2022-12-09-create-initials_df.ipynb`, I created a spreadsheet for coders to check the results. 
+
 ## Notebooks
 
 These are exploratory notebooks. 

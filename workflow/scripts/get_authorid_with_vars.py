@@ -17,27 +17,21 @@ JONGMIN_GR_RESULT = sys.argv[6]
 MATTHEW_GR_RESULT = sys.argv[7]
 JEFF_GR_RESULT = sys.argv[8]
 MICHELLE_GR_RESULT = sys.argv[9]
-AUTHORID_WITH_VARS = sys.argv[10]
+INITIAL_DF = sys.argv[10]
+AUTHORID_WITH_VARS = sys.argv[11]
 
-def filter_aff_df(source, cutoff_year):
-	'''filter for aff results
+def subset_aff_df(source):
+	'''subset aff results
 
 	INPUT:
 		- source: either HONGTAO_AFF_RESULT, or KRISTEN_AFF_RESULT
-		- cutoff_year
 
 	OUTPUT:
 		- a dataframe
 	'''
 	df = pd.read_csv(source)
-	df = df[df.year >= cutoff_year][
-		['authorID', 'country_code', 'aff_type', 'ROR_ID']]
+	df = df[['authorID', 'country_code', 'aff_type', 'ROR_ID']]
 	return df 
-
-def filter_gr_df(source, cutoff_year, wanted_cols):
-	'''filter for gender and race data
-	'''
-	return source[source.year >= cutoff_year][wanted_cols]
 
 def load_ror_dataset(ROR_RAW_DATA):
 	'''read in ROR_DATA
@@ -85,9 +79,9 @@ def get_new_afftype(row):
 	'''
 	if pd.isnull(row['aff_type']):
 		new_afftype = ror_afftype_dic[row['ROR_ID']]
-	elif row['aff_type'] == '1':
+	elif row['aff_type'] == 1:
 		new_afftype = 'Education'
-	elif row['aff_type'] == '0':
+	elif row['aff_type'] == 0:
 		new_afftype = 'Non Education'
 	return new_afftype
 
@@ -106,12 +100,44 @@ def recode_race(row):
 	elif row[race_txt] == 5:
 		return 'Indigenous'
 
+def fill_gender(DF):
+	'''if genderpred_api is nan, use gender_prediction; otherwise, use genderize result
+	This is because Haley/Michelle wrote '1' if the result is the same as the API result
+
+	Inputs:
+		DF: either haley or michelle
+
+	Output: 
+		a numpy array
+	'''
+	genderpred = np.where(
+		DF.genderpred_api.isnull(), DF["gender_prediction"], DF.genderize)
+	genderpred[genderpred == 'female'] = 'F'
+	genderpred[genderpred == 'male'] = 'M'
+	return genderpred 
+
+def fill_race(DF):
+	'''if racepred_api is nan, use race_prediction; otherwise, use race automatic result
+	This is because Haley/Michelle wrote '1' if the result is the same as the API result
+
+	Inputs:
+		DF: either haley or michelle
+
+	Output: 
+		a numpy array
+	'''
+	racepred = np.where(
+		DF.racepred_api.isnull(), DF["race_prediction"], DF.race)
+	racepred[racepred == 'api'] = 2
+	racepred[racepred == 'hispanic'] = 3
+	racepred[racepred == 'white'] = 0
+	return racepred 
+
 if __name__ == '__main__':
-	cutoff_year = 2000
 
 	######### AFF
-	df1 = filter_aff_df(HONGTAO_AFF_RESULT, cutoff_year)
-	df2 = filter_aff_df(KRISTEN_AFF_RESULT, cutoff_year)
+	df1 = subset_aff_df(HONGTAO_AFF_RESULT)
+	df2 = subset_aff_df(KRISTEN_AFF_RESULT)
 
 	ror = load_ror_dataset(ROR_RAW_DATA)
 
@@ -135,23 +161,77 @@ if __name__ == '__main__':
 	jeff = pd.read_csv(JEFF_GR_RESULT)
 	jongmin = pd.read_csv(JONGMIN_GR_RESULT)
 	jaemin = pd.read_csv(JAEMIN_GR_RESULT)
+	# to correct the results of Jaemin
+	jaemin['gender_prediction'] = jaemin[
+		'gender_prediction'].str.replace(' M', 'M')
 
-	gr_wanted_cols = ['authorID', 'gender_prediction', 'race_prediction']
-	haley = filter_gr_df(haley, cutoff_year, gr_wanted_cols)
-	matthew = filter_gr_df(matthew, cutoff_year, gr_wanted_cols)
-	michelle = filter_gr_df(michelle, cutoff_year, gr_wanted_cols)
-	jeff = filter_gr_df(jeff, cutoff_year, gr_wanted_cols)
-	# Temporary, DElete later!!!!!!!!!
-	# jeff = jeff[
-	# 	(jeff.gender_prediction.notnull()) & (
-	# 		jeff.race_prediction.notnull())]
-	jongmin = filter_gr_df(jongmin, cutoff_year, gr_wanted_cols)
-	jaemin = filter_gr_df(jaemin, cutoff_year, gr_wanted_cols)
+	########### Upperclass Matthew's gender prediction coding
+	matthew_upperclass_dict = {
+		'm': 'M',
+		'n': 'N',
+		'f': 'F'
+	}
+	'''https://stackoverflow.com/a/68046167
+	'''
+	for old, new in matthew_upperclass_dict.items():
+		matthew[
+			'gender_prediction'] = matthew['gender_prediction'].str.replace(old, new, regex=False)
+
+	######### Add Coder variable
+	haley['Coder'] = 'Haley'
+	matthew['Coder'] = 'Matthew'
+	michelle['Coder'] = 'Michelle'
+	jaemin['Coder'] = 'Jaemin'
+	jongmin['Coder'] = 'Jongmin'
+	jeff['Coder'] = 'Jeff'
+
+	############ Fill gender and race result for Haley and Michelle
+	haley['gender_prediction'] = fill_gender(haley)
+	michelle['gender_prediction'] = fill_gender(michelle)
+	haley['race_prediction'] = fill_race(haley)
+	michelle['race_prediction'] = fill_race(michelle)
+
+	######### Subset gender and race data
+	gr_wanted_cols = [
+		'Coder', 
+		'firstName', 
+		'genderize', 
+		'authorID', 
+		'doi', 
+		'gender_prediction', 
+		'race_prediction'
+	]
+	haley = haley[gr_wanted_cols]
+	matthew = matthew[gr_wanted_cols]
+	michelle = michelle[gr_wanted_cols]
+	jongmin = jongmin[gr_wanted_cols]
+	jaemin = jaemin[gr_wanted_cols]
+	jeff = jeff[gr_wanted_cols]
 
 	gr_df = pd.concat(
-		[haley, jeff, michelle, matthew, jaemin, jongmin], ignore_index = True)
-	gr_df['gender_prediction'] = [
-		x.upper() for x in gr_df.gender_prediction]
+		[haley, michelle, matthew, jaemin, jongmin, jeff], ignore_index = True)
+
+	### Check gender prediction null results
+	first_try_nan = gr_df[gr_df.gender_prediction.isnull()]
+	print(f'There are {first_try_nan.shape[0]} names that do have not gender prediction result, initially')
+
+	########## Initial df
+	initial_df = pd.read_csv(INITIAL_DF)
+	# get the first try authorID and gender_prediction result
+	authorid_gender_dict = dict(
+		zip(gr_df.authorID, gr_df.gender_prediction))
+	# get the initial df authorid gender prediction dict
+	initial_df_authorid_gender_dict = dict(
+		zip(initial_df.authorID, initial_df.gender_prediction))
+	# update the original one
+	authorid_gender_dict.update(initial_df_authorid_gender_dict)
+
+	######## Update gr_df
+	gr_df['gender_prediction_new'] = [
+		authorid_gender_dict[x] for x in gr_df['authorID']]
+	missing_gender_prediction = gr_df[gr_df.gender_prediction_new.isnull()]
+	
+	print(f'There are {missing_gender_prediction.shape[0]} names that do have not gender prediction results in gr_df')
 	gr_df['race'] = gr_df.apply(recode_race, axis = 1)
 
 	assert len(aff_df) == len(gr_df), 'aff_df and gr_df do not have the same number of rows!'

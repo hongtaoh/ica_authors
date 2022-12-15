@@ -56,6 +56,9 @@ MATTHEW_GR_RESULT = pjoin(GENDER_AND_RACE_CODING_RESULTS, 'matthew.csv')
 JEFF_GR_RESULT = pjoin(GENDER_AND_RACE_CODING_RESULTS, 'jeff.csv')
 MICHELLE_GR_RESULT = pjoin(GENDER_AND_RACE_CODING_RESULTS, 'michelle.csv')
 
+# This is the gender results for those whose first names are initials only
+INITIAL_DF = pjoin(GENDER_AND_RACE_CODING_RESULTS, 'initial_df.csv')
+
 ## Google Scholar
 GSCHOLAR_DATA_MANUAL_CHECKED = pjoin(INTERIM_DATA_DIR, 'gscholar_data_manual_checked.csv')
 
@@ -103,11 +106,11 @@ rule all:
         # AUTHORS_TO_STUDY,
         # DOIS_TO_STUDY,
         # PAPERS_TO_STUDY,
-        # AUTHORID_WITH_VARS,
+        AUTHORID_WITH_VARS,
         # AUTHORS_TO_STUDY_EXPANDED,
         # PAPERS_TO_STUDY_EXPANDED,
         # GSCHOLAR_DATA,
-        GSCHOLAR_DATA_COMBINED,
+        # GSCHOLAR_DATA_COMBINED,
 
 # scrape ica paper dois
 rule scrape_ica_paper_dois:
@@ -169,6 +172,7 @@ rule get_authorid_with_vars:
         MATTHEW_GR_RESULT,
         JEFF_GR_RESULT,
         MICHELLE_GR_RESULT,
+        INITIAL_DF,
 
     output:
         AUTHORID_WITH_VARS

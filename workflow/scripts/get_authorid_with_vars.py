@@ -62,6 +62,8 @@ def update_two_dicts(ror, ror_cntry_dic, ror_afftype_dic):
 	# Chinese Academy of Social Sciences
 	# should be edu in this case. Professor Weishan Miao
 	ror_afftype_dic['https://ror.org/05bxbmy32'] = 'Education'
+	# 'University of Georgia'
+	ror_cntry_dic['https://ror.org/02bjhwk41'] = 'US'
 
 def get_new_cntry_code(row):
 	'''if I have added the country code manually, use that

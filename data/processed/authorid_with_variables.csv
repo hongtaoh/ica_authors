@@ -5,7 +5,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1093/ccc/tcac007+1.0,CN,Education,Haley,Saskia,female,10.1093/ccc/tcac007,F,0.0,White
 10.1093/joc/jqac012+4.0,US,Education,Haley,Bryant,male,10.1093/joc/jqac012,M,0.0,White
 10.1093/joc/jqab052+12.0,US,Education,Haley,Jiaying,female,10.1093/joc/jqab052,F,2.0,Asian
-10.1093/ccc/tcab045+1.0,GE,Education,Haley,Laurena,female,10.1093/ccc/tcab045,F,3.0,Hispanic
+10.1093/ccc/tcab045+1.0,US,Education,Haley,Laurena,female,10.1093/ccc/tcab045,F,3.0,Hispanic
 10.1093/hcr/hqab020+3.0,NL,Education,Haley,Bharath,male,10.1093/hcr/hqab020,M,2.0,Asian
 10.1093/hcr/hqac004+1.0,NL,Education,Haley,Anne,female,10.1093/hcr/hqac004,F,0.0,White
 10.1093/hcr/hqab014+2.0,US,Education,Haley,Trevor,male,10.1093/hcr/hqab014,M,0.0,White
@@ -83,7 +83,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1093/joc/jqz052+36.0,US,Education,Haley,Neil,male,10.1093/joc/jqz052,M,1.0,Black
 10.1093/ct/qtz039+2.0,US,Education,Haley,Matthew,male,10.1093/ct/qtz039,M,0.0,White
 10.1093/joc/jqab009+1.0,US,Education,Haley,Alan,male,10.1093/joc/jqab009,M,0.0,White
-10.1093/joc/jqab029+11.0,GE,Education,Haley,Sun,male,10.1093/joc/jqab029,F,2.0,Asian
+10.1093/joc/jqab029+11.0,US,Education,Haley,Sun,male,10.1093/joc/jqab029,F,2.0,Asian
 10.1093/hcr/hqab009+5.0,US,Education,Haley,Steven,male,10.1093/hcr/hqab009,M,0.0,White
 10.1093/joc/jqab016+2.0,US,Education,Haley,Timeka,female,10.1093/joc/jqab016,F,1.0,Black
 10.1093/jcmc/zmab013+1.0,US,Education,Haley,Bingjie,female,10.1093/jcmc/zmab013,F,0.0,White
@@ -279,7 +279,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1093/joc/jqaa034+2.0,PH,Education,Michelle,Nathan,male,10.1093/joc/jqaa034,M,0.0,White
 10.1093/jcmc/zmaa006+2.0,NL,Education,Michelle,E,male,10.1093/jcmc/zmaa006,M,2.0,Asian
 10.1093/joc/jqaa030+3.0,US,Education,Michelle,Hannah,female,10.1093/joc/jqaa030,F,0.0,White
-10.1093/joc/jqaa024+1.0,GE,Education,Michelle,Glenna,female,10.1093/joc/jqaa024,F,0.0,White
+10.1093/joc/jqaa024+1.0,US,Education,Michelle,Glenna,female,10.1093/joc/jqaa024,F,0.0,White
 10.1093/hcr/hqaa008+1.0,US,Education,Michelle,Anuraj,male,10.1093/hcr/hqaa008,F,2.0,Asian
 10.1093/hcr/hqaa005+2.0,US,Education,Michelle,Paul,male,10.1093/hcr/hqaa005,M,0.0,White
 10.1093/hcr/hqaa002+5.0,US,Education,Michelle,James,male,10.1093/hcr/hqaa002,M,0.0,White
@@ -417,7 +417,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1093/hcr/hqy017+1.0,US,Education,Jeff,Xiaoli,female,10.1093/hcr/hqy017,F,2,Asian
 10.1093/ct/qty033+2.0,US,Education,Jeff,Silvia,female,10.1093/ct/qty033,F,0,White
 10.1093/ccc/tcz007+1.0,US,Education,Jeff,Melissa,female,10.1093/ccc/tcz007,F,0,White
-10.1093/jcmc/zmy021+1.0,GE,Education,Jeff,Jiaying,female,10.1093/jcmc/zmy021,F,2,Asian
+10.1093/jcmc/zmy021+1.0,US,Education,Jeff,Jiaying,female,10.1093/jcmc/zmy021,F,2,Asian
 10.1093/ccc/tcz038+1.0,US,Education,Jeff,Jeff,male,10.1093/ccc/tcz038,M,0,White
 10.1093/ct/qtz001+1.0,US,Education,Jeff,Andrew,male,10.1093/ct/qtz001,M,0,White
 10.1093/hcr/hqz010+1.0,US,Education,Jeff,Salah,male,10.1093/hcr/hqz010,M,2,Asian
@@ -541,7 +541,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1093/hcr/hqy004+2.0,US,Education,Jeff,Erin,female,10.1093/hcr/hqy004,M,0,White
 10.1093/jcmc/zmx004+3.0,US,Education,Jeff,Ben,male,10.1093/jcmc/zmx004,M,2,Asian
 10.1093/joc/jqx018+2.0,SI,Education,Jeff,Boris,male,10.1093/joc/jqx018,M,0,White
-10.1093/joc/jqy049+6.0,GE,Education,Jeff,Lindsay,female,10.1093/joc/jqy049,F,0,White
+10.1093/joc/jqy049+6.0,US,Education,Jeff,Lindsay,female,10.1093/joc/jqy049,F,0,White
 10.1093/ccc/tcx002+1.0,GB,Education,Jeff,Bart,male,10.1093/ccc/tcx002,M,0,White
 10.1093/joc/jqy017+2.0,IL,Education,Jeff,Sandrine,female,10.1093/joc/jqy017,F,3,Hispanic
 10.1093/hcr/hqy005+1.0,US,Education,Jeff,Nathan,male,10.1093/hcr/hqy005,M,0,White
@@ -1434,7 +1434,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1460-2466.2011.01579.x+1.0,US,Education,Jeff,Pauline,female,10.1111/j.1460-2466.2011.01579.x,F,2,Asian
 10.1111/j.1753-9137.2011.01103.x+2.0,US,Education,Jeff,Tara,female,10.1111/j.1753-9137.2011.01103.x,F,0,White
 10.1111/j.1468-2958.2011.01405.x+1.0,US,Education,Jeff,Graham,male,10.1111/j.1468-2958.2011.01405.x,M,0,White
-10.1111/j.1460-2466.2011.01555.x+1.0,GE,Education,Jeff,Minsun,female,10.1111/j.1460-2466.2011.01555.x,F,2,Asian
+10.1111/j.1460-2466.2011.01555.x+1.0,US,Education,Jeff,Minsun,female,10.1111/j.1460-2466.2011.01555.x,F,2,Asian
 10.1111/j.1083-6101.2011.01557.x+2.0,US,Education,Jeff,Alexander,male,10.1111/j.1083-6101.2011.01557.x,M,1,Black
 10.1111/j.1460-2466.2010.01529.x+2.0,US,Education,Jeff,James,male,10.1111/j.1460-2466.2010.01529.x,M,0,White
 10.1111/j.1468-2958.2011.01407.x+6.0,US,Education,Jeff,Allison,female,10.1111/j.1468-2958.2011.01407.x,F,0,White
@@ -1514,7 +1514,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1083-6101.2010.01521.x+1.0,US,Education,Michelle,Jeongsub,male,10.1111/j.1083-6101.2010.01521.x,M,2.0,Asian
 10.1111/j.1468-2958.2010.01378.x+3.0,US,Education,Michelle,Stephanie,female,10.1111/j.1468-2958.2010.01378.x,F,2.0,Asian
 10.1111/j.1083-6101.2009.01503.x+1.0,US,Education,Michelle,Rosemary,female,10.1111/j.1083-6101.2009.01503.x,F,0.0,White
-10.1111/j.1468-2958.2010.01381.x+1.0,GE,Education,Michelle,Lijiang,male,10.1111/j.1468-2958.2010.01381.x,M,2.0,Asian
+10.1111/j.1468-2958.2010.01381.x+1.0,US,Education,Michelle,Lijiang,male,10.1111/j.1468-2958.2010.01381.x,M,2.0,Asian
 10.1111/j.1460-2466.2010.01498.x+2.0,US,Education,Michelle,Amy,female,10.1111/j.1460-2466.2010.01498.x,F,0.0,White
 10.1111/j.1460-2466.2009.01455.x+2.0,SG,Education,Michelle,Clarice,female,10.1111/j.1460-2466.2009.01455.x,F,2.0,Asian
 10.1111/j.1753-9137.2010.01078.x+1.0,US,Education,Michelle,Michael,male,10.1111/j.1753-9137.2010.01078.x,M,0.0,White
@@ -1591,7 +1591,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1468-2885.2009.01343.x+1.0,FI,Education,Haley,Mats,male,10.1111/j.1468-2885.2009.01343.x,M,0.0,White
 10.1111/j.1468-2958.2009.01353.x+1.0,US,Education,Haley,Stephen,male,10.1111/j.1468-2958.2009.01353.x,M,0.0,White
 10.1111/j.1753-9137.2009.01040.x+2.0,CA,Education,Haley,Sara,female,10.1111/j.1753-9137.2009.01040.x,F,0.0,White
-10.1111/j.1083-6101.2009.01490.x+1.0,GE,Education,Haley,Wendy,female,10.1111/j.1083-6101.2009.01490.x,F,0.0,White
+10.1111/j.1083-6101.2009.01490.x+1.0,US,Education,Haley,Wendy,female,10.1111/j.1083-6101.2009.01490.x,F,0.0,White
 10.1111/j.1083-6101.2009.01457.x+2.0,CA,Education,Haley,Susan,female,10.1111/j.1083-6101.2009.01457.x,F,0.0,White
 10.1111/j.1468-2958.2008.01338.x+3.0,US,Education,Haley,Jeffrey,male,10.1111/j.1468-2958.2008.01338.x,M,0.0,White
 10.1111/j.1468-2885.2009.01345.x+6.0,US,Education,Haley,Stephanie,female,10.1111/j.1468-2885.2009.01345.x,F,2.0,Asian
@@ -1641,7 +1641,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1083-6101.2009.01494.x+1.0,US,Education,Michelle,Bernhard,male,10.1111/j.1083-6101.2009.01494.x,M,0.0,White
 10.1111/j.1460-2466.2009.01439.x+2.0,US,Education,Michelle,John,male,10.1111/j.1460-2466.2009.01439.x,M,0.0,White
 10.1111/j.1468-2885.2008.01330.x+1.0,US,Education,Michelle,Josh,male,10.1111/j.1468-2885.2008.01330.x,M,0.0,White
-10.1111/j.1083-6101.2009.01490.x+3.0,GE,Education,Michelle,Vicki,female,10.1111/j.1083-6101.2009.01490.x,F,0.0,White
+10.1111/j.1083-6101.2009.01490.x+3.0,US,Education,Michelle,Vicki,female,10.1111/j.1083-6101.2009.01490.x,F,0.0,White
 10.1111/j.1460-2466.2009.01453.x+3.0,US,Education,Michelle,Scott,male,10.1111/j.1460-2466.2009.01453.x,M,0.0,White
 10.1111/j.1753-9137.2009.01052.x+1.0,US,Education,Michelle,Moira,female,10.1111/j.1753-9137.2009.01052.x,F,0.0,White
 10.1111/j.1753-9137.2009.01037.x+3.0,CA,Education,Michelle,Serra,female,10.1111/j.1753-9137.2009.01037.x,F,0.0,White
@@ -1671,7 +1671,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1460-2466.2009.01413.x+2.0,US,Education,Jeff,Jason,male,10.1111/j.1460-2466.2009.01413.x,M,0,White
 10.1111/j.1460-2466.2008.01406.x+1.0,PH,Education,Jeff,Pablo,male,10.1111/j.1460-2466.2008.01406.x,M,0,White
 10.1111/j.1083-6101.2009.01480.x+1.0,US,Education,Jeff,Crispin,male,10.1111/j.1083-6101.2009.01480.x,M,0,White
-10.1111/j.1083-6101.2009.01470.x+1.0,GE,Education,Jeff,Itai,male,10.1111/j.1083-6101.2009.01470.x,M,0,White
+10.1111/j.1083-6101.2009.01470.x+1.0,US,Education,Jeff,Itai,male,10.1111/j.1083-6101.2009.01470.x,M,0,White
 10.1111/j.1460-2466.2009.01412.x+2.0,US,Education,Jeff,Myiah,female,10.1111/j.1460-2466.2009.01412.x,F,0,White
 10.1111/j.1460-2466.2009.01420.x+1.0,US,Education,Jeff,Jeffrey,male,10.1111/j.1460-2466.2009.01420.x,M,0,White
 10.1111/j.1083-6101.2009.01489.x+3.0,EE,Education,Jeff,Pille,female,10.1111/j.1083-6101.2009.01489.x,F,0,White
@@ -1691,7 +1691,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1083-6101.2009.01494.x+4.0,US,Education,Jeff,Brittany,female,10.1111/j.1083-6101.2009.01494.x,F,0,White
 10.1111/j.1468-2958.2009.01357.x+1.0,PH,Education,Jeff,Paul,male,10.1111/j.1468-2958.2009.01357.x,M,0,White
 10.1111/j.1753-9137.2008.00027.x+1.0,US,Education,Haley,Adedayo,male,10.1111/j.1753-9137.2008.00027.x,F,1.0,Black
-10.1111/j.1083-6101.2008.01435.x+1.0,GE,Education,Haley,Itai,male,10.1111/j.1083-6101.2008.01435.x,M,4.0,Middle Eastern
+10.1111/j.1083-6101.2008.01435.x+1.0,US,Education,Haley,Itai,male,10.1111/j.1083-6101.2008.01435.x,M,4.0,Middle Eastern
 10.1111/j.1083-6101.2008.00428.x+3.0,US,Education,Haley,Scott,male,10.1111/j.1083-6101.2008.00428.x,M,0.0,White
 10.1111/j.1468-2885.2007.00313.x+1.0,KR,Education,Haley,Joohan,male,10.1111/j.1468-2885.2007.00313.x,M,2.0,Asian
 10.1111/j.1083-6101.2008.00403.x+2.0,US,Education,Haley,Derek,male,10.1111/j.1083-6101.2008.00403.x,M,0.0,White
@@ -1726,7 +1726,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1460-2466.2008.00394.x+7.0,US,Education,Haley,Mark,male,10.1111/j.1460-2466.2008.00394.x,M,0.0,White
 10.1111/j.1083-6101.2008.00422.x+2.0,GB,Education,Haley,Mike,male,10.1111/j.1083-6101.2008.00422.x,M,0.0,White
 10.1111/j.1083-6101.2008.00415.x+1.0,US,Education,Haley,David,male,10.1111/j.1083-6101.2008.00415.x,M,0.0,White
-10.1111/j.1460-2466.2007.00375.x+1.0,GE,Education,Haley,Hye-Jin,female,10.1111/j.1460-2466.2007.00375.x,F,2.0,Asian
+10.1111/j.1460-2466.2007.00375.x+1.0,US,Education,Haley,Hye-Jin,female,10.1111/j.1460-2466.2007.00375.x,F,2.0,Asian
 10.1111/j.1460-2466.2008.00393.x+1.0,US,Education,Haley,Hyunyi,female,10.1111/j.1460-2466.2008.00393.x,F,2.0,Asian
 10.1111/j.1083-6101.2008.01437.x+4.0,AU,Education,Michelle,Ian,male,10.1111/j.1083-6101.2008.01437.x,M,0.0,White
 10.1111/j.1460-2466.2008.00399.x+1.0,NL,Education,Michelle,Matthijs,male,10.1111/j.1460-2466.2008.00399.x,M,0.0,White
@@ -1773,7 +1773,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1083-6101.2008.00423.x+4.0,US,Education,Jeff,Carolyn,female,10.1111/j.1083-6101.2008.00423.x,F,0,White
 10.1111/j.1468-2958.2008.00322.x+4.0,DE,Education,Jeff,Felix,male,10.1111/j.1468-2958.2008.00322.x,M,0,White
 10.1111/j.1468-2958.2008.00336.x+6.0,US,Education,Jeff,Jennifer,female,10.1111/j.1468-2958.2008.00336.x,F,0,White
-10.1111/j.1460-2466.2008.00385.x+3.0,GE,Education,Jeff,Lijiang,male,10.1111/j.1460-2466.2008.00385.x,M,2,Asian
+10.1111/j.1460-2466.2008.00385.x+3.0,US,Education,Jeff,Lijiang,male,10.1111/j.1460-2466.2008.00385.x,M,2,Asian
 10.1111/j.1468-2958.2008.00336.x+4.0,US,Education,Jeff,Kami,male,10.1111/j.1468-2958.2008.00336.x,M,0,White
 10.1111/j.1468-2885.2008.00327.x+3.0,US,Education,Jeff,Faye,female,10.1111/j.1468-2885.2008.00327.x,F,0,White
 10.1111/j.1083-6101.2008.00409.x+4.0,US,Education,Jeff,Joseph,male,10.1111/j.1083-6101.2008.00409.x,M,0,White
@@ -1784,7 +1784,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1753-9137.2008.00028.x+1.0,GB,Education,Jeff,Bart,male,10.1111/j.1753-9137.2008.00028.x,M,0,White
 10.1111/j.1083-6101.2008.00424.x+1.0,US,Education,Jeff,Jimmy,male,10.1111/j.1083-6101.2008.00424.x,M,0,White
 10.1111/j.1460-2466.2007.00372.x+1.0,US,Education,Jeff,Artemio,male,10.1111/j.1460-2466.2007.00372.x,M,3,Hispanic
-10.1111/j.1468-2885.2008.00321.x+1.0,GE,Education,Jeff,Thomas,male,10.1111/j.1468-2885.2008.00321.x,M,0,White
+10.1111/j.1468-2885.2008.00321.x+1.0,US,Education,Jeff,Thomas,male,10.1111/j.1468-2885.2008.00321.x,M,0,White
 10.1111/j.1083-6101.2008.00401.x+2.0,US,Education,Jeff,Michel,male,10.1111/j.1083-6101.2008.00401.x,M,0,White
 10.1111/j.1468-2958.2007.00313.x+1.0,NL,Education,Jeff,Moniek,female,10.1111/j.1468-2958.2007.00313.x,F,0,White
 10.1111/j.1468-2885.2008.00320.x+1.0,US,Education,Jeff,Todd,male,10.1111/j.1468-2885.2008.00320.x,M,0,White
@@ -1950,7 +1950,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1083-6101.2006.00034.x+1.0,US,Education,Haley,Marina,female,10.1111/j.1083-6101.2006.00034.x,F,3.0,Hispanic
 10.1111/j.1468-2958.2006.00277.x+1.0,US,Education,Haley,Joseph,male,10.1111/j.1468-2958.2006.00277.x,M,0.0,White
 10.1111/j.1083-6101.2006.00307.x+1.0,US,Education,Haley,Stephen,male,10.1111/j.1083-6101.2006.00307.x,M,0.0,White
-10.1111/j.1083-6101.2006.00032.x+1.0,GE,Education,Haley,Kaye,female,10.1111/j.1083-6101.2006.00032.x,F,0.0,White
+10.1111/j.1083-6101.2006.00032.x+1.0,US,Education,Haley,Kaye,female,10.1111/j.1083-6101.2006.00032.x,F,0.0,White
 10.1111/j.1083-6101.2006.00322.x+3.0,US,Education,Haley,Michael,male,10.1111/j.1083-6101.2006.00322.x,M,0.0,White
 10.1111/j.1468-2958.2006.00284.x+2.0,US,Education,Haley,Denise,female,10.1111/j.1468-2958.2006.00284.x,F,5.0,Indigenous
 10.1111/j.1468-2885.2006.00007.x+5.0,US,Education,Haley,Jennifer,female,10.1111/j.1468-2885.2006.00007.x,F,0.0,White
@@ -2122,7 +2122,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1460-2466.2005.tb03025.x+1.0,US,Education,Michelle,Joseph,male,10.1111/j.1460-2466.2005.tb03025.x,M,0.0,White
 10.1111/j.1460-2466.2005.tb03021.x+3.0,US,Education,Michelle,Xu,male,10.1111/j.1460-2466.2005.tb03021.x,M,2.0,Asian
 10.1111/j.1468-2885.2005.tb00328.x+1.0,US,Education,Michelle,Vesta,female,10.1111/j.1468-2885.2005.tb00328.x,F,0.0,White
-10.1111/j.1460-2466.2005.tb02681.x+2.0,GE,Education,Michelle,Celeste,female,10.1111/j.1460-2466.2005.tb02681.x,F,0.0,White
+10.1111/j.1460-2466.2005.tb02681.x+2.0,US,Education,Michelle,Celeste,female,10.1111/j.1460-2466.2005.tb02681.x,F,0.0,White
 10.1111/j.1083-6101.2006.tb00314.x+1.0,SG,Education,Michelle,Waipeng,male,10.1111/j.1083-6101.2006.tb00314.x,F,2.0,Asian
 10.1111/j.1468-2885.2005.tb00331.x+2.0,US,Education,Jeff,Angela,female,10.1111/j.1468-2885.2005.tb00331.x,F,0,White
 10.1111/j.1468-2958.2005.tb00878.x+1.0,US,Education,Jeff,Roxanne,female,10.1111/j.1468-2958.2005.tb00878.x,F,0,White
@@ -2168,7 +2168,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1468-2885.2004.tb00308.x+1.0,US,Education,Haley,Lisbeth,female,10.1111/j.1468-2885.2004.tb00308.x,F,0.0,White
 10.1111/j.1468-2885.2004.tb00311.x+2.0,US,Education,Haley,Angela,female,10.1111/j.1468-2885.2004.tb00311.x,F,0.0,White
 10.1111/j.1460-2466.2004.tb02636.x+4.0,US,Education,Haley,John,male,10.1111/j.1460-2466.2004.tb02636.x,M,0.0,White
-10.1111/j.1460-2466.2004.tb02616.x+4.0,GE,Education,Haley,Celeste,female,10.1111/j.1460-2466.2004.tb02616.x,F,0.0,White
+10.1111/j.1460-2466.2004.tb02616.x+4.0,US,Education,Haley,Celeste,female,10.1111/j.1460-2466.2004.tb02616.x,F,0.0,White
 10.1111/j.1083-6101.2004.tb00231.x+4.0,US,Education,Haley,Nalova,female,10.1111/j.1083-6101.2004.tb00231.x,F,1.0,Black
 10.1111/j.1468-2958.2004.tb00727.x+2.0,US,Education,Haley,Glenn,male,10.1111/j.1468-2958.2004.tb00727.x,M,0.0,White
 10.1111/j.1468-2958.2004.tb00730.x+2.0,US,Education,Haley,Clifford,male,10.1111/j.1468-2958.2004.tb00730.x,M,0.0,White
@@ -2355,7 +2355,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1460-2466.2002.tb02535.x+5.0,US,Education,Michelle,Erica,female,10.1111/j.1460-2466.2002.tb02535.x,F,0.0,White
 10.1111/j.1460-2466.2002.tb02570.x+2.0,US,Education,Michelle,Jon,male,10.1111/j.1460-2466.2002.tb02570.x,M,0.0,White
 10.1111/j.1083-6101.2002.tb00159.x+2.0,GB,Education,Michelle,Jon,male,10.1111/j.1083-6101.2002.tb00159.x,M,0.0,White
-10.1111/j.1460-2466.2002.tb02575.x+4.0,GE,Education,Michelle,Lynda,female,10.1111/j.1460-2466.2002.tb02575.x,F,0.0,White
+10.1111/j.1460-2466.2002.tb02575.x+4.0,US,Education,Michelle,Lynda,female,10.1111/j.1460-2466.2002.tb02575.x,F,0.0,White
 10.1111/j.1468-2958.2002.tb00813.x+1.0,US,Education,Michelle,Pradeep,male,10.1111/j.1468-2958.2002.tb00813.x,M,2.0,Asian
 10.1111/j.1468-2958.2002.tb00804.x+2.0,US,Education,Michelle,Joseph,male,10.1111/j.1468-2958.2002.tb00804.x,M,0.0,White
 10.1111/j.1460-2466.2002.tb02541.x+1.0,US,Education,Michelle,Joseph,male,10.1111/j.1460-2466.2002.tb02541.x,M,0.0,White
@@ -2401,7 +2401,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1460-2466.2002.tb02567.x+3.0,US,Education,Jeff,Artemio,male,10.1111/j.1460-2466.2002.tb02567.x,M,3,Hispanic
 10.1111/j.1468-2958.2002.tb00820.x+2.0,US,Education,Jeff,William,male,10.1111/j.1468-2958.2002.tb00820.x,M,0,White
 10.1111/j.1460-2466.2002.tb02554.x+2.0,US,Education,Jeff,Susan,female,10.1111/j.1460-2466.2002.tb02554.x,F,0,White
-10.1111/j.1468-2885.2002.tb00275.x+1.0,GE,Education,Jeff,Kevin,male,10.1111/j.1468-2885.2002.tb00275.x,M,0,White
+10.1111/j.1468-2885.2002.tb00275.x+1.0,US,Education,Jeff,Kevin,male,10.1111/j.1468-2885.2002.tb00275.x,M,0,White
 10.1111/j.1460-2466.2002.tb02567.x+2.0,US,Education,Jeff,Joseph,male,10.1111/j.1460-2466.2002.tb02567.x,M,0,White
 10.1111/j.1460-2466.2002.tb02532.x+3.0,US,Education,Jeff,Stacy,female,10.1111/j.1460-2466.2002.tb02532.x,F,0,White
 10.1111/j.1468-2958.2002.tb00819.x+1.0,US,Education,Jeff,Michael,male,10.1111/j.1468-2958.2002.tb00819.x,M,0,White
@@ -2474,7 +2474,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1468-2958.2000.tb00759.x+2.0,US,Education,Haley,Robert,male,10.1111/j.1468-2958.2000.tb00759.x,M,0.0,White
 10.1111/j.1460-2466.2000.tb02867.x+4.0,US,Education,Haley,Charles,male,10.1111/j.1460-2466.2000.tb02867.x,M,0.0,White
 10.1111/j.1083-6101.2000.tb00342.x+1.0,US,Education,Haley,Jonathan,male,10.1111/j.1083-6101.2000.tb00342.x,M,0.0,White
-10.1111/j.1468-2958.2000.tb00755.x+2.0,GE,Education,Haley,Pamela,female,10.1111/j.1468-2958.2000.tb00755.x,F,0.0,White
+10.1111/j.1468-2958.2000.tb00755.x+2.0,US,Education,Haley,Pamela,female,10.1111/j.1468-2958.2000.tb00755.x,F,0.0,White
 10.1111/j.1468-2885.2000.tb00190.x+1.0,PH,Education,Haley,Steven,male,10.1111/j.1468-2885.2000.tb00190.x,M,0.0,White
 10.1111/j.1460-2466.2000.tb02852.x+2.0,US,Education,Haley,Mary,female,10.1111/j.1460-2466.2000.tb02852.x,F,0.0,White
 10.1111/j.1468-2958.2000.tb00763.x+1.0,US,Education,Haley,Patrick,male,10.1111/j.1468-2958.2000.tb00763.x,M,0.0,White
@@ -2663,7 +2663,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1460-2466.1997.tb02726.x+1.0,US,Education,Michelle,Richard,male,10.1111/j.1460-2466.1997.tb02726.x,M,0.0,White
 10.1111/j.1083-6101.1997.tb00192.x+2.0,JP,Non Education,Michelle,Sandra,female,10.1111/j.1083-6101.1997.tb00192.x,F,0,White
 10.1111/j.1460-2466.1997.tb02723.x+2.0,US,Education,Jeff,Kathleen,female,10.1111/j.1460-2466.1997.tb02723.x,F,0,White
-10.1111/j.1083-6101.1997.tb00202.x+1.0,GE,Education,Jeff,Michael,male,10.1111/j.1083-6101.1997.tb00202.x,M,0,White
+10.1111/j.1083-6101.1997.tb00202.x+1.0,DE,Education,Jeff,Michael,male,10.1111/j.1083-6101.1997.tb00202.x,M,0,White
 10.1111/j.1468-2958.1997.tb00417.x+5.0,US,Education,Jeff,Vernon,male,10.1111/j.1468-2958.1997.tb00417.x,M,0,White
 10.1111/j.1460-2466.1997.tb02706.x+2.0,US,Education,Jeff,Paul,male,10.1111/j.1460-2466.1997.tb02706.x,M,0,White
 10.1111/j.1468-2958.1997.tb00416.x+1.0,US,Education,Jeff,Charla,female,10.1111/j.1468-2958.1997.tb00416.x,F,0,White
@@ -2713,7 +2713,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1460-2466.1996.tb01460.x+1.0,US,Education,Michelle,Merrill,male,10.1111/j.1460-2466.1996.tb01460.x,M,0,White
 10.1111/j.1460-2466.1996.tb01504.x+2.0,US,Education,Michelle,Bibb,male,10.1111/j.1460-2466.1996.tb01504.x,M,0.0,White
 10.1111/j.1083-6101.1996.tb00188.x+1.0,PH,Education,Michelle,Douglas,male,10.1111/j.1083-6101.1996.tb00188.x,M,0,White
-10.1111/j.1468-2958.1996.tb00372.x+1.0,GE,Education,Michelle,Jeannette,female,10.1111/j.1468-2958.1996.tb00372.x,F,0.0,White
+10.1111/j.1468-2958.1996.tb00372.x+1.0,DE,Education,Michelle,Jeannette,female,10.1111/j.1468-2958.1996.tb00372.x,F,0.0,White
 10.1111/j.1083-6101.1996.tb00190.x+1.0,US,Education,Michelle,Michael,male,10.1111/j.1083-6101.1996.tb00190.x,M,0.0,White
 10.1111/j.1468-2885.1996.tb00130.x+1.0,US,Education,Michelle,James,male,10.1111/j.1468-2885.1996.tb00130.x,M,0.0,White
 10.1111/j.1460-2466.1996.tb01506.x+2.0,US,Education,Michelle,Bibb,male,10.1111/j.1460-2466.1996.tb01506.x,M,0.0,White
@@ -2725,7 +2725,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1083-6101.1996.tb00056.x+3.0,US,Non Education,Jeff,Donna,female,10.1111/j.1083-6101.1996.tb00056.x,F,0,White
 10.1111/j.1460-2466.1996.tb01491.x+1.0,US,Education,Jeff,Kenneth,male,10.1111/j.1460-2466.1996.tb01491.x,M,0,White
 10.1111/j.1468-2885.1996.tb00132.x+1.0,US,Education,Jeff,Judee,female,10.1111/j.1468-2885.1996.tb00132.x,F,0,White
-10.1111/j.1468-2885.1996.tb00119.x+1.0,GE,Education,Jeff,Raka,male,10.1111/j.1468-2885.1996.tb00119.x,M,0,White
+10.1111/j.1468-2885.1996.tb00119.x+1.0,US,Education,Jeff,Raka,male,10.1111/j.1468-2885.1996.tb00119.x,M,0,White
 10.1111/j.1460-2466.1996.tb01488.x+2.0,US,Education,Jeff,Roger,male,10.1111/j.1460-2466.1996.tb01488.x,M,0,White
 10.1111/j.1468-2958.1996.tb00380.x+2.0,US,Education,Jeff,Steven,male,10.1111/j.1468-2958.1996.tb00380.x,M,0,White
 10.1111/j.1460-2466.1996.tb01505.x+2.0,US,Education,Jeff,Bibb,male,10.1111/j.1460-2466.1996.tb01505.x,M,0,White
@@ -2798,7 +2798,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1083-6101.1995.tb00167.x+3.0,US,Education,Jeff,Charles,male,10.1111/j.1083-6101.1995.tb00167.x,M,0,White
 10.1111/j.1468-2958.1995.tb00349.x+3.0,US,Education,Jeff,Tracy,female,10.1111/j.1468-2958.1995.tb00349.x,F,0,White
 10.1111/j.1468-2958.1994.tb00325.x+3.0,US,Education,Haley,Rahul,male,10.1111/j.1468-2958.1994.tb00325.x,M,2.0,Asian
-10.1111/j.1460-2466.1994.tb00700.x+2.0,GE,Education,Haley,Joseph,male,10.1111/j.1460-2466.1994.tb00700.x,M,0.0,White
+10.1111/j.1460-2466.1994.tb00700.x+2.0,US,Education,Haley,Joseph,male,10.1111/j.1460-2466.1994.tb00700.x,M,0.0,White
 10.1111/j.1468-2885.1994.tb00090.x+1.0,US,Education,Haley,Timothy,male,10.1111/j.1468-2885.1994.tb00090.x,M,0,White
 10.1111/j.1460-2466.1994.tb00699.x+1.0,US,Education,Haley,Robert,male,10.1111/j.1460-2466.1994.tb00699.x,M,3.0,Hispanic
 10.1111/j.1468-2958.1994.tb00331.x+1.0,US,Education,Haley,Carol,female,10.1111/j.1468-2958.1994.tb00331.x,F,0.0,White
@@ -2841,19 +2841,19 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1460-2466.1993.tb01251.x+2.0,US,Education,Haley,John,male,10.1111/j.1460-2466.1993.tb01251.x,M,0.0,White
 10.1111/j.1460-2466.1993.tb01300.x+1.0,DK,Education,Haley,Klaus,male,10.1111/j.1460-2466.1993.tb01300.x,M,0.0,White
 10.1111/j.1460-2466.1993.tb01280.x+2.0,US,Education,Haley,Gladys,female,10.1111/j.1460-2466.1993.tb01280.x,F,0.0,White
-10.1111/j.1468-2885.1993.tb00060.x+1.0,GE,Education,Haley,Thomas,male,10.1111/j.1468-2885.1993.tb00060.x,M,0.0,White
+10.1111/j.1468-2885.1993.tb00060.x+1.0,US,Education,Haley,Thomas,male,10.1111/j.1468-2885.1993.tb00060.x,M,0.0,White
 10.1111/j.1460-2466.1993.tb01301.x+1.0,US,Education,Haley,Herbert,male,10.1111/j.1460-2466.1993.tb01301.x,M,0.0,White
 10.1111/j.1460-2466.1993.tb01314.x+1.0,PH,Education,Haley,Susan,female,10.1111/j.1460-2466.1993.tb01314.x,M,0.0,White
 10.1111/j.1460-2466.1993.tb01286.x+1.0,US,Education,Haley,Dennis,male,10.1111/j.1460-2466.1993.tb01286.x,M,0,White
 10.1111/j.1460-2466.1993.tb01282.x+1.0,US,Education,Haley,Austin,male,10.1111/j.1460-2466.1993.tb01282.x,M,0.0,White
-10.1111/j.1460-2466.1993.tb01287.x+1.0,GE,Education,Haley,Jennifer,female,10.1111/j.1460-2466.1993.tb01287.x,F,0.0,White
+10.1111/j.1460-2466.1993.tb01287.x+1.0,US,Education,Haley,Jennifer,female,10.1111/j.1460-2466.1993.tb01287.x,F,0.0,White
 10.1111/j.1468-2885.1993.tb00070.x+2.0,US,Education,Haley,David,male,10.1111/j.1468-2885.1993.tb00070.x,M,0.0,White
 10.1111/j.1460-2466.1993.tb01258.x+1.0,GB,Education,Haley,Philip,male,10.1111/j.1460-2466.1993.tb01258.x,M,0.0,White
 10.1111/j.1460-2466.1993.tb01299.x+1.0,GB,Education,Haley,David,male,10.1111/j.1460-2466.1993.tb01299.x,M,0.0,White
 10.1111/j.1468-2885.1993.tb00056_3_1.x+1.0,US,Education,Haley,Mark,male,10.1111/j.1468-2885.1993.tb00056_3_1.x,M,0.0,White
 10.1111/j.1460-2466.1993.tb01272.x+1.0,US,Education,Haley,James,male,10.1111/j.1460-2466.1993.tb01272.x,M,0.0,White
 10.1111/j.1460-2466.1993.tb01249.x+1.0,US,Education,Haley,Joseph,male,10.1111/j.1460-2466.1993.tb01249.x,M,0.0,White
-10.1111/j.1460-2466.1993.tb01318.x+1.0,GE,Education,Haley,Anandam,male,10.1111/j.1460-2466.1993.tb01318.x,M,2.0,Asian
+10.1111/j.1460-2466.1993.tb01318.x+1.0,US,Education,Haley,Anandam,male,10.1111/j.1460-2466.1993.tb01318.x,M,2.0,Asian
 10.1111/j.1460-2466.1993.tb01246.x+1.0,US,Education,Haley,Jian-Hua,,10.1111/j.1460-2466.1993.tb01246.x,M,2.0,Asian
 10.1111/j.1460-2466.1993.tb01290.x+1.0,US,Education,Haley,Robert,male,10.1111/j.1460-2466.1993.tb01290.x,M,0.0,White
 10.1111/j.1460-2466.1993.tb01288.x+1.0,US,Education,Haley,Eric,male,10.1111/j.1460-2466.1993.tb01288.x,M,0.0,White
@@ -3122,12 +3122,12 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1468-2958.1986.tb00081.x+2.0,US,Education,Haley,Gerald,male,10.1111/j.1468-2958.1986.tb00081.x,M,0.0,White
 10.1111/j.1468-2958.1986.tb00092.x+1.0,US,Education,Haley,Michael,male,10.1111/j.1468-2958.1986.tb00092.x,M,0.0,White
 10.1111/j.1460-2466.1986.tb01449.x+2.0,US,Education,Haley,Laura,female,10.1111/j.1460-2466.1986.tb01449.x,F,0.0,White
-10.1111/j.1460-2466.1986.tb03040.x+1.0,GE,Education,Haley,Barry,male,10.1111/j.1460-2466.1986.tb03040.x,M,0.0,White
+10.1111/j.1460-2466.1986.tb03040.x+1.0,US,Education,Haley,Barry,male,10.1111/j.1460-2466.1986.tb03040.x,M,0.0,White
 10.1111/j.1468-2958.1986.tb00089.x+2.0,US,Education,Haley,Deborah,female,10.1111/j.1468-2958.1986.tb00089.x,F,0,White
 10.1111/j.1468-2958.1986.tb00081.x+1.0,US,Education,Michelle,James,male,10.1111/j.1468-2958.1986.tb00081.x,M,0.0,White
 10.1111/j.1468-2958.1986.tb00103.x+2.0,US,Education,Michelle,Vincent,male,10.1111/j.1468-2958.1986.tb00103.x,M,0.0,White
 10.1111/j.1460-2466.1986.tb03039.x+1.0,US,Education,Michelle,Pat,male,10.1111/j.1460-2466.1986.tb03039.x,F,0.0,White
-10.1111/j.1460-2466.1986.tb03040.x+2.0,GE,Education,Michelle,Joseph,male,10.1111/j.1460-2466.1986.tb03040.x,M,0.0,White
+10.1111/j.1460-2466.1986.tb03040.x+2.0,US,Education,Michelle,Joseph,male,10.1111/j.1460-2466.1986.tb03040.x,M,0.0,White
 10.1111/j.1468-2958.1986.tb00088.x+1.0,US,Education,Michelle,Leslie,female,10.1111/j.1468-2958.1986.tb00088.x,F,0.0,White
 10.1111/j.1460-2466.1986.tb01425.x+2.0,US,Education,Michelle,Daniel,male,10.1111/j.1460-2466.1986.tb01425.x,M,0.0,White
 10.1111/j.1468-2958.1986.tb00087.x+2.0,US,Education,Michelle,Karen,female,10.1111/j.1468-2958.1986.tb00087.x,F,0.0,White
@@ -3165,7 +3165,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1460-2466.1985.tb02241.x+2.0,CA,Education,Michelle,Wendy,female,10.1111/j.1460-2466.1985.tb02241.x,M,0.0,White
 10.1111/j.1460-2466.1985.tb01890.x+1.0,US,Education,Michelle,Louise,female,10.1111/j.1460-2466.1985.tb01890.x,F,0.0,White
 10.1111/j.1460-2466.1985.tb02233.x+3.0,US,Education,Michelle,William,male,10.1111/j.1460-2466.1985.tb02233.x,M,0.0,White
-10.1111/j.1468-2958.1985.tb00053.x+2.0,GE,Education,Michelle,Deborah,female,10.1111/j.1468-2958.1985.tb00053.x,F,0.0,White
+10.1111/j.1468-2958.1985.tb00053.x+2.0,US,Education,Michelle,Deborah,female,10.1111/j.1468-2958.1985.tb00053.x,F,0.0,White
 10.1111/j.1460-2466.1985.tb02242.x+1.0,US,Education,Michelle,Hugh,male,10.1111/j.1460-2466.1985.tb02242.x,M,0.0,White
 10.1111/j.1468-2958.1985.tb00071.x+2.0,US,Education,Michelle,Elizabeth,female,10.1111/j.1468-2958.1985.tb00071.x,F,0.0,White
 10.1111/j.1460-2466.1985.tb02452.x+1.0,US,Education,Michelle,Paul,male,10.1111/j.1460-2466.1985.tb02452.x,M,0.0,White
@@ -3219,7 +3219,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1468-2958.1984.tb00023.x+4.0,US,Education,Michelle,Mark,male,10.1111/j.1468-2958.1984.tb00023.x,M,0.0,White
 10.1111/j.1460-2466.1984.tb02988.x+2.0,US,Education,Michelle,Eric,male,10.1111/j.1460-2466.1984.tb02988.x,F,0.0,White
 10.1111/j.1468-2958.1984.tb00025.x+3.0,US,Education,Michelle,Mark,male,10.1111/j.1468-2958.1984.tb00025.x,M,0.0,White
-10.1111/j.1460-2466.1984.tb02165.x+1.0,GE,Education,Michelle,Joseph,male,10.1111/j.1460-2466.1984.tb02165.x,M,0.0,White
+10.1111/j.1460-2466.1984.tb02165.x+1.0,US,Education,Michelle,Joseph,male,10.1111/j.1460-2466.1984.tb02165.x,M,0.0,White
 10.1111/j.1460-2466.1984.tb02164.x+2.0,IL,Education,Michelle,Tamar,female,10.1111/j.1460-2466.1984.tb02164.x,F,0,White
 10.1111/j.1468-2958.1984.tb00047.x+2.0,US,Education,Michelle,Brant,male,10.1111/j.1468-2958.1984.tb00047.x,M,0.0,White
 10.1111/j.1460-2466.1984.tb02170.x+2.0,US,Education,Jeff,Vincent,male,10.1111/j.1460-2466.1984.tb02170.x,M,0,White
@@ -3318,7 +3318,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1468-2958.1982.tb00660.x+1.0,US,Education,Haley,Alicia,female,10.1111/j.1468-2958.1982.tb00660.x,F,0.0,White
 10.1111/j.1468-2958.1982.tb00685.x+4.0,US,Education,Haley,Mark,male,10.1111/j.1468-2958.1982.tb00685.x,M,0.0,White
 10.1111/j.1460-2466.1982.tb02517.x+1.0,US,Education,Haley,W.,,10.1111/j.1460-2466.1982.tb02517.x,M,0.0,White
-10.1111/j.1460-2466.1982.tb00481.x+1.0,GE,Education,Michelle,John,male,10.1111/j.1460-2466.1982.tb00481.x,M,0.0,White
+10.1111/j.1460-2466.1982.tb00481.x+1.0,US,Education,Michelle,John,male,10.1111/j.1460-2466.1982.tb00481.x,M,0.0,White
 10.1111/j.1460-2466.1982.tb02508.x+4.0,US,Education,Michelle,Nathalie,female,10.1111/j.1460-2466.1982.tb02508.x,F,0,White
 10.1111/j.1468-2958.1982.tb00668.x+1.0,US,Education,Michelle,Linda,female,10.1111/j.1468-2958.1982.tb00668.x,F,0.0,White
 10.1111/j.1460-2466.1982.tb02515.x+2.0,GB,Education,Michelle,A.,,10.1111/j.1460-2466.1982.tb02515.x,M,0.0,White
@@ -3416,12 +3416,12 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1460-2466.1980.tb01964.x+1.0,US,Education,Haley,Christine,female,10.1111/j.1460-2466.1980.tb01964.x,F,0.0,White
 10.1111/j.1460-2466.1980.tb01782.x+1.0,US,Education,Haley,Michael,male,10.1111/j.1460-2466.1980.tb01782.x,M,0.0,White
 10.1111/j.1468-2958.1980.tb00147.x+1.0,US,Education,Haley,Alan,male,10.1111/j.1468-2958.1980.tb00147.x,M,0.0,White
-10.1111/j.1468-2958.1980.tb00130.x+3.0,GE,Education,Haley,John,male,10.1111/j.1468-2958.1980.tb00130.x,M,0.0,White
+10.1111/j.1468-2958.1980.tb00130.x+3.0,US,Education,Haley,John,male,10.1111/j.1468-2958.1980.tb00130.x,M,0.0,White
 10.1111/j.1460-2466.1980.tb02002.x+1.0,US,Education,Haley,David,male,10.1111/j.1460-2466.1980.tb02002.x,M,0.0,White
 10.1111/j.1460-2466.1980.tb02013.x+2.0,US,Education,Haley,Herbert,male,10.1111/j.1460-2466.1980.tb02013.x,M,0.0,White
 10.1111/j.1460-2466.1980.tb02026.x+1.0,US,Education,Haley,Thomas,male,10.1111/j.1460-2466.1980.tb02026.x,M,0.0,White
 10.1111/j.1468-2958.1980.tb00157.x+1.0,US,Education,Haley,James,male,10.1111/j.1468-2958.1980.tb00157.x,M,0.0,White
-10.1111/j.1460-2466.1980.tb02017.x+1.0,GE,Education,Haley,Leonard,male,10.1111/j.1460-2466.1980.tb02017.x,M,0.0,White
+10.1111/j.1460-2466.1980.tb02017.x+1.0,US,Education,Haley,Leonard,male,10.1111/j.1460-2466.1980.tb02017.x,M,0.0,White
 10.1111/j.1460-2466.1980.tb01780.x+1.0,US,Education,Michelle,John,male,10.1111/j.1460-2466.1980.tb01780.x,M,0.0,White
 10.1111/j.1460-2466.1980.tb01963.x+2.0,US,Education,Michelle,Peter,male,10.1111/j.1460-2466.1980.tb01963.x,M,0.0,White
 10.1111/j.1460-2466.1980.tb02013.x+1.0,US,Education,Michelle,Donald,male,10.1111/j.1460-2466.1980.tb02013.x,M,0,White
@@ -3679,7 +3679,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1460-2466.1976.tb01379.x+2.0,US,Education,Haley,Isaac,male,10.1111/j.1460-2466.1976.tb01379.x,M,0,White
 10.1111/j.1468-2958.1976.tb00482.x+1.0,US,Education,Haley,George,male,10.1111/j.1468-2958.1976.tb00482.x,M,0.0,White
 10.1111/j.1460-2466.1976.tb01949.x+2.0,US,Education,Haley,Robert,male,10.1111/j.1460-2466.1976.tb01949.x,M,0.0,White
-10.1111/j.1460-2466.1976.tb01360.x+2.0,GE,Education,Haley,Millard,male,10.1111/j.1460-2466.1976.tb01360.x,M,0,White
+10.1111/j.1460-2466.1976.tb01360.x+2.0,US,Education,Haley,Millard,male,10.1111/j.1460-2466.1976.tb01360.x,M,0,White
 10.1111/j.1468-2958.1976.tb00501.x+1.0,US,Education,Haley,John,male,10.1111/j.1468-2958.1976.tb00501.x,M,0.0,White
 10.1111/j.1460-2466.1976.tb01945.x+2.0,SE,Non Education,Haley,P.,,10.1111/j.1460-2466.1976.tb01945.x,M,0.0,White
 10.1111/j.1460-2466.1976.tb01918.x+1.0,GB,Education,Haley,Antony,male,10.1111/j.1460-2466.1976.tb01918.x,M,0.0,White
@@ -3693,7 +3693,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1468-2958.1976.tb00496.x+1.0,US,Education,Haley,Norman,male,10.1111/j.1468-2958.1976.tb00496.x,M,0.0,White
 10.1111/j.1460-2466.1976.tb01389.x+2.0,US,Education,Haley,Milton,male,10.1111/j.1460-2466.1976.tb01389.x,M,2.0,Asian
 10.1111/j.1468-2958.1976.tb00711.x+1.0,US,Education,Haley,Christopher,male,10.1111/j.1468-2958.1976.tb00711.x,M,0,White
-10.1111/j.1460-2466.1976.tb01360.x+1.0,GE,Education,Haley,Joseph,male,10.1111/j.1460-2466.1976.tb01360.x,M,0.0,White
+10.1111/j.1460-2466.1976.tb01360.x+1.0,US,Education,Haley,Joseph,male,10.1111/j.1460-2466.1976.tb01360.x,M,0.0,White
 10.1111/j.1468-2958.1976.tb00707.x+1.0,US,Education,Haley,George,male,10.1111/j.1468-2958.1976.tb00707.x,M,0,White
 10.1111/j.1460-2466.1976.tb01351.x+1.0,US,Education,Michelle,Don,male,10.1111/j.1460-2466.1976.tb01351.x,M,0.0,White
 10.1111/j.1468-2958.1976.tb00503.x+1.0,US,Education,Michelle,Lawrence,male,10.1111/j.1468-2958.1976.tb00503.x,M,0,White
@@ -3702,7 +3702,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1460-2466.1976.tb01931.x+1.0,US,Education,Michelle,Sherwood,male,10.1111/j.1460-2466.1976.tb01931.x,M,0.0,White
 10.1111/j.1460-2466.1976.tb01919.x+2.0,US,Education,Michelle,Holly,female,10.1111/j.1460-2466.1976.tb01919.x,F,0.0,White
 10.1111/j.1460-2466.1976.tb01395.x+1.0,PH,Education,Michelle,Thomas,male,10.1111/j.1460-2466.1976.tb01395.x,M,0.0,White
-10.1111/j.1460-2466.1976.tb01937.x+1.0,GE,Education,Michelle,Stuart,male,10.1111/j.1460-2466.1976.tb01937.x,M,0,White
+10.1111/j.1460-2466.1976.tb01937.x+1.0,US,Education,Michelle,Stuart,male,10.1111/j.1460-2466.1976.tb01937.x,M,0,White
 10.1111/j.1468-2958.1976.tb00505.x+1.0,US,Education,Michelle,James,male,10.1111/j.1468-2958.1976.tb00505.x,M,0.0,White
 10.1111/j.1468-2958.1976.tb00708.x+1.0,US,Education,Michelle,Ross,male,10.1111/j.1468-2958.1976.tb00708.x,M,0.0,White
 10.1111/j.1460-2466.1976.tb01953.x+1.0,US,Education,Michelle,Patricia,female,10.1111/j.1460-2466.1976.tb01953.x,F,0,White
@@ -3842,13 +3842,13 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1460-2466.1972.tb00155.x+3.0,US,Education,Haley,Stephen,male,10.1111/j.1460-2466.1972.tb00155.x,M,0.0,White
 10.1111/j.1460-2466.1972.tb00151.x+2.0,US,Education,Haley,Maxwell,male,10.1111/j.1460-2466.1972.tb00151.x,M,0.0,White
 10.1111/j.1460-2466.1972.tb00130.x+2.0,US,Education,Haley,Judith,female,10.1111/j.1460-2466.1972.tb00130.x,F,0,White
-10.1111/j.1460-2466.1972.tb00140.x+2.0,GE,Education,Haley,Abraham,male,10.1111/j.1460-2466.1972.tb00140.x,M,0.0,White
+10.1111/j.1460-2466.1972.tb00140.x+2.0,US,Education,Haley,Abraham,male,10.1111/j.1460-2466.1972.tb00140.x,M,0.0,White
 10.1111/j.1460-2466.1972.tb00143.x+2.0,US,Education,Haley,Douglas,male,10.1111/j.1460-2466.1972.tb00143.x,M,0,White
 10.1111/j.1460-2466.1972.tb00130.x+3.0,US,Education,Haley,Elizabeth,female,10.1111/j.1460-2466.1972.tb00130.x,F,0,White
-10.1111/j.1460-2466.1972.tb00140.x+1.0,GE,Education,Michelle,Sidney,male,10.1111/j.1460-2466.1972.tb00140.x,M,0.0,White
+10.1111/j.1460-2466.1972.tb00140.x+1.0,US,Education,Michelle,Sidney,male,10.1111/j.1460-2466.1972.tb00140.x,M,0.0,White
 10.1111/j.1460-2466.1972.tb00131.x+1.0,US,Education,Michelle,Lewis,male,10.1111/j.1460-2466.1972.tb00131.x,M,0.0,White
 10.1111/j.1460-2466.1972.tb00139.x+1.0,US,Education,Michelle,Catherine,female,10.1111/j.1460-2466.1972.tb00139.x,F,0,White
-10.1111/j.1460-2466.1972.tb00133.x+1.0,GE,Education,Michelle,Robert,male,10.1111/j.1460-2466.1972.tb00133.x,M,0.0,White
+10.1111/j.1460-2466.1972.tb00133.x+1.0,US,Education,Michelle,Robert,male,10.1111/j.1460-2466.1972.tb00133.x,M,0.0,White
 10.1111/j.1460-2466.1972.tb00133.x+2.0,US,Education,Michelle,George,male,10.1111/j.1460-2466.1972.tb00133.x,M,0.0,White
 10.1111/j.1460-2466.1972.tb00164.x+1.0,US,Education,Jeff,Phoebe,female,10.1111/j.1460-2466.1972.tb00164.x,F,0,White
 10.1111/j.1460-2466.1972.tb00149.x+1.0,US,Education,Jeff,Donald,male,10.1111/j.1460-2466.1972.tb00149.x,M,0,White
@@ -3936,7 +3936,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1460-2466.1963.tb02088.x+1.0,US,Education,Michelle,George,male,10.1111/j.1460-2466.1963.tb02088.x,M,0,White
 10.1111/j.1460-2466.1963.tb02112.x+2.0,US,Education,Jeff,J.,,10.1111/j.1460-2466.1963.tb02112.x,M,0,White
 10.1111/j.1460-2466.1963.tb02080.x+2.0,US,Education,Jeff,Kenneth,male,10.1111/j.1460-2466.1963.tb02080.x,M,0,White
-10.1111/j.1460-2466.1963.tb02113.x+2.0,GE,Education,Jeff,Albert,male,10.1111/j.1460-2466.1963.tb02113.x,M,0,White
+10.1111/j.1460-2466.1963.tb02113.x+2.0,US,Education,Jeff,Albert,male,10.1111/j.1460-2466.1963.tb02113.x,M,0,White
 10.1111/j.1460-2466.1962.tb01541.x+1.0,US,Education,Haley,Charles,male,10.1111/j.1460-2466.1962.tb01541.x,M,0.0,White
 10.1111/j.1460-2466.1962.tb01527.x+1.0,US,Education,Haley,Bertram,male,10.1111/j.1460-2466.1962.tb01527.x,M,0.0,White
 10.1111/j.1460-2466.1962.tb01523.x+1.0,US,Education,Michelle,Eldon,male,10.1111/j.1460-2466.1962.tb01523.x,M,0,White
@@ -5878,7 +5878,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1093/hcr/hqaa014+5.0,DE,Education,Matthew,Dorothée,,10.1093/hcr/hqaa014,F,0,White
 10.1093/hcr/hqab003+1.0,IL,Education,Matthew,Guy,male,10.1093/hcr/hqab003,M,0,White
 10.1093/ct/qtz042+2.0,CN,Education,Matthew,Yaqiong,female,10.1093/ct/qtz042,F,2,Asian
-10.1093/joc/jqab002+2.0,GE,Education,Matthew,Glenna,female,10.1093/joc/jqab002,F,0,White
+10.1093/joc/jqab002+2.0,US,Education,Matthew,Glenna,female,10.1093/joc/jqab002,F,0,White
 10.1093/ct/qtaa032+2.0,US,Education,Matthew,Melanie,female,10.1093/ct/qtaa032,F,0,White
 10.1093/ct/qtz025+2.0,US,Education,Matthew,Steven,male,10.1093/ct/qtz025,M,0,White
 10.1093/ccc/tcab061+1.0,US,Education,Matthew,María,female,10.1093/ccc/tcab061,F,3,Hispanic
@@ -6025,7 +6025,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1093/joc/jqz015+1.0,US,Education,Jongmin,Matthew,male,10.1093/joc/jqz015,M,0,White
 10.1093/hcr/hqz004+1.0,AT,Education,Jongmin,Brigitte,female,10.1093/hcr/hqz004,F,0,White
 10.1093/joc/jqz033+6.0,US,Education,Jongmin,Sherry,female,10.1093/joc/jqz033,F,0,White
-10.1093/joc/jqz033+1.0,GE,Education,Jongmin,Jiaying,female,10.1093/joc/jqz033,F,2,Asian
+10.1093/joc/jqz033+1.0,US,Education,Jongmin,Jiaying,female,10.1093/joc/jqz033,F,2,Asian
 10.1093/joc/jqz003+2.0,NL,Education,Jongmin,Jessica,female,10.1093/joc/jqz003,F,0,White
 10.1093/ccc/tcz021+1.0,US,Education,Jongmin,Nickie,female,10.1093/ccc/tcz021,F,0,White
 10.1093/joc/jqz001+1.0,US,Education,Jongmin,Muniba,female,10.1093/joc/jqz001,F,4,Middle Eastern
@@ -6077,7 +6077,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1093/hcr/hqy018+1.0,US,Education,Matthew,Andrew,male,10.1093/hcr/hqy018,M,0,White
 10.1093/jcmc/zmz013+1.0,CN,Education,Matthew,Dong,male,10.1093/jcmc/zmz013,M,2,Asian
 10.1093/ct/qty025+1.0,GB,Education,Matthew,Christian,male,10.1093/ct/qty025,M,0,White
-10.1093/joc/jqz036+1.0,GE,Education,Matthew,David,male,10.1093/joc/jqz036,M,0,White
+10.1093/joc/jqz036+1.0,US,Education,Matthew,David,male,10.1093/joc/jqz036,M,0,White
 10.1093/ccc/tcz031+1.0,US,Education,Matthew,Richard,male,10.1093/ccc/tcz031,M,0,White
 10.1093/joc/jqz002+1.0,AT,Education,Matthew,Homero,male,10.1093/joc/jqz002,M,3,Hispanic
 10.1093/hcr/hqz003+1.0,US,Education,Matthew,Brian,male,10.1093/hcr/hqz003,M,0,White
@@ -6453,7 +6453,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/hcre.12091+1.0,US,Education,Matthew,Denise,female,10.1111/hcre.12091,F,0,White
 10.1111/hcre.12087+5.0,US,Education,Matthew,Eric,male,10.1111/hcre.12087,M,2,Asian
 10.1111/cccr.12128+1.0,US,Education,Matthew,Jolene,female,10.1111/cccr.12128,F,0,White
-10.1111/jcc4.12173+1.0,GE,Education,Matthew,Sun,male,10.1111/jcc4.12173,F,2,Asian
+10.1111/jcc4.12173+1.0,US,Education,Matthew,Sun,male,10.1111/jcc4.12173,F,2,Asian
 10.1111/cccr.12118+2.0,US,Education,Matthew,Andrew,male,10.1111/cccr.12118,M,0,White
 10.1111/comt.12096+3.0,NL,Education,Matthew,Gerard,male,10.1111/comt.12096,M,0,White
 10.1111/hcre.12090+3.0,US,Education,Matthew,Nick,male,10.1111/hcre.12090,M,3,Hispanic
@@ -6788,7 +6788,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/jcc4.12077+7.0,US,Education,Matthew,Jay,male,10.1111/jcc4.12077,M,0,White
 10.1111/jcom.12083+1.0,US,Education,Matthew,Sherry,female,10.1111/jcom.12083,F,0,White
 10.1111/jcc4.12057+3.0,US,Education,Matthew,Joseph,male,10.1111/jcc4.12057,M,0,White
-10.1111/hcre.12036+1.0,GE,Education,Matthew,Analisa,female,10.1111/hcre.12036,F,3,Hispanic
+10.1111/hcre.12036+1.0,US,Education,Matthew,Analisa,female,10.1111/hcre.12036,F,3,Hispanic
 10.1111/jcc4.12077+4.0,US,Education,Matthew,Matthew,male,10.1111/jcc4.12077,M,0,White
 10.1111/jcc4.12067+1.0,GB,Education,Matthew,Graham,male,10.1111/jcc4.12067,M,0,White
 10.1111/hcre.12015+1.0,NL,Education,Matthew,Anneke,female,10.1111/hcre.12015,F,0,White
@@ -6837,7 +6837,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/jcom.12022+3.0,US,Education,Jongmin,Ashley,female,10.1111/jcom.12022,F,0,White
 10.1111/jcom.12001+5.0,US,Education,Jongmin,Wallace,male,10.1111/jcom.12001,M,0,White
 10.1111/jcom.12020+1.0,US,Education,Jongmin,Catherine,female,10.1111/jcom.12020,F,0,White
-10.1111/jcc4.12001+2.0,GE,Education,Jongmin,Stephen,male,10.1111/jcc4.12001,M,0,White
+10.1111/jcc4.12001+2.0,US,Education,Jongmin,Stephen,male,10.1111/jcc4.12001,M,0,White
 10.1111/jcom.12055+2.0,US,Education,Jongmin,Benjamin,male,10.1111/jcom.12055,M,0,White
 10.1111/jcom.12055+3.0,US,Education,Jongmin,Axel,male,10.1111/jcom.12055,M,0,White
 10.1111/comt.12005+1.0,AU,Education,Jongmin,Kristy,female,10.1111/comt.12005,F,0,White
@@ -6871,7 +6871,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/jcom.12000+2.0,US,Education,Jongmin,Rupali,female,10.1111/jcom.12000,F,2,Asian
 10.1111/jcom.12001+7.0,US,Education,Jaemin,Tom,male,10.1111/jcom.12001,M,0,White
 10.1111/j.1468-2958.2012.01438.x+4.0,US,Education,Jaemin,Josh,male,10.1111/j.1468-2958.2012.01438.x,M,0,White
-10.1111/jcc4.12001+1.0,GE,Education,Jaemin,Itai,male,10.1111/jcc4.12001,M,0,White
+10.1111/jcc4.12001+1.0,US,Education,Jaemin,Itai,male,10.1111/jcc4.12001,M,0,White
 10.1111/jcom.12027+2.0,IL,Education,Jaemin,Tamir,male,10.1111/jcom.12027,M,0,White
 10.1111/jcom.12023+3.0,NL,Education,Jaemin,Claes,male,10.1111/jcom.12023,M,0,White
 10.1111/cccr.12026+1.0,US,Education,Jaemin,Laura,female,10.1111/cccr.12026,F,0,White
@@ -6935,7 +6935,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/jcc4.12030+4.0,LB,Education,Matthew,Bijan,male,10.1111/jcc4.12030,M,2,Asian
 10.1111/jcom.12037+1.0,DK,Education,Matthew,Gert,male,10.1111/jcom.12037,M,0,White
 10.1111/jcom.12058+3.0,US,Education,Matthew,James,male,10.1111/jcom.12058,M,0,White
-10.1111/jcom.12054+1.0,GE,Education,Matthew,Joe,male,10.1111/jcom.12054,M,2,Asian
+10.1111/jcom.12054+1.0,US,Education,Matthew,Joe,male,10.1111/jcom.12054,M,2,Asian
 10.1111/jcom.12026+3.0,US,Education,Matthew,Janet,female,10.1111/jcom.12026,F,0,White
 10.1111/jcc4.12029+1.0,PH,Education,Matthew,Paul,male,10.1111/jcc4.12029,M,0,White
 10.1111/jcom.12010+4.0,US,Education,Matthew,Kate,female,10.1111/jcom.12010,F,0,White
@@ -6945,7 +6945,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/jcom.12052+4.0,US,Education,Matthew,Nicole,female,10.1111/jcom.12052,F,0,White
 10.1111/jcom.12037+3.0,DK,Education,Matthew,Theis,male,10.1111/jcom.12037,M,0,White
 10.1111/j.1468-2958.2012.01443.x+1.0,US,Education,Matthew,Stephen,male,10.1111/j.1468-2958.2012.01443.x,M,0,White
-10.1111/hcre.12005+1.0,GE,Education,Matthew,Jiyeon,female,10.1111/hcre.12005,F,2,Asian
+10.1111/hcre.12005+1.0,US,Education,Matthew,Jiyeon,female,10.1111/hcre.12005,F,2,Asian
 10.1111/jcc4.12008+2.0,US,Education,Matthew,Marcia,female,10.1111/jcc4.12008,F,0,White
 10.1111/cccr.12008+2.0,FI,Education,Matthew,Minttu,female,10.1111/cccr.12008,F,0,White
 10.1111/cccr.12034+1.0,US,Education,Matthew,Bill,male,10.1111/cccr.12034,M,0,White
@@ -7186,7 +7186,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1468-2958.2010.01398.x+1.0,JP,Education,Jaemin,Masaki,male,10.1111/j.1468-2958.2010.01398.x,M,2,Asian
 10.1111/j.1460-2466.2011.01562.x+2.0,US,Education,Matthew,Toby,male,10.1111/j.1460-2466.2011.01562.x,M,0,White
 10.1111/j.1460-2466.2011.01541.x+3.0,US,Education,Matthew,Qian,female,10.1111/j.1460-2466.2011.01541.x,F,2,Asian
-10.1111/j.1460-2466.2011.01555.x+3.0,GE,Education,Matthew,Jeong,male,10.1111/j.1460-2466.2011.01555.x,M,2,Asian
+10.1111/j.1460-2466.2011.01555.x+3.0,US,Education,Matthew,Jeong,male,10.1111/j.1460-2466.2011.01555.x,M,2,Asian
 10.1111/j.1083-6101.2011.01542.x+3.0,US,Education,Matthew,Gary,male,10.1111/j.1083-6101.2011.01542.x,M,0,White
 10.1111/j.1460-2466.2011.01564.x+5.0,US,Education,Matthew,Lindsay,female,10.1111/j.1460-2466.2011.01564.x,F,0,White
 10.1111/j.1468-2958.2011.01415.x+1.0,US,Education,Matthew,Jakob,male,10.1111/j.1468-2958.2011.01415.x,M,0,White
@@ -7245,7 +7245,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1753-9137.2010.01067.x+1.0,NO,Education,Jongmin,Hallvard,male,10.1111/j.1753-9137.2010.01067.x,M,0,White
 10.1111/j.1460-2466.2010.01486.x+2.0,US,Education,Jongmin,William,male,10.1111/j.1460-2466.2010.01486.x,M,0,White
 10.1111/j.1753-9137.2009.01057.x+1.0,US,Education,Jongmin,Timothy,male,10.1111/j.1753-9137.2009.01057.x,M,0,White
-10.1111/j.1083-6101.2010.01508.x+1.0,GE,Education,Jongmin,Jeong,male,10.1111/j.1083-6101.2010.01508.x,M,2,Asian
+10.1111/j.1083-6101.2010.01508.x+1.0,US,Education,Jongmin,Jeong,male,10.1111/j.1083-6101.2010.01508.x,M,2,Asian
 10.1111/j.1460-2466.2009.01455.x+1.0,SG,Education,Jongmin,Wayne,male,10.1111/j.1460-2466.2009.01455.x,M,2,Asian
 10.1111/j.1083-6101.2009.01511.x+2.0,US,Education,Jongmin,Cynthia,female,10.1111/j.1083-6101.2009.01511.x,F,0,White
 10.1111/j.1460-2466.2010.01482.x+2.0,US,Education,Jongmin,Spiro,male,10.1111/j.1460-2466.2010.01482.x,M,0,White
@@ -7279,7 +7279,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1083-6101.2010.01507.x+4.0,CA,Education,Jaemin,Vera,female,10.1111/j.1083-6101.2010.01507.x,F,2,Asian
 10.1111/j.1753-9137.2009.01058.x+1.0,EG,Education,Jaemin,Amani,female,10.1111/j.1753-9137.2009.01058.x,F,4,Middle Eastern
 10.1111/j.1083-6101.2010.01523.x+3.0,GB,Education,Jaemin,Stephanie,female,10.1111/j.1083-6101.2010.01523.x,F,0,White
-10.1111/j.1083-6101.2010.01516.x+4.0,GE,Education,Jaemin,Jeong,male,10.1111/j.1083-6101.2010.01516.x,M,2,Asian
+10.1111/j.1083-6101.2010.01516.x+4.0,US,Education,Jaemin,Jeong,male,10.1111/j.1083-6101.2010.01516.x,M,2,Asian
 10.1111/j.1460-2466.2010.01523.x+3.0,US,Education,Jaemin,Jessica,female,10.1111/j.1460-2466.2010.01523.x,F,0,White
 10.1111/j.1753-9137.2010.01065.x+1.0,US,Education,Jaemin,Victor,male,10.1111/j.1753-9137.2010.01065.x,M,0,White
 10.1111/j.1468-2958.2010.01378.x+1.0,US,Education,Jaemin,Joseph,male,10.1111/j.1468-2958.2010.01378.x,M,0,White
@@ -7577,7 +7577,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1468-2958.2007.00297.x+1.0,US,Education,Jaemin,Claude,male,10.1111/j.1468-2958.2007.00297.x,M,0,White
 10.1111/j.1460-2466.2007.00344.x+2.0,US,Education,Jaemin,Charles,male,10.1111/j.1460-2466.2007.00344.x,M,0,White
 10.1111/j.1468-2958.2007.00295.x+2.0,US,Education,Jaemin,Clifford,male,10.1111/j.1468-2958.2007.00295.x,M,0,White
-10.1111/j.1468-2958.2007.00287.x+2.0,GE,Education,Jaemin,Jennifer,female,10.1111/j.1468-2958.2007.00287.x,F,0,White
+10.1111/j.1468-2958.2007.00287.x+2.0,US,Education,Jaemin,Jennifer,female,10.1111/j.1468-2958.2007.00287.x,F,0,White
 10.1111/j.1083-6101.2007.00360.x+2.0,JP,Education,Jaemin,Takanori,male,10.1111/j.1083-6101.2007.00360.x,M,2,Asian
 10.1111/j.1460-2466.2006.00331.x+1.0,PH,Education,Jaemin,Dennis,male,10.1111/j.1460-2466.2006.00331.x,M,2,Asian
 10.1111/j.1468-2958.2007.00300.x+1.0,US,Education,Jaemin,Donald,male,10.1111/j.1468-2958.2007.00300.x,M,0,White
@@ -7594,7 +7594,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1083-6101.2007.00363.x+1.0,EG,Education,Matthew,Rasha,female,10.1111/j.1083-6101.2007.00363.x,F,2,Asian
 10.1111/j.1083-6101.2007.00352.x+2.0,CA,Education,Matthew,Barry,male,10.1111/j.1083-6101.2007.00352.x,M,0,White
 10.1111/j.1083-6101.2007.00373.x+1.0,GB,Education,Matthew,Elad,male,10.1111/j.1083-6101.2007.00373.x,M,4,Middle Eastern
-10.1111/j.1468-2958.2007.00308.x+2.0,GE,Education,Matthew,Lijiang,male,10.1111/j.1468-2958.2007.00308.x,M,2,Asian
+10.1111/j.1468-2958.2007.00308.x+2.0,US,Education,Matthew,Lijiang,male,10.1111/j.1468-2958.2007.00308.x,M,2,Asian
 10.1111/j.0021-9916.2007.00330.x+1.0,CN,Education,Matthew,Yuqiong,female,10.1111/j.0021-9916.2007.00330.x,F,2,Asian
 10.1111/j.1468-2958.2007.00306.x+2.0,US,Education,Matthew,Scott,male,10.1111/j.1468-2958.2007.00306.x,M,0,White
 10.1111/j.1083-6101.2007.00365.x+1.0,GB,Education,Matthew,Stephen,male,10.1111/j.1083-6101.2007.00365.x,M,0,White
@@ -7720,7 +7720,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1468-2958.2005.tb00879.x+1.0,US,Education,Jongmin,Lisa,female,10.1111/j.1468-2958.2005.tb00879.x,F,0,White
 10.1111/j.1468-2885.2005.tb00339.x+1.0,US,Education,Jongmin,Heather,female,10.1111/j.1468-2885.2005.tb00339.x,F,0,White
 10.1111/j.1468-2958.2005.tb00870.x+6.0,US,Education,Jongmin,Matthew,male,10.1111/j.1468-2958.2005.tb00870.x,M,0,White
-10.1111/j.1468-2958.2005.tb00878.x+5.0,GE,Education,Jongmin,Tina,female,10.1111/j.1468-2958.2005.tb00878.x,F,0,White
+10.1111/j.1468-2958.2005.tb00878.x+5.0,US,Education,Jongmin,Tina,female,10.1111/j.1468-2958.2005.tb00878.x,F,0,White
 10.1111/j.1083-6101.2005.tb00261.x+1.0,US,Education,Jongmin,Wilson,male,10.1111/j.1083-6101.2005.tb00261.x,M,0,White
 10.1111/j.1083-6101.2005.tb00273.x+9.0,US,Education,Jongmin,Loren,male,10.1111/j.1083-6101.2005.tb00273.x,M,0,White
 10.1111/j.1468-2885.2005.tb00323.x+1.0,US,Education,Jongmin,Serena,female,10.1111/j.1468-2885.2005.tb00323.x,F,0,White
@@ -7765,7 +7765,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1468-2958.2005.tb00883.x+1.0,US,Education,Jaemin,Tamara,female,10.1111/j.1468-2958.2005.tb00883.x,F,0,White
 10.1111/j.1468-2885.2005.tb00332.x+1.0,US,Education,Jaemin,Vamsee,male,10.1111/j.1468-2885.2005.tb00332.x,M,2,Asian
 10.1111/j.1083-6101.2005.tb00258.x+3.0,US,Education,Jaemin,Carrie,female,10.1111/j.1083-6101.2005.tb00258.x,F,0,White
-10.1111/j.1468-2958.2005.tb00878.x+4.0,GE,Education,Jaemin,Celeste,female,10.1111/j.1468-2958.2005.tb00878.x,F,0,White
+10.1111/j.1468-2958.2005.tb00878.x+4.0,US,Education,Jaemin,Celeste,female,10.1111/j.1468-2958.2005.tb00878.x,F,0,White
 10.1111/j.1468-2958.2005.tb00866.x+2.0,US,Education,Jaemin,Ascan,male,10.1111/j.1468-2958.2005.tb00866.x,M,0,White
 10.1111/j.1083-6101.2005.tb00244.x+2.0,US,Education,Jaemin,Hala,female,10.1111/j.1083-6101.2005.tb00244.x,F,3,Hispanic
 10.1111/j.1083-6101.2005.tb00240.x+1.0,US,Education,Jaemin,Courtenay,male,10.1111/j.1083-6101.2005.tb00240.x,M,0,White
@@ -7789,7 +7789,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1468-2958.2005.tb00873.x+1.0,US,Education,Matthew,Zachary,male,10.1111/j.1468-2958.2005.tb00873.x,M,0,White
 10.1111/j.1083-6101.2005.tb00271.x+4.0,GB,Education,Matthew,Kathrin,female,10.1111/j.1083-6101.2005.tb00271.x,F,0,White
 10.1111/j.1083-6101.2005.tb00273.x+3.0,US,Education,Matthew,Pamela,female,10.1111/j.1083-6101.2005.tb00273.x,F,0,White
-10.1111/j.1460-2466.2005.tb02681.x+1.0,GE,Education,Matthew,Bonnie,female,10.1111/j.1460-2466.2005.tb02681.x,F,0,White
+10.1111/j.1460-2466.2005.tb02681.x+1.0,US,Education,Matthew,Bonnie,female,10.1111/j.1460-2466.2005.tb02681.x,F,0,White
 10.1111/j.1460-2466.2005.tb02684.x+1.0,US,Education,Matthew,Mark,male,10.1111/j.1460-2466.2005.tb02684.x,M,0,White
 10.1111/j.1460-2466.2005.tb02658.x+3.0,SG,Education,Matthew,Hong,male,10.1111/j.1460-2466.2005.tb02658.x,M,0,White
 10.1111/j.1083-6101.2005.tb00253.x+2.0,US,Education,Matthew,Michael,male,10.1111/j.1083-6101.2005.tb00253.x,M,3,Hispanic
@@ -7882,7 +7882,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1468-2958.2004.tb00735.x+4.0,US,Education,Matthew,Elaine,female,10.1111/j.1468-2958.2004.tb00735.x,F,0,White
 10.1111/j.1468-2958.2004.tb00729.x+1.0,US,Education,Matthew,Tom,male,10.1111/j.1468-2958.2004.tb00729.x,M,0,White
 10.1111/j.1083-6101.2004.tb00294.x+1.0,US,Education,Matthew,Charles,male,10.1111/j.1083-6101.2004.tb00294.x,M,0,White
-10.1111/j.1460-2466.2004.tb02616.x+5.0,GE,Education,Matthew,Tina,female,10.1111/j.1460-2466.2004.tb02616.x,F,1,Black
+10.1111/j.1460-2466.2004.tb02616.x+5.0,US,Education,Matthew,Tina,female,10.1111/j.1460-2466.2004.tb02616.x,F,1,Black
 10.1111/j.1468-2958.2004.tb00735.x+2.0,US,Education,Matthew,Joshua,male,10.1111/j.1468-2958.2004.tb00735.x,M,0,White
 10.1111/j.1083-6101.2004.tb00227.x+3.0,US,Education,Matthew,Cheryl,female,10.1111/j.1083-6101.2004.tb00227.x,F,0,White
 10.1111/j.1468-2958.2004.tb00738.x+1.0,US,Education,Matthew,Klaus,male,10.1111/j.1468-2958.2004.tb00738.x,M,0,White
@@ -7988,7 +7988,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1460-2466.2003.tb02600.x+6.0,US,Education,Matthew,Kristin,female,10.1111/j.1460-2466.2003.tb02600.x,F,0,White
 10.1111/j.1468-2885.2003.tb00284.x+1.0,US,Education,Matthew,Kristine,female,10.1111/j.1468-2885.2003.tb00284.x,F,0,White
 10.1111/j.1460-2466.2002.tb02562.x+1.0,CA,Education,Jongmin,Janet,female,10.1111/j.1460-2466.2002.tb02562.x,F,0,White
-10.1111/j.1460-2466.2002.tb02575.x+3.0,GE,Education,Jongmin,Donald,male,10.1111/j.1460-2466.2002.tb02575.x,M,0,White
+10.1111/j.1460-2466.2002.tb02575.x+3.0,US,Education,Jongmin,Donald,male,10.1111/j.1460-2466.2002.tb02575.x,M,0,White
 10.1111/j.1460-2466.2002.tb02585.x+1.0,US,Education,Jongmin,Brian,male,10.1111/j.1460-2466.2002.tb02585.x,M,0,White
 10.1111/j.1460-2466.2002.tb02553.x+1.0,US,Education,Jongmin,Matt,male,10.1111/j.1460-2466.2002.tb02553.x,M,0,White
 10.1111/j.1460-2466.2002.tb02538.x+2.0,US,Education,Jongmin,Cindy,female,10.1111/j.1460-2466.2002.tb02538.x,F,0,White
@@ -8044,7 +8044,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1460-2466.2002.tb02547.x+2.0,US,Education,Matthew,Mitchell,male,10.1111/j.1460-2466.2002.tb02547.x,M,0,White
 10.1111/j.1468-2885.2002.tb00259.x+1.0,US,Education,Matthew,Pamela,female,10.1111/j.1468-2885.2002.tb00259.x,F,0,White
 10.1111/j.1460-2466.2002.tb02549.x+1.0,DE,Education,Matthew,Silvia,female,10.1111/j.1460-2466.2002.tb02549.x,M,0,White
-10.1111/j.1460-2466.2002.tb02536.x+1.0,GE,Education,Matthew,Carolina,female,10.1111/j.1460-2466.2002.tb02536.x,F,3,Hispanic
+10.1111/j.1460-2466.2002.tb02536.x+1.0,US,Education,Matthew,Carolina,female,10.1111/j.1460-2466.2002.tb02536.x,F,3,Hispanic
 10.1111/j.1460-2466.2002.tb02577.x+1.0,US,Education,Matthew,Michael,male,10.1111/j.1460-2466.2002.tb02577.x,M,0,White
 10.1111/j.1460-2466.2002.tb02533.x+1.0,US,Education,Matthew,Stacy,female,10.1111/j.1460-2466.2002.tb02533.x,F,0,White
 10.1111/j.1460-2466.2002.tb02548.x+2.0,US,Education,Matthew,Joseph,male,10.1111/j.1460-2466.2002.tb02548.x,M,0,White
@@ -8058,7 +8058,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1468-2958.2002.tb00802.x+2.0,US,Education,Matthew,Timothy,male,10.1111/j.1468-2958.2002.tb00802.x,M,0,White
 10.1111/j.1468-2958.2002.tb00800.x+2.0,US,Education,Matthew,Julia,female,10.1111/j.1468-2958.2002.tb00800.x,F,0,White
 10.1111/j.1460-2466.2002.tb02534.x+1.0,US,Education,Matthew,Stacy,female,10.1111/j.1460-2466.2002.tb02534.x,F,0,White
-10.1111/j.1460-2466.2002.tb02536.x+2.0,GE,Education,Matthew,Peggy,female,10.1111/j.1460-2466.2002.tb02536.x,F,0,White
+10.1111/j.1460-2466.2002.tb02536.x+2.0,US,Education,Matthew,Peggy,female,10.1111/j.1460-2466.2002.tb02536.x,F,0,White
 10.1111/j.1083-6101.2002.tb00143.x+2.0,SG,Education,Matthew,Eddie,male,10.1111/j.1083-6101.2002.tb00143.x,M,2,Asian
 10.1111/j.1083-6101.2002.tb00145.x+2.0,TW,Education,Matthew,Wan-Wen,,10.1111/j.1083-6101.2002.tb00145.x,M,2,Asian
 10.1111/j.1468-2958.2002.tb00804.x+4.0,US,Education,Matthew,Michael,male,10.1111/j.1468-2958.2002.tb00804.x,M,0,White
@@ -8251,7 +8251,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1083-6101.1998.tb00089.x+1.0,NL,Education,Jongmin,Herre,male,10.1111/j.1083-6101.1998.tb00089.x,F,0,White
 10.1111/j.1468-2958.1998.tb00429.x+4.0,US,Education,Jongmin,Peter,male,10.1111/j.1468-2958.1998.tb00429.x,M,0,White
 10.1111/j.1083-6101.1998.tb00081.x+1.0,US,Education,Jongmin,Batia,female,10.1111/j.1083-6101.1998.tb00081.x,F,0,White
-10.1111/j.1468-2958.1998.tb00422.x+2.0,GE,Education,Jongmin,Jennifer,female,10.1111/j.1468-2958.1998.tb00422.x,M,0,White
+10.1111/j.1468-2958.1998.tb00422.x+2.0,US,Education,Jongmin,Jennifer,female,10.1111/j.1468-2958.1998.tb00422.x,M,0,White
 10.1111/j.1460-2466.1998.tb02757.x+3.0,AU,Education,Jongmin,Elizabeth,female,10.1111/j.1460-2466.1998.tb02757.x,M,0,White
 10.1111/j.1468-2958.1998.tb00444.x+2.0,US,Education,Jongmin,Sarah,female,10.1111/j.1468-2958.1998.tb00444.x,M,0,White
 10.1111/j.1083-6101.1998.tb00093.x+3.0,US,Education,Jongmin,Matt,male,10.1111/j.1083-6101.1998.tb00093.x,M,0,White
@@ -8265,7 +8265,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1460-2466.1998.tb02769.x+2.0,US,Education,Jaemin,Melissa,female,10.1111/j.1460-2466.1998.tb02769.x,F,0,White
 10.1111/j.1468-2885.1998.tb00210.x+2.0,US,Education,Jaemin,Edward,male,10.1111/j.1468-2885.1998.tb00210.x,M,0,White
 10.1111/j.1468-2885.1998.tb00227.x+2.0,US,Education,Jaemin,Susan,female,10.1111/j.1468-2885.1998.tb00227.x,F,0,White
-10.1111/j.1468-2958.1998.tb00428.x+1.0,GE,Education,Jaemin,Jennifer,female,10.1111/j.1468-2958.1998.tb00428.x,F,0,White
+10.1111/j.1468-2958.1998.tb00428.x+1.0,US,Education,Jaemin,Jennifer,female,10.1111/j.1468-2958.1998.tb00428.x,F,0,White
 10.1111/j.1083-6101.1998.tb00081.x+2.0,US,Education,Jaemin,Sumita,female,10.1111/j.1083-6101.1998.tb00081.x,F,2,Asian
 10.1111/j.1460-2466.1998.tb02745.x+1.0,US,Education,Jaemin,Vincent,male,10.1111/j.1460-2466.1998.tb02745.x,M,0,White
 10.1111/j.1460-2466.1998.tb02748.x+1.0,AU,Education,Jaemin,Duane,male,10.1111/j.1460-2466.1998.tb02748.x,M,0,White
@@ -8276,7 +8276,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1468-2958.1998.tb00431.x+2.0,US,Education,Jaemin,Valerie,female,10.1111/j.1468-2958.1998.tb00431.x,F,0,White
 10.1111/j.1468-2885.1998.tb00213.x+1.0,US,Education,Jaemin,Meenakshi,female,10.1111/j.1468-2885.1998.tb00213.x,F,2,Asian
 10.1111/j.1460-2466.1998.tb02771.x+1.0,US,Education,Jaemin,Hong-Won,male,10.1111/j.1460-2466.1998.tb02771.x,M,2,Asian
-10.1111/j.1468-2958.1998.tb00422.x+1.0,GE,Education,Jaemin,Roxanne,female,10.1111/j.1468-2958.1998.tb00422.x,F,0,White
+10.1111/j.1468-2958.1998.tb00422.x+1.0,US,Education,Jaemin,Roxanne,female,10.1111/j.1468-2958.1998.tb00422.x,F,0,White
 10.1111/j.1468-2958.1998.tb00429.x+3.0,US,Non Education,Jaemin,David,male,10.1111/j.1468-2958.1998.tb00429.x,M,0,White
 10.1111/j.1468-2958.1998.tb00424.x+1.0,US,Non Education,Jaemin,David,male,10.1111/j.1468-2958.1998.tb00424.x,M,0,White
 10.1111/j.1083-6101.1998.tb00092.x+3.0,UK,Education,Jaemin,Raymond,male,10.1111/j.1083-6101.1998.tb00092.x,M,2,Asian
@@ -8291,7 +8291,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1468-2885.1998.tb00223.x+3.0,US,Education,Matthew,George,male,10.1111/j.1468-2885.1998.tb00223.x,M,0,White
 10.1111/j.1468-2885.1998.tb00221.x+2.0,US,Education,Matthew,Fernando,male,10.1111/j.1468-2885.1998.tb00221.x,M,3,Hispanic
 10.1111/j.1083-6101.1998.tb00082.x+1.0,US,Education,Matthew,Martha,female,10.1111/j.1083-6101.1998.tb00082.x,F,0,White
-10.1111/j.1468-2958.1998.tb00422.x+3.0,GE,Education,Matthew,Stuart,male,10.1111/j.1468-2958.1998.tb00422.x,M,0,White
+10.1111/j.1468-2958.1998.tb00422.x+3.0,US,Education,Matthew,Stuart,male,10.1111/j.1468-2958.1998.tb00422.x,M,0,White
 10.1111/j.1083-6101.1998.tb00086.x+5.0,US,Education,Matthew,Jillian,female,10.1111/j.1083-6101.1998.tb00086.x,F,0,White
 10.1111/j.1468-2958.1998.tb00429.x+1.0,US,Education,Matthew,Peter,male,10.1111/j.1468-2958.1998.tb00429.x,M,0,White
 10.1111/j.1468-2958.1998.tb00439.x+4.0,US,Education,Matthew,Clark,male,10.1111/j.1468-2958.1998.tb00439.x,M,0,White
@@ -8506,7 +8506,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1468-2958.1994.tb00328.x+5.0,US,Education,Matthew,Stagey,female,10.1111/j.1468-2958.1994.tb00328.x,F,0,White
 10.1111/j.1468-2958.1994.tb00327.x+1.0,US,Education,Matthew,Sally,female,10.1111/j.1468-2958.1994.tb00327.x,F,0,White
 10.1111/j.1460-2466.1994.tb00676.x+1.0,US,Education,Matthew,Marian,male,10.1111/j.1460-2466.1994.tb00676.x,F,0,White
-10.1111/j.1460-2466.1994.tb00700.x+1.0,GE,Education,Matthew,Patricia,female,10.1111/j.1460-2466.1994.tb00700.x,F,0,White
+10.1111/j.1460-2466.1994.tb00700.x+1.0,US,Education,Matthew,Patricia,female,10.1111/j.1460-2466.1994.tb00700.x,F,0,White
 10.1111/j.1468-2958.1994.tb00327.x+2.0,US,Education,Matthew,Dale,male,10.1111/j.1468-2958.1994.tb00327.x,M,0,White
 10.1111/j.1460-2466.1994.tb00690.x+1.0,US,Education,Matthew,David,male,10.1111/j.1460-2466.1994.tb00690.x,M,0,White
 10.1111/j.1468-2958.1994.tb00328.x+3.0,US,Education,Matthew,Lewis,male,10.1111/j.1468-2958.1994.tb00328.x,M,0,White
@@ -8880,7 +8880,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1468-2958.1984.tb00024.x+2.0,US,Education,Matthew,John,male,10.1111/j.1468-2958.1984.tb00024.x,M,0,White
 10.1111/j.1460-2466.1984.tb02175.x+1.0,US,Education,Matthew,Terrance,male,10.1111/j.1460-2466.1984.tb02175.x,F,0,White
 10.1111/j.1460-2466.1984.tb02986.x+1.0,US,Education,Matthew,Walter,male,10.1111/j.1460-2466.1984.tb02986.x,M,0,White
-10.1111/j.1460-2466.1984.tb02167.x+2.0,GE,Education,Matthew,John,male,10.1111/j.1460-2466.1984.tb02167.x,M,0,White
+10.1111/j.1460-2466.1984.tb02167.x+2.0,US,Education,Matthew,John,male,10.1111/j.1460-2466.1984.tb02167.x,M,0,White
 10.1111/j.1468-2958.1984.tb00049.x+2.0,US,Education,Matthew,Stephen,male,10.1111/j.1468-2958.1984.tb00049.x,M,0,White
 10.1111/j.1468-2958.1984.tb00049.x+3.0,US,Education,Matthew,Kay,male,10.1111/j.1468-2958.1984.tb00049.x,M,0,White
 10.1111/j.1460-2466.1984.tb02993.x+1.0,NO,Non Education,Matthew,Tapio,male,10.1111/j.1460-2466.1984.tb02993.x,M,0,White
@@ -9083,7 +9083,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1468-2958.1980.tb00155.x+1.0,PH,Education,Jaemin,Michael,male,10.1111/j.1468-2958.1980.tb00155.x,M,0,White
 10.1111/j.1468-2958.1980.tb00155.x+2.0,US,Education,Jaemin,Bradley,male,10.1111/j.1468-2958.1980.tb00155.x,M,0,White
 10.1111/j.1460-2466.1980.tb02030.x+1.0,US,Education,Jaemin,Robert,male,10.1111/j.1460-2466.1980.tb02030.x,M,0,White
-10.1111/j.1460-2466.1980.tb02016.x+1.0,GE,Education,Jaemin,Paula,female,10.1111/j.1460-2466.1980.tb02016.x,F,1,Black
+10.1111/j.1460-2466.1980.tb02016.x+1.0,US,Education,Jaemin,Paula,female,10.1111/j.1460-2466.1980.tb02016.x,F,1,Black
 10.1111/j.1468-2958.1980.tb00132.x+3.0,US,Education,Jaemin,Vicki,female,10.1111/j.1468-2958.1980.tb00132.x,F,0,White
 10.1111/j.1468-2958.1980.tb00130.x+2.0,US,Education,Jaemin,Gerald,male,10.1111/j.1468-2958.1980.tb00130.x,M,0,White
 10.1111/j.1460-2466.1980.tb02012.x+1.0,US,Education,Jaemin,Mark,male,10.1111/j.1460-2466.1980.tb02012.x,M,0,White
@@ -9147,7 +9147,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1468-2958.1979.tb00630.x+1.0,US,Education,Jaemin,Glen,male,10.1111/j.1468-2958.1979.tb00630.x,M,0,White
 10.1111/j.1468-2958.1979.tb00631.x+1.0,US,Education,Jaemin,Ernest,male,10.1111/j.1468-2958.1979.tb00631.x,M,0,White
 10.1111/j.1460-2466.1979.tb01692.x+1.0,US,Education,Jaemin,Robert,male,10.1111/j.1460-2466.1979.tb01692.x,M,0,White
-10.1111/j.1468-2958.1979.tb00289.x+1.0,GE,Education,Jaemin,John,male,10.1111/j.1468-2958.1979.tb00289.x,M,0,White
+10.1111/j.1468-2958.1979.tb00289.x+1.0,US,Education,Jaemin,John,male,10.1111/j.1468-2958.1979.tb00289.x,M,0,White
 10.1111/j.1460-2466.1979.tb01717.x+1.0,CA,Education,Jaemin,Asghar,male,10.1111/j.1460-2466.1979.tb01717.x,M,2,Asian
 10.1111/j.1460-2466.1979.tb01733.x+4.0,US,Education,Jaemin,Robert,male,10.1111/j.1460-2466.1979.tb01733.x,M,0,White
 10.1111/j.1468-2958.1979.tb00289.x+3.0,US,Education,Jaemin,Joyce,female,10.1111/j.1468-2958.1979.tb00289.x,F,0,White
@@ -9270,7 +9270,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1460-2466.1977.tb01815.x+1.0,US,Education,Jaemin,Gary,male,10.1111/j.1460-2466.1977.tb01815.x,M,0,White
 10.1111/j.1460-2466.1977.tb01805.x+2.0,US,Education,Jaemin,Gary,male,10.1111/j.1460-2466.1977.tb01805.x,M,0,White
 10.1111/j.1460-2466.1977.tb01871.x+1.0,CA,Education,Jaemin,Gary,male,10.1111/j.1460-2466.1977.tb01871.x,M,0,White
-10.1111/j.1468-2958.1977.tb00522.x+1.0,GE,Education,Jaemin,John,male,10.1111/j.1468-2958.1977.tb00522.x,M,0,White
+10.1111/j.1468-2958.1977.tb00522.x+1.0,US,Education,Jaemin,John,male,10.1111/j.1468-2958.1977.tb00522.x,M,0,White
 10.1111/j.1460-2466.1977.tb01795.x+2.0,US,Education,Jaemin,Lynn,female,10.1111/j.1460-2466.1977.tb01795.x,F,0,White
 10.1111/j.1460-2466.1977.tb01823.x+1.0,US,Education,Jaemin,Lawrence,male,10.1111/j.1460-2466.1977.tb01823.x,M,0,White
 10.1111/j.1468-2958.1977.tb00523.x+1.0,US,Education,Jaemin,Lawrence,male,10.1111/j.1468-2958.1977.tb00523.x,M,0,White
@@ -9290,7 +9290,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1460-2466.1977.tb02142.x+1.0,US,Education,Matthew,Jeffrey,male,10.1111/j.1460-2466.1977.tb02142.x,M,0,White
 10.1111/j.1460-2466.1977.tb01840.x+1.0,UK,Education,Matthew,Rita,female,10.1111/j.1460-2466.1977.tb01840.x,F,0,White
 10.1111/j.1460-2466.1977.tb01845.x+2.0,US,Education,Matthew,Larry,male,10.1111/j.1460-2466.1977.tb01845.x,M,0,White
-10.1111/j.1460-2466.1977.tb01862.x+1.0,GE,Education,Matthew,Joseph,male,10.1111/j.1460-2466.1977.tb01862.x,M,0,White
+10.1111/j.1460-2466.1977.tb01862.x+1.0,US,Education,Matthew,Joseph,male,10.1111/j.1460-2466.1977.tb01862.x,M,0,White
 10.1111/j.1460-2466.1977.tb02128.x+1.0,AU,Education,Matthew,Patricia,female,10.1111/j.1460-2466.1977.tb02128.x,F,0,White
 10.1111/j.1468-2958.1977.tb00521.x+2.0,US,Education,Matthew,Normand.,,10.1111/j.1468-2958.1977.tb00521.x,M,0,White
 10.1111/j.1460-2466.1977.tb01810.x+2.0,US,Education,Matthew,Martin,male,10.1111/j.1460-2466.1977.tb01810.x,M,0,White
@@ -9460,13 +9460,13 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1460-2466.1972.tb00129.x+2.0,US,Education,Jongmin,Jean,male,10.1111/j.1460-2466.1972.tb00129.x,M,0,White
 10.1111/j.1460-2466.1972.tb00157.x+2.0,US,Education,Jongmin,John,male,10.1111/j.1460-2466.1972.tb00157.x,F,0,White
 10.1111/j.1460-2466.1972.tb00154.x+1.0,US,Education,Jaemin,James,male,10.1111/j.1460-2466.1972.tb00154.x,M,0,White
-10.1111/j.1460-2466.1972.tb00150.x+2.0,GE,Education,Jaemin,Sidney,male,10.1111/j.1460-2466.1972.tb00150.x,M,0,White
+10.1111/j.1460-2466.1972.tb00150.x+2.0,US,Education,Jaemin,Sidney,male,10.1111/j.1460-2466.1972.tb00150.x,M,0,White
 10.1111/j.1460-2466.1972.tb00127.x+1.0,US,Education,Jaemin,James,male,10.1111/j.1460-2466.1972.tb00127.x,M,0,White
 10.1111/j.1460-2466.1972.tb00165.x+1.0,CZ,Non Education,Jaemin,Allen,male,10.1111/j.1460-2466.1972.tb00165.x,M,0,White
 10.1111/j.1460-2466.1972.tb00155.x+1.0,US,Education,Jaemin,Gerrit,male,10.1111/j.1460-2466.1972.tb00155.x,M,0,White
 10.1111/j.1460-2466.1972.tb00130.x+4.0,US,Education,Jaemin,Richard,male,10.1111/j.1460-2466.1972.tb00130.x,M,0,White
 10.1111/j.1460-2466.1972.tb00156.x+1.0,US,Education,Matthew,Harvey,male,10.1111/j.1460-2466.1972.tb00156.x,M,0,White
-10.1111/j.1460-2466.1972.tb00150.x+1.0,GE,Education,Matthew,Abraham,male,10.1111/j.1460-2466.1972.tb00150.x,M,0,White
+10.1111/j.1460-2466.1972.tb00150.x+1.0,US,Education,Matthew,Abraham,male,10.1111/j.1460-2466.1972.tb00150.x,M,0,White
 10.1111/j.1460-2466.1972.tb00129.x+1.0,US,Education,Matthew,Joseph,male,10.1111/j.1460-2466.1972.tb00129.x,M,0,White
 10.1111/j.1460-2466.1972.tb00166.x+1.0,US,Education,Matthew,Howard,male,10.1111/j.1460-2466.1972.tb00166.x,M,0,White
 10.1111/j.1460-2466.1971.tb00904.x+2.0,US,Education,Jongmin,Nathan,male,10.1111/j.1460-2466.1971.tb00904.x,M,0,White
@@ -9595,7 +9595,7 @@ authorID,new_country_code,new_afftype,Coder,firstName,genderize,doi,gender_predi
 10.1111/j.1460-2466.1955.tb01116.x+1.0,US,Education,Jongmin,Russell,male,10.1111/j.1460-2466.1955.tb01116.x,M,0,White
 10.1111/j.1460-2466.1955.tb01098.x+1.0,US,Education,Jaemin,Victor,male,10.1111/j.1460-2466.1955.tb01098.x,M,0,White
 10.1111/j.1460-2466.1954.tb00237.x+1.0,US,Education,Jongmin,Thomas,male,10.1111/j.1460-2466.1954.tb00237.x,M,0,White
-10.1111/j.1460-2466.1954.tb00233.x+1.0,GE,Education,Matthew,Stanley,male,10.1111/j.1460-2466.1954.tb00233.x,M,0,White
+10.1111/j.1460-2466.1954.tb00233.x+1.0,US,Education,Matthew,Stanley,male,10.1111/j.1460-2466.1954.tb00233.x,M,0,White
 10.1111/j.1460-2466.1953.tb01064.x+1.0,US,Education,Jongmin,Laura,female,10.1111/j.1460-2466.1953.tb01064.x,M,0,White
 10.1111/j.1460-2466.1953.tb01086.x+1.0,US,Education,Jongmin,Herbert,male,10.1111/j.1460-2466.1953.tb01086.x,M,0,White
 10.1111/j.1460-2466.1953.tb01066.x+1.0,PH,Education,Jongmin,Dean,male,10.1111/j.1460-2466.1953.tb01066.x,M,2,Asian

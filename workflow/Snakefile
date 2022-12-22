@@ -99,18 +99,18 @@ rule all:
         # AUTHOR_WITH_GENDER,
         # AUTHOR_WITH_PRED_RAW,
         # AUTHOR_WITH_PRED,
-        # ICA_PAPER_DF_WITH_TYPE, 
-        # AUTHOR_WITH_PRED_WITH_TYPE,
-        # RESEARCH_PAPER_DF,
-        # RESEARCH_AUTHOR_WITH_PRED,
-        # AUTHORS_TO_STUDY,
-        # DOIS_TO_STUDY,
-        # PAPERS_TO_STUDY,
+        ICA_PAPER_DF_WITH_TYPE, 
+        AUTHOR_WITH_PRED_WITH_TYPE,
+        RESEARCH_PAPER_DF,
+        RESEARCH_AUTHOR_WITH_PRED,
+        AUTHORS_TO_STUDY,
+        DOIS_TO_STUDY,
+        PAPERS_TO_STUDY,
         AUTHORID_WITH_VARS,
-        # AUTHORS_TO_STUDY_EXPANDED,
-        # PAPERS_TO_STUDY_EXPANDED,
+        AUTHORS_TO_STUDY_EXPANDED,
+        PAPERS_TO_STUDY_EXPANDED,
         # GSCHOLAR_DATA,
-        # GSCHOLAR_DATA_COMBINED,
+        GSCHOLAR_DATA_COMBINED,
 
 # scrape ica paper dois
 rule scrape_ica_paper_dois:
@@ -183,16 +183,17 @@ rule get_authors_and_papers_expanded:
         AUTHORID_WITH_VARS,
         AUTHORS_TO_STUDY,
         PAPERS_TO_STUDY,
+        GSCHOLAR_DATA_COMBINED,
 
     output:
         AUTHORS_TO_STUDY_EXPANDED,
         PAPERS_TO_STUDY_EXPANDED,
     shell: 'python scripts/get_authors_and_papers_expanded.py {input} {output}'
 
-rule get_gscholar_data:
-    input: AUTHORS_TO_STUDY
-    output: GSCHOLAR_DATA
-    shell: 'python scripts/get_gscholar_data.py {input} {output}'
+# rule get_gscholar_data:
+#     input: AUTHORS_TO_STUDY
+#     output: GSCHOLAR_DATA
+#     shell: 'python scripts/get_gscholar_data.py {input} {output}'
 
 rule get_gscholar_data_combined:
     input: GSCHOLAR_DATA, GSCHOLAR_DATA_MANUAL_CHECKED

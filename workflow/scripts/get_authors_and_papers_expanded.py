@@ -11,8 +11,9 @@ import numpy as np
 AUTHORID_WITH_VARS = sys.argv[1]
 AUTHORS_TO_STUDY = sys.argv[2]
 PAPERS_TO_STUDY = sys.argv[3]
-AUTHORS_TO_STUDY_EXPANDED = sys.argv[4]
-PAPERS_TO_STUDY_EXPANDED = sys.argv[5]
+GSCHOLAR_DATA_COMBINED = sys.argv[4]
+AUTHORS_TO_STUDY_EXPANDED = sys.argv[5]
+PAPERS_TO_STUDY_EXPANDED = sys.argv[6]
 
 def get_cross_and_num_stuff_dic(df):
 	'''cross country, cross type, cross gender, and cross race
@@ -115,14 +116,20 @@ def get_first_author_stuff_dic(df):
 		first_author_afftype_dic
 
 if __name__ == '__main__':
-	cutoff_year = 2000
 
 	# import and filter
 	aid_df = pd.read_csv(AUTHORID_WITH_VARS)
+	print(f'AUTHORID_WITH_VARS shape: {aid_df.shape}')
 	authors = pd.read_csv(AUTHORS_TO_STUDY)
 	papers = pd.read_csv(PAPERS_TO_STUDY)
-	authors = authors[authors.year >= cutoff_year]
-	papers = papers[papers.year >= cutoff_year]
+
+	to_keep_doi = list(set(aid_df.doi))
+	authors = authors.query('doi == @to_keep_doi')
+	papers = papers.query('doi == @to_keep_doi')
+	gscholar_data = pd.read_csv(GSCHOLAR_DATA_COMBINED)
+	gscholar_data_dois = list(set(gscholar_data.DOI))
+	missing_dois = [x for x in to_keep_doi if x not in gscholar_data_dois]
+	print(f'These DOIs are missing in gscholar_data: {missing_dois}')
 
 	# number of authors dic
 	num_author_dic = dict(zip(authors.doi, authors.numberOfAuthors))
@@ -132,6 +139,15 @@ if __name__ == '__main__':
 	id_gender_dict = dict(zip(aid_df.authorID, aid_df.gender_prediction))
 	id_afftype_dict = dict(zip(aid_df.authorID, aid_df.new_afftype))
 	id_race_dict = dict(zip(aid_df.authorID, aid_df.race))
+
+	# google scholar dic (doi -> citation count)
+	doi_citecount_dict = dict(zip(gscholar_data.DOI, 
+		gscholar_data['Citation Counts on Google Scholar']))
+	# I didn't know why this paper was not included in the gscholar data but
+	# I need to have its data so I manually added it:
+	doi_citecount_dict.update({
+		'10.1111/j.1083-6101.1996.tb00178.x': 24
+		})
 
 	authors['countrypred'] = [id_country_dict[x] for x in authors.authorID]
 	authors['genderpred'] = [id_gender_dict[x] for x in authors.authorID]
@@ -172,6 +188,7 @@ if __name__ == '__main__':
 	papers['with_us_authors'] = [with_us_authors_dic[x] for x in papers.doi]
 	papers['cross_race_details'] = [cross_race_details_dic[x] for x in papers.doi]
 	papers['cross_gender_details'] = [cross_gender_details_dic[x] for x in papers.doi]
+	papers['gscholar_citation'] = [doi_citecount_dict[x] for x in papers.doi]
 	
 	papers.to_csv(PAPERS_TO_STUDY_EXPANDED, index = False)
 	authors.to_csv(AUTHORS_TO_STUDY_EXPANDED, index = False)

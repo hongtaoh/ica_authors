@@ -227,15 +227,26 @@ if __name__ == '__main__':
 	authorid_gender_dict.update(initial_df_authorid_gender_dict)
 
 	######## Update gr_df
-	gr_df['gender_prediction_new'] = [
+	gr_df['gender_prediction'] = [
 		authorid_gender_dict[x] for x in gr_df['authorID']]
-	missing_gender_prediction = gr_df[gr_df.gender_prediction_new.isnull()]
+	missing_gender_prediction = gr_df[gr_df.gender_prediction.isnull()]
 	
-	print(f'There are {missing_gender_prediction.shape[0]} names that do have not gender prediction results in gr_df')
+	# print(f'There are {missing_gender_prediction.shape[0]} names that do not have gender prediction results in gr_df')
 	gr_df['race'] = gr_df.apply(recode_race, axis = 1)
 
 	assert len(aff_df) == len(gr_df), 'aff_df and gr_df do not have the same number of rows!'
 	assert set(aff_df.authorID) == set(gr_df.authorID), 'authorID in aff_df and gr_df differ!'
 
 	df = pd.merge(aff_df, gr_df, on = 'authorID')
-	df.to_csv(AUTHORID_WITH_VARS, index = False)
+
+	to_delete_dois = list(set(missing_gender_prediction.doi))
+	to_keep_dois = list(set([x for x in df.doi.tolist() if x not in to_delete_dois]))
+	to_delete_authors = df.query('doi == @to_delete_dois')
+	to_keep_authors = df.query('doi == @to_keep_dois')
+
+	print(f"""{missing_gender_prediction.shape[0]} people scattered in {len(to_delete_dois)} papers
+		do not have gender predictions. So I had to delete all {len(to_delete_authors)} authors in these papers.
+		The final result consists of {len(to_keep_authors)} authors scattered in {len(to_keep_dois)} papers. 
+		""")
+
+	to_keep_authors.to_csv(AUTHORID_WITH_VARS, index = False)

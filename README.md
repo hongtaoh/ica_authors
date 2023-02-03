@@ -2,10 +2,10 @@
 
 This project contains my codes to scrape ICA Annaual conference data and also some exploratory codes about ICA journal data from web of science and also openalex. 
 
-## TODO!
+<!-- ## TODO!
 
 - In `2022-12-08-check-authors-without-only-initials.ipynb`, I found one author without first name. I need to remove that paper `10.1111/j.1460-2466.1980.tb02015.x` and the two authors
-- There are 157 authors scattered in 70 papers whose first names are initials only.
+- There are 157 authors scattered in 70 papers whose first names are initials only. -->
 
 ## Google scholar data
 
@@ -181,6 +181,3 @@ Finally, I generated
 Those two files are the most complete ones. 
 
 - GSCHOLAR_DATA_COMBINED, this is the final google scholar data. For details of how I got this data, see the section of "Google scholar data"
-
-
-

@@ -1,0 +1,8 @@
+- country ts: area chart or the current one
+- afftype ts: add area chart of the prop ts line chart
+- is fig.4c too messy?
+- In introduction, I feel we have to state our contributions:
+  - dataset (gender, race, affliation, citation counts)
+  - methodology
+  - practical implications
+- gender and race, error rate is both about 10%

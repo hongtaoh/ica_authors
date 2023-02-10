@@ -159,6 +159,10 @@ These are exploratory notebooks.
 
 - `aff_result`: affiliation coding final results
 
+- `api_reliance_checking`
+
+  - `113_names_for_api_reliance_checking.csv`: I randomly selected 113 names from the final dataset of 11292 authors for Haley to check how reliant we are on the automatic results from API. This is the result of `notebooks/workflow/workflow-notebooks/2023-02-10-get-113-names-to-see-reliance-on-api-automatic-results.ipynb`. Haley coded it here: https://docs.google.com/spreadsheets/d/17HIaX2yzDLCDJAQ-8kvANg6Wmzcb4yLJ7uNg-b6wJq8/edit?usp=sharing
+
 ### Processed
 
 I first get AUTHOR_WITH_PRED. Then the following:

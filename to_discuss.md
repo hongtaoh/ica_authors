@@ -1,8 +1,11 @@
 - country ts: area chart or the current one
 - afftype ts: add area chart of the prop ts line chart
 - is fig.4c too messy?
+  - Yes.. didn’t you add an alpha measure to it before to try to fade some out? And maybe we can also remove the shapes at each point? It might help
 - In introduction, I feel we have to state our contributions:
   - dataset (gender, race, affliation, citation counts)
   - methodology
   - practical implications
 - gender and race, error rate is both about 10%
+- first author gender is around the same. 
+- first author race is around the same. 

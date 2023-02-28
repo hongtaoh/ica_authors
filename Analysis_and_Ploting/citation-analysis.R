@@ -2,6 +2,7 @@ library(car)
 library(olsrr)
 
 df <- read.csv("../data/processed/papers_to_study_expanded.csv")
+sapply(list(df$first_author_country), unique)
 df$Year.Distance.from.2022 = abs(df$year - 2022)
 df$gscholar_citation_log10 <- log10(df$gscholar_citation + 0.1)
 var_cols <- c(1, 16:17, 20:33, 35:36)

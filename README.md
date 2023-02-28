@@ -19,7 +19,7 @@ Then, I combined the two datasets through `combine_gscholar_data.py`
 
 ## Workflow
 
-This project uses [snakemake](https://github.com/hongtaoh/snakemake-tutorial).
+This project uses snakemake.
  
 ### Scripts
 
@@ -48,7 +48,7 @@ and return basically dictionaries through a dataframe.
 
 ### Paper classification ICR
 
-First, with `2022-08-20-new-cat-issueurl.ipynb`, we get the list of all categories with associated frequencies. Then in this the dataset, we (Kristen, Jeff and I) reclassified categories: https://docs.google.com/spreadsheets/d/1E2dgJCpv5FrxKv41QZuNsv7MjJs3IcBxFbZze_5rnjU/edit#gid=2060805888
+First, with `2022-08-20-new-cat-issueurl.ipynb`, we get the list of all categories with associated frequencies. Then in this the dataset, we reclassified categories: https://docs.google.com/spreadsheets/d/1E2dgJCpv5FrxKv41QZuNsv7MjJs3IcBxFbZze_5rnjU/edit#gid=2060805888
 
 After we classified these categories as either "to exclude" or not, I put the raw result into `data/interim/cat_class_raw.csv`
 
@@ -147,7 +147,7 @@ These are exploratory notebooks.
 
 #### Folders 
 
-- `paper_classification_task`: The source files for me, Kristen, and Jeff to code the paper classifcation. 
+- `paper_classification_task`: The source files for three authors to code the paper classifcation. 
 
 - `icr`: contains all files for intercoder reliability testing
 
@@ -161,7 +161,7 @@ These are exploratory notebooks.
 
 - `api_reliance_checking`
 
-  - `113_names_for_api_reliance_checking.csv`: I randomly selected 113 names from the final dataset of 11292 authors for Haley to check how reliant we are on the automatic results from API. This is the result of `notebooks/workflow/workflow-notebooks/2023-02-10-get-113-names-to-see-reliance-on-api-automatic-results.ipynb`. Haley coded it here: https://docs.google.com/spreadsheets/d/17HIaX2yzDLCDJAQ-8kvANg6Wmzcb4yLJ7uNg-b6wJq8/edit?usp=sharing
+  - `113_names_for_api_reliance_checking.csv`: I randomly selected 113 names from the final dataset of 11292 authors for one author to check how reliant we are on the automatic results from API. This is the result of `notebooks/workflow/workflow-notebooks/2023-02-10-get-113-names-to-see-reliance-on-api-automatic-results.ipynb`. One author it here: https://docs.google.com/spreadsheets/d/17HIaX2yzDLCDJAQ-8kvANg6Wmzcb4yLJ7uNg-b6wJq8/edit?usp=sharing
 
 ### Processed
 

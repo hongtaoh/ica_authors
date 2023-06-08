@@ -15,6 +15,18 @@ Then, I combined the two datasets through `combine_gscholar_data.py`
 
 >I thought about redoing scraping google scholar citation data by searching the DOI (right now, the majority of the data came from searching the title). However, after checking the result of data now (trying searching DOI for papers with strings like `[PDF]` and `CITATION`), I found that they are the same. So I probably won't do it again; I'll keep the data for now for my analysis.   
 
+### Redoing GScholar data on 2023-06-07
+
+I scraped citation data from Google Scholar. I queried title + journal + first author name. I then compared the original title and the title shown on Google Scholar to make sure my data is accurate. Among all 5,718 papers `10.1111/j.1083-6101.1996.tb00178.x` is missing in gscholar data. This is because one paper happend twice in the gscholar data. But I dind't know what happened. Only 289 papers have differences in titles. I then investigated these 289 papers. I compared the similarity (using python's difflib) between the two titles. More than half of them have a similarity score of 0.95. For these, I considered them as accurate. For the 123 papers, I collected their data on Google Scholar by searching their DOIs (instead of titles). Note that '10.1111/j.1460-2466.1952.tb00171.x' is not available on Google Scholar so I had to remove it. 
+
+I then manually checked these results at https://docs.google.com/spreadsheets/d/14y72p5I9RvzueNOb5x1cE23M0N__A8rCaCRudckxU5U/edit#gid=261290178. There, I added 10.1111/j.1083-6101.1996.tb00178.x. These results are at `data/interim/gscholar_data_manual.csv`
+
+In all, these papers are not availabe on google Scholar:
+ - 10.1111/j.1460-2466.1977.tb02133.x
+ - 10.1111/j.1460-2466.1952.tb00171.x
+
+Then, I combined the two datasets through `combine_gscholar_data.py`. The final dataset should contain 5717 papers. 
+
 ## Limitations 
 
 ## Workflow

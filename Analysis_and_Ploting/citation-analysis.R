@@ -2,10 +2,14 @@ library(car)
 library(olsrr)
 
 df <- read.csv("../data/processed/papers_to_study_expanded.csv")
+dim(df)
+
+# dff <- df[!(df$doi == '10.1111/j.1460-2466.1977.tb02133.x'),]
+
 sapply(list(df$first_author_country), unique)
 df$Year.Distance.from.2022 = abs(df$year - 2022)
 df$gscholar_citation_log10 <- log10(df$gscholar_citation + 0.1)
-var_cols <- c(1, 16:17, 20:33, 35:36)
+var_cols <- c(1, 11, 16:17, 20:33, 35:36)
 data <- df[, var_cols]
 
 ## Checking outlier
@@ -25,6 +29,7 @@ table(data$outlier0)
 datanew <- subset(data, outlier0 == 0)
 datanew$outlier0 <- NULL
 datanew$gscholar_citation_log10_stdized <- NULL
+
 
 model <- lm(gscholar_citation_log10~., datanew)
 summary(model)

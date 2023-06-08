@@ -39,11 +39,12 @@ data$outlier0 <- ifelse(data$gscholar_citation_log10_stdized > 3.3 |
 table(data$outlier0)
 ```
 
-As can be seen, there are 124 outliers. 
+As can be seen, there are 103 outliers. 
 
 ## Build model
 
 ```{r}
+# '10.1111/j.1460-2466.1977.tb02133.x', '10.1111/j.1460-2466.1952.tb00171.x' These two papers have no gscholar data, and they will be excluded in the following line because its outerlier0 is N/A, not 0. 
 datanew <- subset(data, outlier0 == 0)
 datanew$outlier0 <- NULL
 datanew$gscholar_citation_log10_stdized <- NULL

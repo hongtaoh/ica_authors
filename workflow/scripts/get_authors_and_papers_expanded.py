@@ -141,13 +141,11 @@ if __name__ == '__main__':
 	id_race_dict = dict(zip(aid_df.authorID, aid_df.race))
 
 	# google scholar dic (doi -> citation count)
+
+	# In gscholar data, '10.1111/j.1083-6101.1996.tb00053.x' appeared twice 
+	# but the data is exactly the same, so there is no issue here. 
 	doi_citecount_dict = dict(zip(gscholar_data.DOI, 
 		gscholar_data['Citation Counts on Google Scholar']))
-	# I didn't know why this paper was not included in the gscholar data but
-	# I need to have its data so I manually added it:
-	doi_citecount_dict.update({
-		'10.1111/j.1083-6101.1996.tb00178.x': 24
-		})
 
 	authors['countrypred'] = [id_country_dict[x] for x in authors.authorID]
 	authors['genderpred'] = [id_gender_dict[x] for x in authors.authorID]
@@ -188,7 +186,10 @@ if __name__ == '__main__':
 	papers['with_us_authors'] = [with_us_authors_dic[x] for x in papers.doi]
 	papers['cross_race_details'] = [cross_race_details_dic[x] for x in papers.doi]
 	papers['cross_gender_details'] = [cross_gender_details_dic[x] for x in papers.doi]
-	papers['gscholar_citation'] = [doi_citecount_dict[x] for x in papers.doi]
+	# some two papers are not available on gscholar
+	# '10.1111/j.1460-2466.1977.tb02133.x'
+	# '10.1111/j.1460-2466.1952.tb00171.x'
+	papers['gscholar_citation'] = [doi_citecount_dict.get(x, np.nan) for x in papers.doi]
 	
 	papers.to_csv(PAPERS_TO_STUDY_EXPANDED, index = False)
 	authors.to_csv(AUTHORS_TO_STUDY_EXPANDED, index = False)

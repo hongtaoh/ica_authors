@@ -1,6 +1,8 @@
 ---
-title: "Citation Analysis"
-output: pdf_document
+title: "Supplementary Material"
+output: 
+  pdf_document:
+    number_sections: true
 ---
 
 ```{r setup, include=FALSE}
@@ -9,6 +11,16 @@ library(olsrr)
 library(stargazer)
 ```
 
+\tableofcontents
+
+# Number of publications for each journal
+
+```{r pressure, echo=FALSE, fig.cap="number of publications for each journal by year", out.width = '50%'}
+knitr::include_graphics("num_pub_journal.png")
+```
+
+
+# Citation Analysis
 ## Read data
 
 The first step is to read data:

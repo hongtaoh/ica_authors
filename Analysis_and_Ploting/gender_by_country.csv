@@ -1,0 +1,132 @@
+countrypred,genderpred,freq,country_full_name
+AE,M,3,United Arab Emirates
+AM,F,1,Armenia
+AR,F,3,Argentina
+AR,M,2,Argentina
+AT,F,13,Austria
+AT,M,30,Austria
+AU,F,51,Australia
+AU,M,73,Australia
+AU,N,1,Australia
+BD,M,1,Bangladesh
+BE,F,23,Belgium
+BE,M,43,Belgium
+BN,F,1,Brunei Darussalam
+BR,F,17,Brazil
+BR,M,10,Brazil
+BS,M,1,Bahamas
+BY,M,1,Belarus
+CA,F,72,Canada
+CA,M,148,Canada
+CH,F,23,Switzerland
+CH,M,40,Switzerland
+CL,F,9,Chile
+CL,M,18,Chile
+CN,F,35,China
+CN,M,68,China
+CO,F,3,Colombia
+CO,M,5,Colombia
+CR,F,1,Costa Rica
+CR,M,5,Costa Rica
+CY,F,3,Cyprus
+CY,M,1,Cyprus
+CZ,F,4,Czech Republic
+CZ,M,6,Czech Republic
+DE,F,105,Germany
+DE,M,171,Germany
+DK,F,18,Denmark
+DK,M,21,Denmark
+EE,F,5,Estonia
+EG,F,3,Egypt
+EG,M,2,Egypt
+ES,F,24,Spain
+ES,M,33,Spain
+ET,F,1,Ethiopia
+FI,F,23,Finland
+FI,M,21,Finland
+FR,F,13,France
+FR,M,19,France
+GB,F,109,United Kingdom
+GB,M,188,United Kingdom
+GE,M,1,Georgia
+GH,M,2,Ghana
+GR,F,1,Greece
+GR,M,5,Greece
+HK,F,2,Hong Kong
+HK,M,6,Hong Kong
+HR,M,1,Croatia
+HU,F,4,Hungary
+HU,M,3,Hungary
+ID,M,1,Indonesia
+IE,F,6,Ireland
+IE,M,5,Ireland
+IL,F,102,Israel
+IL,M,125,Israel
+IN,F,6,India
+IN,M,7,India
+IR,F,1,"Iran, Islamic Republic of"
+IR,M,1,"Iran, Islamic Republic of"
+IS,F,1,Iceland
+IS,M,2,Iceland
+IT,F,10,Italy
+IT,M,26,Italy
+JP,F,17,Japan
+JP,M,44,Japan
+KE,F,2,Kenya
+KH,M,1,Cambodia
+KR,F,36,"Korea, Republic of"
+KR,M,47,"Korea, Republic of"
+LB,F,5,Lebanon
+LB,M,10,Lebanon
+LK,F,1,Sri Lanka
+LT,F,1,Lithuania
+LV,M,2,Latvia
+MA,M,1,Morocco
+MO,M,1,Macao
+MX,F,4,Mexico
+MX,M,8,Mexico
+MZ,M,1,Mozambique
+NG,M,2,Nigeria
+NL,F,167,Netherlands
+NL,M,197,Netherlands
+NO,F,10,Norway
+NO,M,16,Norway
+NZ,F,10,New Zealand
+NZ,M,20,New Zealand
+PE,F,1,Peru
+PH,F,35,Philippines
+PH,M,100,Philippines
+PL,F,5,Poland
+PL,M,6,Poland
+PT,F,3,Portugal
+PT,M,2,Portugal
+QA,F,4,Qatar
+QA,M,6,Qatar
+RU,F,1,Russian Federation
+RU,M,6,Russian Federation
+SE,F,14,Sweden
+SE,M,36,Sweden
+SG,F,48,Singapore
+SG,M,52,Singapore
+SI,F,4,Slovenia
+SI,M,5,Slovenia
+SK,F,2,Slovakia
+TH,F,5,Thailand
+TH,M,2,Thailand
+TJ,F,3,Tajikistan
+TJ,M,5,Tajikistan
+TR,F,2,Turkey
+TR,M,4,Turkey
+TW,F,22,"Taiwan, Province of China"
+TW,M,11,"Taiwan, Province of China"
+UG,F,1,Uganda
+UG,M,2,Uganda
+UK,F,9,United Kingdom
+UK,M,24,United Kingdom
+US,F,3293,United States
+US,M,5164,United States
+US,N,10,United States
+VE,F,1,"Venezuela, Bolivarian Republic of"
+VN,F,1,Viet Nam
+ZA,F,5,South Africa
+ZA,M,6,South Africa

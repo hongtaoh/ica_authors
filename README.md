@@ -7,127 +7,13 @@ This project contains my codes to scrape ICA Annaual conference data and also so
 - In `2022-12-08-check-authors-without-only-initials.ipynb`, I found one author without first name. I need to remove that paper `10.1111/j.1460-2466.1980.tb02015.x` and the two authors
 - There are 157 authors scattered in 70 papers whose first names are initials only. -->
 
-## Google scholar data
-
-I scraped citation data from Google Scholar. I queried title + journal + first author name. I then compared the original title and the title shown on Google Scholar to make sure my data is accurate. Among all 5,718 papers (The full dataset contains 5719 papers, so `10.1111/j.1083-6101.1996.tb00178.x` is missing in gscholar data. I dind't know what happened.), only 293 papers have differences in titles. I then investigated these 293 papers. I compared the similarity (using python's difflib) between the two titles. More than half of them have a similarity score of 0.95. For these, I considered them as accurate. For the 122 papers, I collected their data on Google Scholar by searching their DOIs (instead of titles). In this case, searching by DOI yeilds a much better result (`data/interim/gscholar_data_manual.csv`). Still, there are some mismatches. I updated this dataset in https://docs.google.com/spreadsheets/d/14y72p5I9RvzueNOb5x1cE23M0N__A8rCaCRudckxU5U/edit#gid=1256132535. The resulting data is `interim/gscholar_data_manual_checked.csv`
-
-Then, I combined the two datasets through `combine_gscholar_data.py`
-
->I thought about redoing scraping google scholar citation data by searching the DOI (right now, the majority of the data came from searching the title). However, after checking the result of data now (trying searching DOI for papers with strings like `[PDF]` and `CITATION`), I found that they are the same. So I probably won't do it again; I'll keep the data for now for my analysis.   
-
-### Redoing GScholar data on 2023-06-07
-
-I scraped citation data from Google Scholar. I queried title + journal + first author name. I then compared the original title and the title shown on Google Scholar to make sure my data is accurate. Among all 5,718 papers `10.1111/j.1083-6101.1996.tb00178.x` is missing in gscholar data. This is because one paper happend twice in the gscholar data. But I dind't know what happened. Only 289 papers have differences in titles. I then investigated these 289 papers. I compared the similarity (using python's difflib) between the two titles. More than half of them have a similarity score of 0.95. For these, I considered them as accurate. For the 123 papers, I collected their data on Google Scholar by searching their DOIs (instead of titles). Note that '10.1111/j.1460-2466.1952.tb00171.x' is not available on Google Scholar so I had to remove it. 
-
-I then manually checked these results at https://docs.google.com/spreadsheets/d/14y72p5I9RvzueNOb5x1cE23M0N__A8rCaCRudckxU5U/edit#gid=261290178. There, I added 10.1111/j.1083-6101.1996.tb00178.x. These results are at `data/interim/gscholar_data_manual.csv`
-
-In all, these papers are not availabe on google Scholar:
- - 10.1111/j.1460-2466.1977.tb02133.x
- - 10.1111/j.1460-2466.1952.tb00171.x
-
-Then, I combined the two datasets through `combine_gscholar_data.py`. The final dataset should contain 5717 papers. 
-
-## Limitations 
-
-## Workflow
-
-This project uses snakemake.
- 
-### Scripts
-
-(More details can be found in `workflow/Snakefile` and also in each specific `py` file)
-
-- `scrape_ica_paper_dois.py`: get ICA publication paper info, specifically, I got all paper dois, title, and abstracts
-
-- `scrape_ica_author_data.py`: get paper and author data on ICA journal publications using BeautifulSoup
-
-- `get_author_with_gender.py`: get gender raw predictions. This is to prevent me from having to do it again, which requires quota from genderize.io.
-
-- `get_author_with_pred_raw.py`: get race and affiliations. "Raw" because I'll change column order later
-
-- `get_author_with_pred.py`: rearrange colomn order
-
-- `get_paper_and_author_with_type.py`: add 'type' to paper df and author data, and subsequently get research paper/author, and authors/papers to study. 
-
-- `get_authorid_with_vars.py`: in this script, I processed the gender, race and aff coded data
-and return basically dictionaries through a dataframe. 
-
-- `get_authors_and_papers_expanded.py`: get all variables needed in analysis.
-
-- `get_gscholar_data.py` and `get_gscholar_data_combined.py`: get gscholar data.
-
-## Classification and Inter-coder reliability
-
-### Paper classification ICR
-
-First, with `2022-08-20-new-cat-issueurl.ipynb`, we get the list of all categories with associated frequencies. Then in this the dataset, we reclassified categories: https://docs.google.com/spreadsheets/d/1E2dgJCpv5FrxKv41QZuNsv7MjJs3IcBxFbZze_5rnjU/edit#gid=2060805888
-
-After we classified these categories as either "to exclude" or not, I put the raw result into `data/interim/cat_class_raw.csv`
-
-- `data/interim/icr/paper_classification_icr_test_2022-08-27.csv` is the randomly selected 100 rows to test paper classification intercoder reliability. This dataset is generated by `2022-08-27-GET-100-random-papers-to-classify-types-for-ICR.ipynb`. 
-
-- This is the raw result: https://docs.google.com/spreadsheets/d/1POuzorD6B2r8uO9gdpBgt1U1ZksJhbCTzaolnAKQpmU/edit#gid=1585704198
-
-Krippendorff alpha: 0.831
-
-- `paper_cla_ica_compa_results_2022-08-29.csv` is the aggregated results. This result is computed by `2022-08-29-calculate-paper-cla-icr.ipynb`
-
-- Then, We did all the classification here: https://docs.google.com/spreadsheets/d/1uslTqfe269jf0KHJ8E70XHru2jag8y-iiRRb94HQA9s/edit#gid=349722970, which is created by `2022-08-29-randomly-split-ica-paper-df-for-paper-classification.ipynb`
-
-- We tested final icr here: https://docs.google.com/spreadsheets/d/1KvPvm5DWAP9ndPbB4yfEWyet5WIu0rfKsqM_FL2kbP8/edit?usp=sharing
-  - This is created by `2022-09-12-GET-100-random-papers-to-classify-types-for-final-ICR.ipynb`
-  - Result: `2022-09-13-calculate-paper-classification-final-icr.ipynb`. 
-  - Final ICR: .79
-
-<!-- ## with type
-
-- With `2022-09-14-get-paper-and-author-with-type.ipynb`, I add `type` to ica paper df and author data with pred. I also outputed research paper df and research author with pred.  -->
-
-### race and gender 
-
-- With `2022-09-14-get-100-names-for-initial-gender-race-icr.ipynb`, I randomly selected 100 names for initial icr for race and gender. 
-
-- This is where they coded: https://docs.google.com/spreadsheets/d/1ZgDutpqsO23PqssScUaACHdWuu32mzO1SmNOkbsq-jA/edit#gid=112686513. And there is the data for Matthew: https://docs.google.com/spreadsheets/d/1VS7iTtfS640PA56o8DnPh3DJm4Dx5UJfubvkbXd7IwI/edit#gid=0
-
-- I calculated race and gender ICR in `2022-09-19-calculate-initial-gender-icr.ipynb`. The ICR is 0.94. 
-
-- Here is the aggregated results for initial gender coding: https://docs.google.com/spreadsheets/d/1ZgDutpqsO23PqssScUaACHdWuu32mzO1SmNOkbsq-jA/edit#gid=1431889162
-
-<!-- ### Post ICR
-
-- With `2022-12-02-get-100-names-for-final-gender-race-icr.ipynb`, I obtained 100 names for final ICR for gender and race. Resulting data is `data/interim/icr/2022-12-02-race-gender-post-icr-100names.csv`
-
-- This is where they coded:  -->
-
-#### Redo Race
-
-- Gender is okay but we need to redo race. Now I used `2022-09-20-get-100-names-for-race-icr.ipynb` to get another 100 random names for race ICR. Here is where we coded the race: https://docs.google.com/spreadsheets/d/1Fe_w078ZxqOV8HxmjuqJav5ff-PM4bElJr9CgSwZHHw/edit?usp=sharing
-
-- I calculated the ICR here: `2022-09-23-calculate-initial-race-icr.ipynb`. The initial ICR is 0.91. 
-
-- Here is the aggregated result: https://docs.google.com/spreadsheets/d/1Fe_w078ZxqOV8HxmjuqJav5ff-PM4bElJr9CgSwZHHw/edit#gid=1729958890
-
-### ACTUAL CODING
-
-#### author affiliation
-
-With `2022-09-16-split-aff-task.ipynb` I split the dataset. Here is where we coded: https://docs.google.com/spreadsheets/d/1DA7EZ1SmvdaMihPzNqcp1aHmZ_N6PQpxB5YUjI_jNoY/edit#gid=393854720
-
-#### Gender and Race
-
-I did it here: `2022-09-23-split-race-gender-task.ipynb`. There datasets are deposited in `data/interim/gender_race_coding_task`
-
-Note that I found one person who uses anonymous name: https://academic.oup.com/ct/article/8/4/381/4201775. I then updated the script of `get_paper_and_author_with_type.py` in the workflow. Now this issue is solved. 
-
-There are 84 scholars whose first name is initials only. With `2022-12-09-create-initials_df.ipynb`, I created a spreadsheet for coders to check the results. 
-
 ## Notebooks
 
-These are exploratory notebooks. 
+These are exploratory notebooks
 
 ## Data
 
-## Raw
+### Raw
 
 - `/large/ror.json`
 
@@ -197,3 +83,125 @@ Finally, I generated
 Those two files are the most complete ones. 
 
 - GSCHOLAR_DATA_COMBINED, this is the final google scholar data. For details of how I got this data, see the section of "Google scholar data"
+
+## Workflow
+
+This project uses snakemake.
+
+### Workflow notebooks
+
+These are notebooks used for the workflow. 
+ 
+### Scripts
+
+(More details can be found in `workflow/Snakefile` and also in each specific `py` file)
+
+- `scrape_ica_paper_dois.py`: get ICA publication paper info, specifically, I got all paper dois, title, and abstracts
+
+- `scrape_ica_author_data.py`: get paper and author data on ICA journal publications using BeautifulSoup
+
+- `get_author_with_gender.py`: get gender raw predictions. This is to prevent me from having to do it again, which requires quota from genderize.io.
+
+- `get_author_with_pred_raw.py`: get race and affiliations. "Raw" because I'll change column order later
+
+- `get_author_with_pred.py`: rearrange colomn order
+
+- `get_paper_and_author_with_type.py`: add 'type' to paper df and author data, and subsequently get research paper/author, and authors/papers to study. 
+
+- `get_authorid_with_vars.py`: in this script, I processed the gender, race and aff coded data
+and return basically dictionaries through a dataframe. 
+
+- `get_authors_and_papers_expanded.py`: get all variables needed in analysis.
+
+- `get_gscholar_data.py` and `get_gscholar_data_combined.py`: get gscholar data.
+
+## Misc.
+
+### About Google Scholar data
+
+I scraped citation data from Google Scholar. I queried title + journal + first author name. I then compared the original title and the title shown on Google Scholar to make sure my data is accurate. Among all 5,718 papers (The full dataset contains 5719 papers, so `10.1111/j.1083-6101.1996.tb00178.x` is missing in gscholar data. I dind't know what happened.), only 293 papers have differences in titles. I then investigated these 293 papers. I compared the similarity (using python's difflib) between the two titles. More than half of them have a similarity score of 0.95. For these, I considered them as accurate. For the 122 papers, I collected their data on Google Scholar by searching their DOIs (instead of titles). In this case, searching by DOI yeilds a much better result (`data/interim/gscholar_data_manual.csv`). Still, there are some mismatches. I updated this dataset in https://docs.google.com/spreadsheets/d/14y72p5I9RvzueNOb5x1cE23M0N__A8rCaCRudckxU5U/edit#gid=1256132535. The resulting data is `interim/gscholar_data_manual_checked.csv`
+
+Then, I combined the two datasets through `combine_gscholar_data.py`
+
+>I thought about redoing scraping google scholar citation data by searching the DOI (right now, the majority of the data came from searching the title). However, after checking the result of data now (trying searching DOI for papers with strings like `[PDF]` and `CITATION`), I found that they are the same. So I probably won't do it again; I'll keep the data for now for my analysis.   
+
+#### Redoing GScholar data on 2023-06-07
+
+I scraped citation data from Google Scholar. I queried title + journal + first author name. I then compared the original title and the title shown on Google Scholar to make sure my data is accurate. Among all 5,718 papers `10.1111/j.1083-6101.1996.tb00178.x` is missing in gscholar data. This is because one paper happend twice in the gscholar data. But I dind't know what happened. Only 289 papers have differences in titles. I then investigated these 289 papers. I compared the similarity (using python's difflib) between the two titles. More than half of them have a similarity score of 0.95. For these, I considered them as accurate. For the 123 papers, I collected their data on Google Scholar by searching their DOIs (instead of titles). Note that '10.1111/j.1460-2466.1952.tb00171.x' is not available on Google Scholar so I had to remove it. 
+
+I then manually checked these results at https://docs.google.com/spreadsheets/d/14y72p5I9RvzueNOb5x1cE23M0N__A8rCaCRudckxU5U/edit#gid=261290178. There, I added 10.1111/j.1083-6101.1996.tb00178.x. These results are at `data/interim/gscholar_data_manual.csv`
+
+In all, these papers are not availabe on google Scholar:
+ - 10.1111/j.1460-2466.1977.tb02133.x
+ - 10.1111/j.1460-2466.1952.tb00171.x
+
+Then, I combined the two datasets through `combine_gscholar_data.py`. The final dataset should contain 5717 papers. 
+
+
+### Classification and Inter-coder reliability
+
+#### Paper classification ICR
+
+First, with `2022-08-20-new-cat-issueurl.ipynb`, we get the list of all categories with associated frequencies. Then in this the dataset, we reclassified categories: https://docs.google.com/spreadsheets/d/1E2dgJCpv5FrxKv41QZuNsv7MjJs3IcBxFbZze_5rnjU/edit#gid=2060805888
+
+After we classified these categories as either "to exclude" or not, I put the raw result into `data/interim/cat_class_raw.csv`
+
+- `data/interim/icr/paper_classification_icr_test_2022-08-27.csv` is the randomly selected 100 rows to test paper classification intercoder reliability. This dataset is generated by `2022-08-27-GET-100-random-papers-to-classify-types-for-ICR.ipynb`. 
+
+- This is the raw result: https://docs.google.com/spreadsheets/d/1POuzorD6B2r8uO9gdpBgt1U1ZksJhbCTzaolnAKQpmU/edit#gid=1585704198
+
+Krippendorff alpha: 0.831
+
+- `paper_cla_ica_compa_results_2022-08-29.csv` is the aggregated results. This result is computed by `2022-08-29-calculate-paper-cla-icr.ipynb`
+
+- Then, We did all the classification here: https://docs.google.com/spreadsheets/d/1uslTqfe269jf0KHJ8E70XHru2jag8y-iiRRb94HQA9s/edit#gid=349722970, which is created by `2022-08-29-randomly-split-ica-paper-df-for-paper-classification.ipynb`
+
+- We tested final icr here: https://docs.google.com/spreadsheets/d/1KvPvm5DWAP9ndPbB4yfEWyet5WIu0rfKsqM_FL2kbP8/edit?usp=sharing
+  - This is created by `2022-09-12-GET-100-random-papers-to-classify-types-for-final-ICR.ipynb`
+  - Result: `2022-09-13-calculate-paper-classification-final-icr.ipynb`. 
+  - Final ICR: .79
+
+<!-- ## with type
+
+- With `2022-09-14-get-paper-and-author-with-type.ipynb`, I add `type` to ica paper df and author data with pred. I also outputed research paper df and research author with pred.  -->
+
+#### race and gender 
+
+- With `2022-09-14-get-100-names-for-initial-gender-race-icr.ipynb`, I randomly selected 100 names for initial icr for race and gender. 
+
+- This is where they coded: https://docs.google.com/spreadsheets/d/1ZgDutpqsO23PqssScUaACHdWuu32mzO1SmNOkbsq-jA/edit#gid=112686513. And there is the data for Matthew: https://docs.google.com/spreadsheets/d/1VS7iTtfS640PA56o8DnPh3DJm4Dx5UJfubvkbXd7IwI/edit#gid=0
+
+- I calculated race and gender ICR in `2022-09-19-calculate-initial-gender-icr.ipynb`. The ICR is 0.94. 
+
+- Here is the aggregated results for initial gender coding: https://docs.google.com/spreadsheets/d/1ZgDutpqsO23PqssScUaACHdWuu32mzO1SmNOkbsq-jA/edit#gid=1431889162
+
+<!-- ### Post ICR
+
+- With `2022-12-02-get-100-names-for-final-gender-race-icr.ipynb`, I obtained 100 names for final ICR for gender and race. Resulting data is `data/interim/icr/2022-12-02-race-gender-post-icr-100names.csv`
+
+- This is where they coded:  -->
+
+##### Redo Race
+
+- Gender is okay but we need to redo race. Now I used `2022-09-20-get-100-names-for-race-icr.ipynb` to get another 100 random names for race ICR. Here is where we coded the race: https://docs.google.com/spreadsheets/d/1Fe_w078ZxqOV8HxmjuqJav5ff-PM4bElJr9CgSwZHHw/edit?usp=sharing
+
+- I calculated the ICR here: `2022-09-23-calculate-initial-race-icr.ipynb`. The initial ICR is 0.91. 
+
+- Here is the aggregated result: https://docs.google.com/spreadsheets/d/1Fe_w078ZxqOV8HxmjuqJav5ff-PM4bElJr9CgSwZHHw/edit#gid=1729958890
+
+### ACTUAL CODING
+
+#### author affiliation
+
+With `2022-09-16-split-aff-task.ipynb` I split the dataset. Here is where we coded: https://docs.google.com/spreadsheets/d/1DA7EZ1SmvdaMihPzNqcp1aHmZ_N6PQpxB5YUjI_jNoY/edit#gid=393854720
+
+#### Gender and Race
+
+I did it here: `2022-09-23-split-race-gender-task.ipynb`. There datasets are deposited in `data/interim/gender_race_coding_task`
+
+Note that I found one person who uses anonymous name: https://academic.oup.com/ct/article/8/4/381/4201775. I then updated the script of `get_paper_and_author_with_type.py` in the workflow. Now this issue is solved. 
+
+There are 84 scholars whose first name is initials only. With `2022-12-09-create-initials_df.ipynb`, I created a spreadsheet for coders to check the results. 
+
+
+

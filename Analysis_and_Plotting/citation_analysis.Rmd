@@ -1,22 +1,40 @@
 ---
 title: "Supplementary Material"
 output: 
-  pdf_document:
-    number_sections: true
+  bookdown::pdf_document2
 ---
 
 ```{r setup, include=FALSE}
 library(car)
 library(olsrr)
 library(stargazer)
+library(bookdown)
 ```
 
-\tableofcontents
+
+# Interactive visualizations
+
+Interactive visualizations showing the distribution of race and gender in different countries/regions are available at [https://icaviz.netlify.app/](https://icaviz.netlify.app/).
 
 # Number of publications for each journal
 
-```{r pressure, echo=FALSE, fig.cap="number of publications for each journal by year", out.width = '50%'}
+See Figure \@ref(fig:numofpub).
+
+```{r numofpub, echo=FALSE, fig.cap="Number of publications for each journal by year", out.width = '50%'}
 knitr::include_graphics("num_pub_journal.png")
+```
+
+# Women proportion among authors of different racial groups
+
+See Figure \@ref(fig:wp1) and Figure \@ref(fig:wp2).
+
+
+```{r wp1, echo=FALSE, fig.cap="Women proportion", out.width = '50%'}
+knitr::include_graphics("w_p_1.png")
+```
+
+```{r wp2, echo=FALSE, fig.cap="Women proportion", out.width = '50%'}
+knitr::include_graphics("w_p_2.png")
 ```
 
 

@@ -21,6 +21,10 @@ These are exploratory notebooks
 
 `category-classification.csv` is the result category classification directly from Google Sheet.  -->
 
+### Plots
+
+These data were created in the notebook of "Analysis_and_Plotting_2022-10-28-Analyze-Colla-Flows.ipynb".
+
 ### Interim
 
 - `ica_paper_df.csv`, this file mainly contains dois for ica journal papers. I also included all other necessary information when it exists, for example, issue, and abstract. 

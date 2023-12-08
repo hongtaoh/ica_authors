@@ -16,6 +16,14 @@ library(bookdown)
 
 Interactive visualizations showing the distribution of race and gender in different countries/regions are available at [https://icaviz.netlify.app/](https://icaviz.netlify.app/).
 
+# Intercoder reliability 
+
+In the Methods section of the manuscript, we mentioned that 
+
+>Once coders had completed training, we randomly selected 100 authors among all 11,304 authors for inter-coder reliability and achieved a Krippendorff alpha of 0.91 for race and 0.94 for gender.
+
+Note that when we calculated the gender intercoder reliability here, the sample included 160 subsequently deleted authors whose affiliation data was missing.
+
 # Number of publications for each journal
 
 See Figure \@ref(fig:numofpub).

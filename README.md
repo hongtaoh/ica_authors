@@ -11,6 +11,10 @@ This project contains my codes to scrape ICA Annaual conference data and also so
 
 These are exploratory notebooks
 
+## Figures
+
+Those are figures used in our manuscript
+
 ## Data
 
 ### Raw

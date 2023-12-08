@@ -29,7 +29,7 @@ Note that when we calculated the gender intercoder reliability here, the sample 
 See Figure \@ref(fig:numofpub).
 
 ```{r numofpub, echo=FALSE, fig.cap="Number of publications for each journal by year", out.width = '50%'}
-knitr::include_graphics("num_pub_journal.png")
+knitr::include_graphics("Analysis_and_Plotting/num_pub_journal.png")
 ```
 
 # Women proportion among authors of different racial groups
@@ -38,11 +38,11 @@ See Figure \@ref(fig:wp1) and Figure \@ref(fig:wp2).
 
 
 ```{r wp1, echo=FALSE, fig.cap="Women proportion", out.width = '50%'}
-knitr::include_graphics("w_p_1.png")
+knitr::include_graphics("Analysis_and_Plotting/w_p_1.png")
 ```
 
 ```{r wp2, echo=FALSE, fig.cap="Women proportion", out.width = '50%'}
-knitr::include_graphics("w_p_2.png")
+knitr::include_graphics("Analysis_and_Plotting/w_p_2.png")
 ```
 
 
@@ -52,7 +52,7 @@ knitr::include_graphics("w_p_2.png")
 The first step is to read data:
 
 ```{r read data}
-df <- read.csv("../data/processed/papers_to_study_expanded.csv")
+df <- read.csv("data/processed/papers_to_study_expanded.csv")
 df$Year.Distance.from.2022 = abs(df$year - 2022)
 
 # do the log10 transformation on citation counts

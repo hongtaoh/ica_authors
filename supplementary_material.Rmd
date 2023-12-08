@@ -45,6 +45,9 @@ knitr::include_graphics("Analysis_and_Plotting/w_p_1.png")
 knitr::include_graphics("Analysis_and_Plotting/w_p_2.png")
 ```
 
+# Collaboration analysis
+
+Please note that in our discussion of collaboration patterns, "white-only", "men-only", and "women-only" papers included those by solo authors. 
 
 # Citation Analysis
 ## Read data
